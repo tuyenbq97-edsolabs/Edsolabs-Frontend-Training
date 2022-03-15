@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise day 2</title>
+</head>
+    <h3>Câu hỏi 1: HTML5 là gì ?</h3>
+    <ol>
+        <li>HTML5 là HTML phiên bản 5</li>
+        <li>Trong đó HTML(Hypertext Markup Language)là một ngôn ngữ đánh dấu được thiết kế để tạo nên các trang web trên World Wile Web </li>
+    </ol>
+    <h3>Câu hỏi 2: Nêu tác dụng của việc sử dụng html5 trong lập trình ?</h3>
+    <h4>Lợi ích của HTML5 :</h4>
+    <ol>
+        <li>Tương thích với các trang web đang tồn tại</li>
+        <li>Đáp ứng các kĩ thuật không chính thức nhưng được nhiều người dùng</li>
+        <li>Giải quyết các nhu cầu thực tế</li>  
+    </ol>
+    <h4>Trong lập trình thì HTML5 có ưu điểm với lập trình viên là :</h4>
+    <ol>
+        <li>Không cần tạo cookie</li>
+        <li>Có thể dễ dàng tùy chỉnh Data attribute</li>
+        <li>Menu element</li>
+        <li>Thiết kế web mobile thuận tiện hơn</li>
+        <li>Tăng tương thích cho ứng dụng web</li>
+    </ol>
+    <h3>Câu hỏi 3: HTML5 khác với HTML ở điểm nào (chức năng, tags, bổ sung tags hay bỏ tags nào) ?</h3>
+    <h4>Về chức năng :</h4>
+    <ol>
+        <li>Multi-media support : HTML không hỗ trợ video và âm thanh còn HTML5 được tích hợp sẵn chức năng hỗ trợ video, âm thanh</li>
+        <li>Geographical support : HTML hỗ trợ theo dõi vị trí người dùng nhưng quá trình này rất khó khăn nếu người dùng sử dụng thiết bị di động còn HTML5 sử dụng Javascript Gelocation API để theo dõi vị trí bất cứ người dùng nào đang truy cập website</li>
+        <li>Storage : HTML sử dụng bộ nhớ cache của trình duyệt làm bộ nhớ tam thời còn HTML5 có nhiều tùy chọn để lưu trữ ví dụ như Application cache, SQL database, Web storage.
+            Chúng ta có thể chạy JS trong nền bằng JS API có sẵn cho việc lưu trữ</li>
+        <li>Communication :Trong HTML, Giao tiếp giữa Client và Server bằng Streaming là Long Pooling (vì chúng không hỗ trợ Web Socket) còn HTML5, hỗ trợ Web Socket, giúp giao tiếp song song giữa Server và Client</li>
+        <li>Browser compatibility : HTML tương thích với tất cả các trình duyệt (Vì nó đã tồn tại quá lâu) còn HTML5, chúng ta có nhiều thẻ mới và bỏ đi một số thẻ. Vì thế, chỉ có một số trình duyệt hỗ trợ hoàn toàn HTML5</li>
+        <li>Graphics support : Trong HTML, muốn làm đồ họa vector thì phải sử dụng Sliver light, Adobe Flash, VML ... còn Trong HTML5 Đồ họa vector được hỗ trợ mặc định với Canvas và SVG</li>
+        <li>Threading : Trong HTML, giao diện trình duyệt tương tác với người dùng và Javascript trong cùng luồng. Điều này khiến cho hiệu suất trang web thấp còn Trong HTML5, với JavaScript Web Worker API cho phép Javascript và Giao diện trình duyệt chạy trên các luồng khác nhau</li>
+        <li>HTML không thể xử lý cú pháp không chính xác và các lỗi còn HTML5 có thể xử lý cú pháp không chính xác và các lỗi khác</li>
+    </ol>
+    <h4>Về tags :</h4>
+    <ol>
+        <li>Trong HTML, thẻ applet được sử dụng để hiển thị các applet và thẻ đối tượng được giới thiệu). Trong HTML5, thẻ applet đã bị xóa</li>
+        <li>Trong HTML, thẻ "a" được sử dụng làm mỏ neo cũng như để tham chiếu đến một liên kết trong khi trong HTML5, thẻ "a" chỉ được sử dụng làm siêu liên kết</li>
+        <li>Trong HTML, thẻ "acronym" được sử dụng để hiển thị chữ viết tắt trong khi trong HTML5, thẻ này được thay thế bằng thẻ "abbr"</li>
+        <li>Trong HTML5, thẻ "table" có thể chỉ có một thuộc tính border và giá trị bằng 0 hoặc 1. Trong khi trong HTML "table" có rất nhiều thuộc tính</li>
+        <li>Bổ sung rất nhiều các thẻ đánh dấu (markup) mới : header, footer, article, nav, section, audio, video, canvas, embed,....</li>
+        <li>Bỏ đi một số thẻ như : acronym, applet, font, frame, frameset, noframes, isindex, basefont, dir, big, conter, strike,.... </li>
+    </ol>
+    <h3>Câu hỏi 4: Sematic elments là gì, bao gồm những thẻ nào ?</h3>
+    <ol>
+        <li>Trong ngôn ngữ học , ngữ nghĩa học là nghiên cứu về ý nghĩa của từ và cụm từ trong ngôn ngữ</li>
+        <li>Mỗi yếu tố ngữ nghĩa(Sematic element) đều mang một ý nghĩa riêng</li>
+        <li>Vậy nên trong HTML, mỗi Sematic element mô tả ý nghĩa cấu trúc của yếu tố đó đối với các trình duyệt và các nhà phát triển/lập trình viên</li>
+        <li>Ví dụ : non-sematic : div, span - không mô tả rõ ràng về nội dung bên trong nó còn sematic : form, table,... thì đưa ra các mô tả rõ ràng về nội dung bên trong yếu tố</li>
+        <li>Các yếu tố sematic mới để xác định các thành phần khác nhau của 1 trang web : article, aside, details, figcaption, figure, footer, header, main, mark, section, summary, time</li>
+    </ol>
+    <h3>Câu hỏi 5: Tác dụng của Sematic elments ?</h3>
+    <ol>
+        <li>Với mỗi sematic element đều có ý nghĩa riêng nên sẽ giúp công cụ tìm kiếm xác định nội dung có bên trong trang web một cách chính xác</li>
+        <li>Giúp thiết kế cấu trúc/giao diện của một trang web đẹp và rõ ràng hơn</li>
+    </ol>
+    <h3>Câu hỏi 6: SEO là gì? Những yếu tố nào tác động lên điểm SEO của một trang web ?</h3>
+    <p>SEO là từ viết tắt của Search Engine Optimization (tối ưu hóa công cụ tìm kiếm), là một quy trình nâng cao thứ hạng của website trên các công cụ tìm kiếm giúp người dùng có thể tìm thấy trang web dễ dàng hơn trên bảng kết quả tìm kiếm</p>
+    <h4>Những yếu tố tác động lên điểm SEO của một trang web là :</h4>
+    <ol>
+        <li>Chất lượng nội dung(content)</li>
+        <li>Backlink chất lượng</li>
+        <li>Lượng traffic đổ về</li>
+        <li>Tốc độ trang web</li>
+        <li>Thân thiện với thiết bị di động</li>
+        <li>Tối ưu hóa onpage cho những website chính</li>
+        <li>Độ dài URL</li>
+        <li>Tối ưu hóa hình ảnh</li>
+    </ol>
+    <h3>Câu hỏi 7: Git flow cơ bản trong một dự án?</h3>
+    <p>Git Flow được Vincent Driessen đưa ra nhằm cải thiện quá trình làm việc cùng Git. Thực chất, đấy là cách chia nhánh và merge nhánh vào khi hoàn thành một tập hợp tính năng hoặc fix.
+    Git Flow đưa ra các quy ước để triển khai công việc. Nó được tổng kết qua quá trình làm việc thực tiễn của nhiều team trên thế giới. Mục đích là các nhóm công việc triển khai song song nhưng không ảnh hưởng tới nhau. Các  môi trường development, staging và production tách biệt giúp quá trình kiểm thử (QA), feedback và xử lý các issue được gọn gàng và thống nhất hơn.
+    </p>
+    <h4>Các branch chính </h4>
+    <ol>
+        <li>master: là branch tồn tại xuyên suốt quá vòng đời của phần mềm được tạo mặc định trong Git khi ta tạo repository</li>
+        <li>develop: là nơi các develop phát triển chính branch luôn tồn tại song song với master</li>
+        <li>feature: là nhánh được tách từ develop nhằm mục đích xây dựng các tính năng riêng mà không phụ thuộc vào nhau</li>
+        <li>release: là nhánh tách từ develop để kiểm tra và fix bug chuẩn bị cho việc ra mắt sản phẩm</li>
+        <li>hotfix: là nhánh tách từ master để fix gấp những bug còn tồn đọng mà trên release chưa xử lý hết </li>
+    </ol>
+    <h3>Câu hỏi 8: Có những cách nào để style một element</h3>
+    <ol>
+        <li> viết style ngay trong thẻ -inline </li>
+        <li> viết style trong cặp thẻ style và đặt nó sau thẻ head - Internal</li>
+        <li> viết style trong file css và đặt đường dẫn liên kết đến trang css đó trong thẻ head -  external</li>
+    </ol>
+    <h3>Câu hỏi 9: Mức độ ưu tiên trong css</h3>
+    <ol>
+        <li>Các elements(thẻ) trong CSS :p, div, section, header,... thì độ ưu tiên thấp nhất</li>
+        <li>Tiếp theo là các class, pseudo class như :.home, .comtent, :hover, :before, :after hoặc các attribute như : a[target="_blank"], input[type="text"] thì độ ưu tiên nó nằm kề cuối</li>
+        <li>Tiếp đến là các id như #header, #banner,... có độ ưu tiên thứ nhì</li>
+        <li>Cuối cùng là inline - style : code trực tiếp bên trong thẻ HTML với độ ưu tiên cao nhất</li>
+        <li>Sử dụng !important có độ ưu tiên cao nhất hơn cả inline - style</li>
+        <li>Note : nếu cả 2 đoạn code có cùng thứ tự ưu tiên : cái nào có số lượng thẻ còn lại cao hơn thì ưu tiên hơn</li>
+        <li>Với trường hợp tất cả bằng nhau thì ưu tiên đoạn code nằm ở dưới</li>
+    </ol>
+</body>
+</html>
