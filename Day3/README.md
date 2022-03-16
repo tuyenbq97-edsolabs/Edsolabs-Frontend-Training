@@ -1,6 +1,10 @@
-## Bài tập: Thực hiện tạo bảng với html, style bảng theo mẫu (file table.png)
+## Bài tập: Thực hiện tạo bảng với html, style bảng theo mẫu
 
-## Yêu cầu, bảng nằm ở giữa của trang web (trái,phải,trên,dưới), background của toàn bộ trang web là màu `#a8c5f0`
+## Bài 1: file table.html (Mẫu table.png)
+
+# Yêu cầu, bảng nằm ở giữa của trang web (trái,phải,trên,dưới), background của toàn bộ trang web là màu `#a8c5f0`
+
+## Bài 2: file menu.html (Mẫu menu.png)
 
 ### Cách nộp bài
 
