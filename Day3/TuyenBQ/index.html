@@ -14,35 +14,79 @@
       border-radius: 8px;
       background-color: orange;
     }
+    ol > li:nth-child(even):not(li:nth-child(2)),
+    ol > li:nth-child(1),
+    ol li:nth-child(11) {
+      color: red;
+    }
+    ol li:nth-child(3),
+    ol li:nth-child(5) {
+      color: blue;
+    }
+    ol li:nth-child(7) {
+      color: green;
+    }
+    ol li:nth-child(9) {
+      color: yellow;
+    }
+    .arrow {
+      width: 100px;
+      height: 40px;
+      background-color: transparent;
+      margin-bottom: 100px;
+      margin-left: auto;
+      margin-right: auto;
+      position: relative;
+    }
+
+    .arrow:after {
+      content: "";
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      border-bottom: 80px solid lightblue;
+      border-right: 60px solid transparent;
+      border-left: 60px solid transparent;
+    }
+
+    .arrow:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 30px;
+      border-top: 80px solid lightblue;
+      border-right: 60px solid transparent;
+      border-left: 60px solid transparent;
+    }
   </style>
   <body>
     <ul>
-      <li style="color: red">
+      <li>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, tenetur?
       </li>
       <li>Lorem ipsum dolor sit amet.</li>
-      <li style="color: blue">
+      <li>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores qui
         magni dolores recusandae quasi modi inventore dolor a! In, perferendis.
-      </li style="color: red">
-      <li style="color: red">Lorem ipsum dolor sit amet consectetur, adipisicing elit.</li>
-      <li style="color: blue">lorem</li>
-      <li style="color: red">
+      </li>
+      <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</li>
+      <li>lorem</li>
+      <li>
         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Debitis cum
         quasi in harum distinctio nobis deserunt velit dignissimos minima
         dolores.
       </li>
-      <li style="color: green">Lorem ipsum dolor sit amet.</li>
-      <li style="color: red">Lorem ipsum dolor sit amet.</li>
-      <li style="color: yellow">Lorem ipsum dolor sit amet.</li>
-      <ul>
-        <li style="color: red">Lorem ipsum dolor sit amet.</li>
-          <li>
-            Lorem ipsum dolor sit amet.
-          </li>
-      </ul>
-      <li style="color: red">Lorem ipsum dolor sit amet.</li>
+      <li>Lorem ipsum dolor sit amet.</li>
+      <li>Lorem ipsum dolor sit amet.</li>
+      <li>Lorem ipsum dolor sit amet.</li>
+      <ol>
+        <li>Lorem ipsum dolor sit amet.</li>
+        <li>Lorem ipsum dolor sit amet.</li>
+      </ol>
+      <li>Lorem ipsum dolor sit amet.</li>
     </ul>
+
+    <div class="arrow"></div>
     <a href="https://google.com" target="_blank" class="btn"> Go to Gooogle </a>
   </body>
 </html>
