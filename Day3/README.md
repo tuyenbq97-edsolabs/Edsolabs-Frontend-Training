@@ -6,6 +6,10 @@
 
 ## Bài 2: file menu.html (Mẫu menu.png)
 
+## Bài 3: Dùng pseudo class để style lại list theo mẫu (file list.png)
+
+## Bài 4: Dùng pseudo class style cho button, hover => đổi màu nền, đổi màu chữ, đổi màu border
+
 ### Cách nộp bài
 
 - Sử dụng các kiến thức đã học về git, tạo một `branch` mới, rồi push code có chứa câu trả lời lên trên repo: https://github.com/tuyenbq97-edsolabs/Edsolabs-Frontend-Training
