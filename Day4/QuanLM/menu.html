@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
 </head>
 <style>
     body{
@@ -13,26 +14,34 @@
         background-color: aqua;
         display: flex;
         justify-content: center;
+
     }
-    #menu div{
+    #menu> div{
         width: 300px;
-        padding: 10px;
         text-align: center;
+        padding: 20px;      
+    }
+    #menu div:first-child{
+        background-color: brown;
+    }
+    .dropdownmenu{
         position: relative;
+    }
+    .menucontent{
+        display: none;
+        position: absolute;
+    }
+    .menucontent div{
+        padding: 20px;
     }
 
     #menu div:hover{
         background-color: brown;
     }
-    #menu div:first-child{
-        background-color: brown;
-    }
-    .dropdownmenu div{
-        display: none;
-    }
      .dropdownmenu:hover div{
-        background-color: aqua;
         display: block;
+        background-color: aqua;
+        
     }
   
 
@@ -46,10 +55,13 @@
         <div><a>TIỂU THUYẾT</a></div>
         <div class="dropdownmenu">
             <a>TRUYỆN TRANH</a>
-            <div><a>CONAN</a></div>
-            <div><a>SHIN</a></div>
-            <div><a>NARUTO</a></div>
-            <div><a>DRAGON BALL</a></div>
+            <div class="menucontent">
+                <div><a>CONAN</a></div>
+                <div><a>SHIN</a></div>
+                <div><a>NARUTO</a></div>
+                <div><a>DRAGON BALL</a></div>
+        </div>
+            
         </div>
     </nav>
 </body>
