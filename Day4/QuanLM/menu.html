@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
+</head>
+<style>
+    body{
+    }
+    #menu{
+        background-color: aqua;
+        display: flex;
+        justify-content: center;
+
+    }
+    #menu> div{
+        width: 300px;
+        text-align: center;
+        padding: 20px;      
+    }
+    #menu div:first-child{
+        background-color: brown;
+    }
+    .dropdownmenu{
+        position: relative;
+    }
+    .menucontent{
+        display: none;
+        position: absolute;
+    }
+    .menucontent div{
+        padding: 20px;
+    }
+
+    #menu div:hover{
+        background-color: brown;
+    }
+     .dropdownmenu:hover div{
+        display: block;
+        background-color: aqua;
+        
+    }
+  
+
+</style>
+<body>
+    <div id="menu">
+        <div><a>HOME</a></div>
+        <div><a>SÁCH GIÁO KHOA</a></div>
+        <div><a>SÁCH THAM KHẢO</a></div>
+        <div><a>TÀI LIỆU LỊCH SỬ</a></div>
+        <div><a>TIỂU THUYẾT</a></div>
+        <div class="dropdownmenu">
+            <a>TRUYỆN TRANH</a>
+            <div class="menucontent">
+                <div><a>CONAN</a></div>
+                <div><a>SHIN</a></div>
+                <div><a>NARUTO</a></div>
+                <div><a>DRAGON BALL</a></div>
+        </div>
+            
+        </div>
+    </nav>
+</body>
+</html>
