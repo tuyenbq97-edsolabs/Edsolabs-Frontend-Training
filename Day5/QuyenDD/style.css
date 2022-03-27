@@ -1,0 +1,125 @@
+ body
+    {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background-repeat:round;
+        background: linear-gradient(180deg, #E5B2CA 0%, #CD82DE 100%);
+    }
+    .image 
+    {
+        width: 353px;
+        height: 290px;
+        margin-top: 54px;
+    }
+    .title
+    {
+        text-align: center;
+        margin-top: 5px;
+        width: 227px;
+        height: 71px;  
+    }
+    .title p:first-child
+    {
+        font-style: normal;
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 24px;
+        color: rgba(255, 255, 255, 0.75);
+        margin-bottom: 6px;
+        margin-top: 0px;
+    }
+    .title p:last-child
+    {
+
+        font-style: normal;
+        font-weight: 800;
+        font-size: 34px;
+        line-height: 41px;
+        color: #FFFFFF;
+        margin: 0px;
+    }
+    .email
+    {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-top: 37px;
+        width: 342px;
+        height: 74px;
+        background: #FFFFFF;
+        border-radius: 37px;
+    }
+    .email img, .password img
+    {
+        margin-left: 21.87px;
+        margin-right: 25.1px;
+        width: 13.04px;
+        height: 13.91px;
+    }
+
+    .password
+    {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-top: 14px; 
+        margin-bottom: 14px; 
+        width: 342px;
+        height: 74px;
+        background: #FFFFFF;
+        border-radius: 37px; 
+    }
+    .continue
+    {
+        text-align: center;
+        width: 342px;
+        height: 70px;
+        background: #78258B;
+        box-shadow: 0px 25px 45px rgba(120, 37, 139, 0.25);
+        border-radius: 37px;
+    }
+    .continue p
+    {
+        margin-top: 26px;
+        margin-bottom: 25px;
+    }
+    .or 
+    {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        width: 342px;
+        height: 16px;
+        text-align: center;
+        margin-top: 32px;
+        margin-bottom: 32px;
+    }
+    .or::before, .or::after
+    {
+        content: "";
+        width: 148px;
+        height: 0px;
+        border: 1px dashed rgba(255, 255, 255, 0.4);
+    }
+    .create_account
+    {
+        text-align: center;
+        margin-bottom: 45px;
+        width: 342px;
+        height: 70px;
+        background: rgba(255, 255, 255, 0.28);
+        box-shadow: 0px 25px 45px rgba(120, 37, 139, 0.25);
+        border-radius: 37px;
+    }
+    .continue p, .create_account p
+    {
+        margin-top: 26px;
+        margin-bottom: 25px;
+    }
+    .or p
+    {
+        padding-left: 16px;
+        padding-right: 15px;
+    }

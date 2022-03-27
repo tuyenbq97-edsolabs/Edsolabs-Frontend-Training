@@ -30,12 +30,12 @@ main {
   padding-right: 36px;
   min-height: 100vh;
 }
-.header-form {
+form .header-form {
   text-align: center;
   color: #fff;
 }
 
-.header-form h4 {
+form .header-form h4 {
   font-size: 20px;
   line-height: 24px;
   font-weight: 600;
@@ -43,7 +43,7 @@ main {
   margin-top: 0;
 }
 
-.header-form h1 {
+form .header-form h1 {
   font-weight: 800;
   font-size: 34px;
   line-height: 41px;
