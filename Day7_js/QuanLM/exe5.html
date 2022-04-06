@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function different(arr1,arr2)
+        {
+            let result = [];
+            for(let i = 0; i< arr1.length ; i++)
+            {
+                let tick = false;
+                for(let j = 0 ; j < arr2.length ; j++)
+                {    
+                    if(arr1[i] == arr2[j])
+                    {
+                       tick = true;
+                       break;
+                    }
+                }
+                if(tick == false){
+                    result.push(arr1[i]);
+                }
+            }
+            console.log(result);
+        }
+        
+        different([1,2,4,5,3] , [2,3,8]);
+    </script>
+</body>
+</html>

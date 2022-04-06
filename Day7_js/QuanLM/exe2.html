@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exe 2</title>
+</head>
+<body>
+    <script>
+        function lowerCase(str){
+            let result = str.replace(/\W|_/g, ' ').replace(/[A-Z][a-z]/g ,(x) => ` ${x}`).replace(/\s+/g, ' ').replace(/\d+/g, (x) => `${x} `).toLowerCase().trim();
+            console.log(result);
+        }
+        lowerCase('--Foo-Bar--');
+        lowerCase('fooBar');
+        lowerCase('__FOO_BAR__');
+        lowerCase('--++66jkyujyuGoo+*****bar');
+    </script>
+</body>
+</html>
