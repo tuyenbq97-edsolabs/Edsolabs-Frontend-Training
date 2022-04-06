@@ -9,7 +9,12 @@
 <body>
     <script>
         function isEmpty(str){
-            if(str == null || typeof str != 'object' || str == true) return true;
+            if(str == null || typeof str != 'object' ){
+                if(typeof str == 'string' && str.length != 0){
+                    return false;
+                }
+                else return true;
+            }
             else return false;
         }
         console.log(isEmpty(null));
@@ -17,6 +22,9 @@
         console.log(isEmpty(1));
         console.log(isEmpty([1 ,2 ,3]));
         console.log(isEmpty({ 'a': 1}));
+        console.log(isEmpty('hello world'));
+        console.log(typeof 'hello world');
+        console.log(('Hello world').length);
     </script>
 </body>
 </html>
