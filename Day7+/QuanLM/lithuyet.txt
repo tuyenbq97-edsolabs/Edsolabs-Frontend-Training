@@ -1,0 +1,20 @@
+1. 
+-string
+-number
+-boolean
+-null
+-undefined
+-Bigint
+-Symbol
+2.
+"==": sẽ chuyển đổi loại trước khi so sánh đẳng thức
+"===": không chuyển đổi loại khi so sánh. Nên nếu hai value k cùng loại thì sẽ trả về false
+3.
+DOM(Document object model) được dùng để truy xuất và thao tác tài liệu dạng HTML và XML thông qua js và nhiều ngôn ngữ khác
+4.
+NaN nghĩa là "Not A Number"
+5.
+var: được khai báo đa dạng các kiểu biến và có tính chất hoisting. 
+    Khi giá trị của biến var được cập nhật thì nó sẽ được giữ nguyên ngay cả khi ra khỏi
+let: được khai báo giống var.Có thể cập nhật lại giá trị của biến nhưng khi bị ra khỏi scope thì sẽ không thể sử dụng được nữa
+const: Được khai báo giống let. Biến const sẽ không thể cập nhật được giá trị nhưng có thể cập nhật giá trị thuộc tính cho biến đó
