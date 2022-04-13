@@ -1,0 +1,40 @@
+
+        main{
+            max-width: 350px;
+            min-height: 100vh;
+            margin: auto;
+            display: flex;
+            align-items: center;
+        }
+        fieldset, input, .btn_submit>input{
+            border: 1px solid #999999;
+            border-radius: 5px;
+            width: 100%;
+        }
+        input, .btn_submit>input{
+             cursor: pointer;
+        }
+        fieldset{
+            padding:0px 20px 20px 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .form_group{
+            margin: 20px 0px;
+        }
+        .form_group > span {
+            color: red;
+        }
+        input{
+            height: 30px;
+        }
+        input[type=number]::-webkit-inner-spin-button{
+            -webkit-appearance: none;
+        }
+        .btn_submit>input{
+            margin: 2px 0px;
+        }
+        input:hover{
+            border: 1px solid ;
+        }
