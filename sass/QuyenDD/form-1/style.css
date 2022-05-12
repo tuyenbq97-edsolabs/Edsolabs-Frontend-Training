@@ -1,0 +1,137 @@
+body {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  background-repeat: round;
+  background-image: url("./images/bg gradient_2.png");
+}
+
+.widget-login__image {
+  width: 353px;
+  height: 290px;
+  margin-top: 54px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+}
+.widget-login__title {
+  text-align: center;
+  width: 269px;
+  height: 71px;
+  margin-top: 5px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+}
+.widget-login__title p:first-child {
+  font-style: normal;
+  font-size: 20px;
+  line-height: 24px;
+  color: rgba(255, 255, 255, 0.75);
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 6px;
+  margin-left: 0px;
+}
+.widget-login__title p:last-child {
+  font-size: normal;
+  font-size: 34px;
+  line-height: 41px;
+  color: #FFFFFF;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+}
+.widget-login__form-group {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  width: 342px;
+  height: 74px;
+  background: #FFFFFF;
+  border-radius: 37px;
+}
+.widget-login__btn {
+  cursor: pointer;
+  text-align: center;
+  width: 342px;
+  height: 70px;
+  border-radius: 37px;
+  box-shadow: 0px 25px 45px rgba(82, 67, 154, 0.25);
+}
+.widget-login__or {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  text-align: center;
+  justify-content: center;
+  width: 342px;
+  height: 16px;
+  margin-top: 32px;
+  margin-right: 0px;
+  margin-bottom: 32px;
+  margin-left: 0px;
+}
+.widget-login__or p::before, .widget-login__or p::after {
+  content: "";
+  width: 148px;
+  height: 0px;
+  border: 1px dashed rgba(255, 255, 255, 0.4);
+}
+.widget-login__or p {
+  padding: 0px 16px;
+}
+
+.form-email {
+  margin-top: 37px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+}
+.form-email img {
+  margin-top: 0px;
+  margin-right: 25.1px;
+  margin-bottom: 0px;
+  margin-left: 21.87px;
+  width: 13.04px;
+  height: 13.91px;
+}
+
+.form-password {
+  margin-top: 14px;
+  margin-right: 0px;
+  margin-bottom: 14px;
+  margin-left: 0px;
+}
+.form-password img {
+  width: 13.04px;
+  height: 13.91px;
+  margin-top: 0px;
+  margin-right: 25.1px;
+  margin-bottom: 0px;
+  margin-left: 21.87px;
+}
+
+.btn-create {
+  background: #52439A;
+}
+.btn-create p {
+  margin-top: 26px;
+  margin-right: 0px;
+  margin-bottom: 25px;
+  margin-left: 0px;
+}
+
+.btn-login {
+  background: rgba(255, 255, 255, 0.28);
+}
+.btn-login p {
+  margin-top: 26px;
+  margin-right: 0px;
+  margin-bottom: 25px;
+  margin-left: 0px;
+}
+
+/*# sourceMappingURL=style.css.map */

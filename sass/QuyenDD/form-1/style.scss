@@ -1,0 +1,135 @@
+$bg-1:#FFFFFF;
+$bg-2:#52439A;
+$bg-3:rgba(255, 255, 255, 0.28);
+$color-1: rgba(255, 255, 255, 0.75);
+$border-1:1px dashed rgba(255, 255, 255, 0.4);
+$border-radius:37px;
+$box-shadow:0px 25px 45px rgba(82, 67, 154, 0.25);
+$font:normal;
+$center:center;
+$repeat:round;
+$padding:16px;
+@mixin style1($width,$height) {
+    width: $width;
+    height: $height;
+}
+@mixin style2($margin-top,$margin-right,$margin-bottom,$margin-left) {
+    margin-top: $margin-top;
+    margin-right: $margin-right;
+    margin-bottom: $margin-bottom;
+    margin-left: $margin-left;
+}
+@mixin style3($flex-direction:column) {
+    display: flex;
+    align-items: center;
+    flex-direction: $flex-direction;
+}
+@mixin style4($font-size,$line-height) {
+    font-size: $font-size;
+    line-height: $line-height;
+    
+}
+body
+{
+    @include style3;
+    justify-content: $center;
+    background-repeat: $repeat;
+    background-image: url("./images/bg\ gradient_2.png");
+}
+.widget-login
+{
+    &__image
+    {
+     @include style1(353px,290px);
+     @include style2(54px,0px,0px,0px);
+    }
+    &__title
+    {
+        text-align: $center;
+        @include style1(269px,71px);
+        @include style2(5px,0px,0px,0px);
+        p:first-child
+        {
+            font-style: $font;
+            @include style4(20px, 24px);
+            color:$color-1;
+            @include style2(0px, 0px, 6px, 0px);
+        }
+        p:last-child
+        {
+            font-size: $font;
+            font-weight: 800;
+            @include style4(34px, 41px);
+            color: $bg-1;
+            @include style2(0px, 0px, 0px, 0px);
+        }
+    }
+    &__form-group
+    {
+        @include style3(row);
+        @include style1(342px,74px);
+        background: $bg-1;
+        border-radius: $border-radius;
+        
+    }
+    &__btn
+    {
+        cursor: pointer;
+        text-align: $center;
+        @include style1(342px,70px);
+        border-radius: $border-radius;
+        box-shadow: $box-shadow;
+    }   
+    &__or
+    {
+        @include style3(row);
+        text-align: $center;
+        justify-content: $center;
+        @include style1(342px,16px);
+        @include style2(32px, 0px, 32px, 0px);
+        p::before,p::after
+        {
+            content: "";
+            @include style1(148px,1px);
+            border: $border-1;
+        }
+        p 
+        {
+            padding: 0px 16px;
+        }
+    }
+}
+.form-email
+{
+    @include style2(37px, 0px, 0px, 0px);
+    img 
+    {
+        @include style2(0px, 25.1px, 0px, 21.87px);
+        @include style1(13.04px,13.91px);
+    }
+}
+.form-password
+{
+    @include style2(14px, 0px, 14px, 0px);
+    img 
+    {
+        @include style1(13.04px,13.91px);
+        @include style2(0px, 25.1px, 0px, 21.87px);
+    }
+}
+.btn-create
+    {
+        background: $bg-2;
+        p 
+        {
+            @include style2(26px, 0px, 25px, 0px);
+        }
+    }
+.btn-login
+    {
+        background: $bg-3;
+        p 
+        {
+            @include style2(26px, 0px, 25px, 0px);
+        }
+    }
