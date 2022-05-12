@@ -1,0 +1,334 @@
+@font-face {
+  font-family: 'SF Pro Display Medium';
+  src: url(fonts/SFPRODISPLAYMEDIUM.OTF);
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'SF Pro Display Bold';
+  src: url(fonts/SFPRODISPLAYBOLD.OTF);
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: 'SF Pro Display Regular';
+  src: url(fonts/SFPRODISPLAYREGULAR.OTF);
+  font-weight: 400;
+}
+
+body {
+  background-image: url(./images/bgimg.png);
+  background-repeat: round;
+}
+
+main {
+  padding-top: 58px;
+  max-width: 414px;
+  min-height: 100vh;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+}
+
+.container {
+  width: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin-top: 52px;
+  background: rgba(49, 49, 49, 0.6);
+  -webkit-backdrop-filter: blur(35px);
+          backdrop-filter: blur(35px);
+  border-radius: 40px;
+  padding: 25px 36px 0px 36px;
+  z-index: 2;
+}
+
+.container__title {
+  margin-bottom: 32px;
+}
+
+.container__title h4 {
+  font-family: 'SF Pro Display Regular';
+  font-weight: 400;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 17px;
+  line-height: 20px;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.container__title h1 {
+  font-family: 'SF Pro Display Bold';
+  font-weight: 700;
+  margin-top: 6px;
+  font-size: 28px;
+  line-height: 33px;
+  color: #FFFFFF;
+}
+
+.btn {
+  margin-bottom: 18px;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 100%;
+  height: 74px;
+  border-radius: 14px;
+}
+
+.btn__title {
+  cursor: pointer;
+  position: absolute;
+  margin-top: 18px;
+  margin-left: 14px;
+  font-size: 9px;
+  line-height: 11px;
+  color: #FFFFFF99;
+}
+
+.btn__input {
+  cursor: pointer;
+  width: 100%;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 18px;
+  padding: 33px 14px 12px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  outline: none;
+  background: rgba(255, 255, 255, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #FFFFFF;
+  border-radius: 14px;
+}
+
+.btn__input::-webkit-input-placeholder {
+  color: #FFFFFF;
+}
+
+.btn__input:-ms-input-placeholder {
+  color: #FFFFFF;
+}
+
+.btn__input::-ms-input-placeholder {
+  color: #FFFFFF;
+}
+
+.btn__input::placeholder {
+  color: #FFFFFF;
+}
+
+.btn__img {
+  cursor: pointer;
+  right: 0;
+  top: calc(50% - 5px);
+  right: 4.39%;
+  position: absolute;
+}
+
+.btn--login:hover {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+.btn--submit {
+  margin-bottom: 24px;
+  background: #57D3EC;
+  -webkit-box-shadow: 0px 28px 40px rgba(87, 211, 236, 0.35);
+          box-shadow: 0px 28px 40px rgba(87, 211, 236, 0.35);
+  border-radius: 14px;
+  border: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.btn--submit:hover {
+  background-color: aqua;
+}
+
+.btn--submit__title {
+  font-family: 'SF Pro Display Bold';
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 2px;
+  color: #FFFFFF;
+}
+
+.btn--otherSubmit {
+  margin-bottom: 18px;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 100%;
+  height: 74px;
+  border-radius: 14px;
+  cursor: pointer;
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(38, 115, 209, 0.08);
+  border-radius: 10px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-decoration: none;
+}
+
+.btn--otherSubmit:first-child {
+  margin-right: 8px;
+}
+
+.btn--otherSubmit:hover {
+  background-color: cornflowerblue;
+}
+
+.btn-submit__title {
+  font-family: 'SF Pro Display Regular';
+  font-weight: 400;
+  font-size: 11px;
+  line-height: 13px;
+  color: #FFFFFF;
+  margin-left: 12px;
+}
+
+.seperator {
+  font-family: 'SF Pro Display Regular';
+  font-weight: 400;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: 14px;
+  line-height: 17px;
+  color: #FFFFFF;
+  margin-bottom: 114px;
+  margin-top: 24px;
+}
+
+.seperator span {
+  margin: 0px 14px;
+}
+
+.seperator::after, .seperator::before {
+  content: "";
+  height: 0;
+  width: 40%;
+  border-top: 1px dashed rgba(255, 255, 255, 0.4);
+}
+
+.btn-faceId {
+  border: 1px solid;
+  margin-top: -77px;
+  width: 103px;
+  height: 103px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 50%;
+  background: linear-gradient(129.7deg, rgba(255, 255, 255, 0.4) -1.3%, rgba(255, 255, 255, 0.05) 104.6%);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-backdrop-filter: blur(40px);
+          backdrop-filter: blur(40px);
+  z-index: 3;
+}
+
+.btn-faceId img {
+  margin-top: 18px;
+}
+
+.btn-faceId:hover {
+  background: linear-gradient(129.7deg, rgba(255, 255, 255, 0.6) -1.3%, rgba(255, 255, 255, 0.05) 104.6%);
+}
+
+.create-user {
+  width: 100%;
+  margin-top: -40px;
+  margin-bottom: 0px;
+  padding-top: 98px;
+  padding-bottom: 34px;
+  -webkit-backdrop-filter: blur(35px);
+          backdrop-filter: blur(35px);
+}
+
+.create-user > span, .create-user > a {
+  font-family: 'SF Pro Display Regular';
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 20px;
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+.create-user a:hover {
+  color: blanchedalmond;
+}
+
+.form-control::-webkit-input-placeholder {
+  color: #FFFFFF99;
+  vertical-align: bottom;
+}
+
+.form-control:-ms-input-placeholder {
+  color: #FFFFFF99;
+  vertical-align: bottom;
+}
+
+.form-control::-ms-input-placeholder {
+  color: #FFFFFF99;
+  vertical-align: bottom;
+}
+
+.form-control::placeholder {
+  color: #FFFFFF99;
+  vertical-align: bottom;
+}
+
+@media screen and (min-width: 415px) {
+  .create-user {
+    -webkit-backdrop-filter: none;
+            backdrop-filter: none;
+  }
+}
+
+@media screen and (max-width: 365px) {
+  main {
+    max-width: 100%;
+  }
+}
+/*# sourceMappingURL=style.css.map */

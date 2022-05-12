@@ -1,0 +1,28 @@
+@font-face {
+    font-family: 'SF Pro Display Medium';
+    src: url(fonts/SFPRODISPLAYMEDIUM.OTF);
+    font-weight: 500;
+}
+@font-face {
+    font-family: 'SF Pro Display Bold';
+    src: url(fonts/SFPRODISPLAYBOLD.OTF);
+    font-weight: 700;
+}
+@font-face {
+    font-family: 'SF Pro Display Regular';
+    src: url(fonts/SFPRODISPLAYREGULAR.OTF);
+    font-weight: 400;
+}
+
+@mixin font-Medium{
+    font-family: 'SF Pro Display Medium';
+    font-weight: 500;
+}
+@mixin font-Bold {
+    font-family: 'SF Pro Display Bold';
+    font-weight: 700;
+}
+@mixin font-regular {
+    font-family: 'SF Pro Display Regular';
+    font-weight: 400;
+}
