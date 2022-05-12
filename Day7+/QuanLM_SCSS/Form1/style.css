@@ -52,11 +52,11 @@ main {
   z-index: 2;
 }
 
-.container__title {
+.container section {
   margin-bottom: 32px;
 }
 
-.container__title h4 {
+.container section h4 {
   font-family: 'SF Pro Display Regular';
   font-weight: 400;
   margin-top: 0;
@@ -66,7 +66,7 @@ main {
   color: rgba(255, 255, 255, 0.75);
 }
 
-.container__title h1 {
+.container section h1 {
   font-family: 'SF Pro Display Bold';
   font-weight: 700;
   margin-top: 6px;
@@ -75,7 +75,7 @@ main {
   color: #FFFFFF;
 }
 
-.btn {
+.container__btn {
   margin-bottom: 18px;
   position: relative;
   display: -webkit-box;
@@ -90,7 +90,11 @@ main {
   border-radius: 14px;
 }
 
-.btn__title {
+.btn--login:hover {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+.btn--login span {
   cursor: pointer;
   position: absolute;
   margin-top: 18px;
@@ -100,7 +104,7 @@ main {
   color: #FFFFFF99;
 }
 
-.btn__input {
+.btn--login input {
   cursor: pointer;
   width: 100%;
   font-weight: 500;
@@ -116,32 +120,28 @@ main {
   border-radius: 14px;
 }
 
-.btn__input::-webkit-input-placeholder {
+.btn--login input::-webkit-input-placeholder {
   color: #FFFFFF;
 }
 
-.btn__input:-ms-input-placeholder {
+.btn--login input:-ms-input-placeholder {
   color: #FFFFFF;
 }
 
-.btn__input::-ms-input-placeholder {
+.btn--login input::-ms-input-placeholder {
   color: #FFFFFF;
 }
 
-.btn__input::placeholder {
+.btn--login input::placeholder {
   color: #FFFFFF;
 }
 
-.btn__img {
+.btn--login img {
   cursor: pointer;
   right: 0;
   top: calc(50% - 5px);
   right: 4.39%;
   position: absolute;
-}
-
-.btn--login:hover {
-  background-color: rgba(255, 255, 255, 0.4);
 }
 
 .btn--submit {
@@ -166,7 +166,7 @@ main {
   background-color: aqua;
 }
 
-.btn--submit__title {
+.btn--submit span {
   font-family: 'SF Pro Display Bold';
   font-weight: 700;
   font-size: 20px;
@@ -174,7 +174,7 @@ main {
   color: #FFFFFF;
 }
 
-.btn--otherSubmit {
+.btn--otherSubmit a {
   margin-bottom: 18px;
   position: relative;
   display: -webkit-box;
@@ -200,15 +200,15 @@ main {
   text-decoration: none;
 }
 
-.btn--otherSubmit:first-child {
+.btn--otherSubmit a:first-child {
   margin-right: 8px;
 }
 
-.btn--otherSubmit:hover {
+.btn--otherSubmit a:hover {
   background-color: cornflowerblue;
 }
 
-.btn-submit__title {
+.btn--otherSubmit a span {
   font-family: 'SF Pro Display Regular';
   font-weight: 400;
   font-size: 11px;
@@ -217,7 +217,7 @@ main {
   margin-left: 12px;
 }
 
-.seperator {
+.container__seperator {
   font-family: 'SF Pro Display Regular';
   font-weight: 400;
   display: -webkit-box;
@@ -240,11 +240,11 @@ main {
   margin-top: 24px;
 }
 
-.seperator span {
+.container__seperator span {
   margin: 0px 14px;
 }
 
-.seperator::after, .seperator::before {
+.container__seperator::after, .container__seperator::before {
   content: "";
   height: 0;
   width: 40%;
@@ -276,7 +276,7 @@ main {
   background: linear-gradient(129.7deg, rgba(255, 255, 255, 0.6) -1.3%, rgba(255, 255, 255, 0.05) 104.6%);
 }
 
-.create-user {
+.footer {
   width: 100%;
   margin-top: -40px;
   margin-bottom: 0px;
@@ -286,7 +286,7 @@ main {
           backdrop-filter: blur(35px);
 }
 
-.create-user > span, .create-user > a {
+.footer span {
   font-family: 'SF Pro Display Regular';
   font-weight: 400;
   font-size: 17px;
@@ -295,32 +295,21 @@ main {
   text-decoration: none;
 }
 
-.create-user a:hover {
+.footer a {
+  font-family: 'SF Pro Display Regular';
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 20px;
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+.footer a:hover {
   color: blanchedalmond;
 }
 
-.form-control::-webkit-input-placeholder {
-  color: #FFFFFF99;
-  vertical-align: bottom;
-}
-
-.form-control:-ms-input-placeholder {
-  color: #FFFFFF99;
-  vertical-align: bottom;
-}
-
-.form-control::-ms-input-placeholder {
-  color: #FFFFFF99;
-  vertical-align: bottom;
-}
-
-.form-control::placeholder {
-  color: #FFFFFF99;
-  vertical-align: bottom;
-}
-
 @media screen and (min-width: 415px) {
-  .create-user {
+  .footer {
     -webkit-backdrop-filter: none;
             backdrop-filter: none;
   }
