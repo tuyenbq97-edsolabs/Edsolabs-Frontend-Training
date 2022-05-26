@@ -1,3 +1,23 @@
+@font-face {
+    font-family: "Montserrat 300";
+    src: url(./fonts/Montserrat/Montserrat-Light.ttf);
+    font-weight: 300;
+}
+@font-face {
+    font-family: "Montserrat 400";
+    src: url(./fonts/Montserrat/Montserrat-Regular.ttf);
+    font-weight: 400;
+}
+@font-face {
+    font-family: "Montserrat 600";
+    src: url(./fonts/Montserrat/Montserrat-SemiBold.ttf);
+    font-weight: 600;
+}
+@font-face {
+    font-family:"Iceland 400" ;
+    src: url(./fonts/Iceland/Iceland-Regular.ttf);
+    font-weight: 400;
+}
 body{
     background: url("./images/background.png") no-repeat center center fixed ;
     -webkit-background-size: cover;
@@ -32,7 +52,7 @@ form{
 }
 .form-title h1
 {
-    font-family: 'Iceland', cursive;
+    font-family: 'Iceland 400';
     font-size: 40px;
     line-height: 39px;
 }
@@ -43,7 +63,7 @@ form{
 }
 .form-title h3
 {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Montserrat 300';
     font-size: 20px;
     list-style: 24px;
 }
@@ -51,12 +71,11 @@ form{
 {
     margin-bottom: 50px;
 }
-.form-label,.form-control::placeholder
+.form-label
 {
     margin-bottom: 5px;
-    font-weight: 400px;
     line-height: 18px;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Montserrat 400';
     font-size: 15px;
 }
 .form-control
@@ -68,8 +87,9 @@ form{
 }
 .form-control::placeholder
 {
+    font-size: 15px;
     color: #ffffff;
-    font-weight: 300px;
+    font-family: 'Montserrat 300';
     opacity: 0.5;
 }
 .Password
@@ -79,21 +99,22 @@ form{
 }
 .forgot-Password
 {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 400px;
+    font-family: 'Montserrat 400';
     line-height: 15px;
     font-size: 12px; 
 }
 .btn-success{
 
     background-color: #A5D9D0;
-    color: #000000;
     margin-top: 30px;
     margin-bottom: 15px;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 600px;
+    font-family: 'Montserrat 600';
     font-size: 15px;
     line-height: 18px;
+}
+.Register a
+{
+    font-weight: bold;
 }
 a{
     color: white;
