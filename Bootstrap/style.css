@@ -1,0 +1,182 @@
+@font-face {
+  font-family: "Montserrat 300";
+  src: url(./fonts/Montserrat/Montserrat-Light.ttf);
+  font-weight: 300;
+}
+@font-face {
+  font-family: "Montserrat 400";
+  src: url(./fonts/Montserrat/Montserrat-Regular.ttf);
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Montserrat 600";
+  src: url(./fonts/Montserrat/Montserrat-SemiBold.ttf);
+  font-weight: 600;
+}
+@font-face {
+  font-family: "Iceland";
+  src: url(./fonts/Iceland/Iceland-Regular.ttf);
+  font-weight: 400;
+}
+body {
+  background: url(./images/background-2.png) center no-repeat,
+    url(./images/background.png) center no-repeat;
+  background-size: cover;
+  max-height: 100vh;
+  min-height: 100vh;
+}
+
+.logo {
+  display: inline-block;
+  width: 150px;
+  height: 34px;
+}
+
+/* 
+ .mt-40 {
+  margin-top: 40px;
+}
+.ms-40 {
+  margin-left: 40px;
+}
+.mt-83 {
+  margin-top: 83px;
+}
+.me-53 {
+  margin-right: 53px;
+}
+.mb-48 {
+  margin-bottom: 48px;
+} */
+
+form {
+  width: 480px;
+  background: linear-gradient(
+    109.46deg,
+    rgba(201, 201, 201, 0.3) 12.57%,
+    rgba(196, 196, 196, 0.1) 85%
+  );
+  border-radius: 27px;
+  padding: 20px 30px 30px;
+}
+.form-title h1 {
+  font-family: "Iceland";
+  font-size: 40px;
+  line-height: 39px;
+}
+.form-title hr {
+  width: 110px;
+  opacity: 1;
+  margin: 0 0 10px;
+}
+.form-title h3 {
+  font-family: "Montserrat 300";
+  font-size: 20px;
+  list-style: 24px;
+}
+.form-title {
+  margin-bottom: 50px;
+}
+.form-label {
+  margin-bottom: 5px;
+  line-height: 18px;
+  font-family: "Montserrat 400";
+  font-size: 15px;
+}
+.form-login .form-control {
+  padding: 15px;
+  line-height: 18px;
+  font-size: 15px;
+}
+
+.form-control {
+  background: linear-gradient(
+    109.46deg,
+    rgba(201, 201, 201, 0.8) 1.57%,
+    rgba(196, 196, 196, 0.1) 100%
+  );
+  backdrop-filter: blur(60px);
+  border-radius: 7px;
+}
+.form-control::placeholder {
+  font-family: "Montserrat 300";
+  font-size: 15px;
+  color: #ffffff;
+  opacity: 0.5;
+}
+.Password {
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+.forgot-Password {
+  font-family: "Montserrat 400";
+  line-height: 15px;
+  font-size: 12px;
+}
+.btn-success {
+  background-color: #a5d9d0;
+}
+.btn-login {
+  margin-top: 30px;
+  margin-bottom: 15px;
+  font-family: "Montserrat 600";
+  font-size: 15px;
+  line-height: 18px;
+  color: #000;
+}
+
+.Register a {
+  font-weight: bold;
+}
+a {
+  color: white;
+}
+a:hover {
+  color: bisque;
+}
+
+.rounded-circle {
+  box-sizing: border-box;
+  position: fixed;
+  opacity: 0.2;
+  border: 1px solid #ffffff;
+}
+.right-circle {
+  width: 20%;
+  height: 40%;
+  top: -15%;
+  right: -5%;
+}
+.bottom-circle {
+  width: 15%;
+  height: 28%;
+  left: 50%;
+  bottom: -16%;
+}
+.top-circle {
+  height: 16%;
+  width: 8.5%;
+  left: 30%;
+  top: -8%;
+  background: #ffffff;
+}
+.left-circle {
+  width: 19%;
+  height: 23%;
+  left: -1.8%;
+  top: -4.6%;
+  transform: rotate(-8.06deg);
+}
+@media screen and (min-width: 961px) {
+  .h-100-vh {
+    min-height: 100vh;
+    max-height: 100vh;
+  }
+  .form-login {
+    padding-top: 10%;
+  }
+  .logo {
+    margin-top: 40px;
+    margin-left: 40px;
+  }
+}
