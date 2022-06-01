@@ -20,7 +20,7 @@
   src: url("./fonts/SFPRODISPLAYBOLD.OTF");
   font-weight: 800;
 }
-body
+.body
 {
   background-image: url(./images/bg.png);
   background-repeat: round;
