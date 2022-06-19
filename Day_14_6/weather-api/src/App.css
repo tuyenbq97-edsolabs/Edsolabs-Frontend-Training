@@ -1,0 +1,11 @@
+@import 'bootstrap/dist/css/bootstrap.min.css';
+.main {
+  min-height: 100vh;
+}
+.footer {
+  bottom: 0px;
+}
+.Weather-icon {
+  width: 35%;
+  margin: auto;
+}
