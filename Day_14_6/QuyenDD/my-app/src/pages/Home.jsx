@@ -30,12 +30,11 @@ export default function Home() {
       <Container className="d-flex justify-content-center flex-column">
         <Search setCity={setCity} city={city} getWheather={getWheather} />
 
-        {(typeof wheatherData.location === 'undefined') &
-        (typeof wheatherData.current === 'undefined') ? (
-          <h3 className="text-center mt-3">Welcome to wheather app !!! </h3>
+        {typeof wheatherData.location === 'undefined' ? (
+          <h3 className="text-center m-5">Welcome to wheather app !!! </h3>
         ) : (
           <>
-            <h3 className="mt-3 text-center">Current Wheather</h3>
+            <h3 className="m-4 text-center">Current Wheather</h3>
             <WheatherCurrent wheatherData={wheatherData} />
 
             <WheatherNextFiveDays wheatherData={wheatherData} data={data} />

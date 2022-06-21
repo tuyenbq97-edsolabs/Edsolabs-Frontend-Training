@@ -3,10 +3,10 @@ import { Card } from 'react-bootstrap';
 // import PropsTypes from 'prop-types'
 export default function WheatherCurrent({ wheatherData }) {
   return (
-    <div className="mt-3 d-flex justify-content-center align-item-center">
+    <div className="d-flex justify-content-center align-item-center">
       <Card style={{ width: '18rem' }}>
         <Card.Img
-          className="wheather-icon"
+          className="w-50"
           variant="top"
           src={wheatherData.current.condition.icon}
         />

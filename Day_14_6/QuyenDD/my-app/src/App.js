@@ -1,5 +1,6 @@
 import React from 'react';
-import './App.css';
+
+import './App.scss';
 
 import Footer from './components/Footer';
 import About from './pages/About';
@@ -9,7 +10,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 function App() {
   return (
-    <div className="main d-flex position-relative justify-content-center align-items-center">
+    <div className="min-vh-100 d-flex position-relative justify-content-center align-items-center">
       <Router>
         <Routes>
           <Route path="/" element={<Home />} />

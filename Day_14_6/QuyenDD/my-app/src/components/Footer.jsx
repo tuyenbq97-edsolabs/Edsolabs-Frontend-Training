@@ -6,7 +6,7 @@ export default function Footer() {
     <div className="footer d-flex justify-content-center align-items-center position-absolute">
       <h4>
         © 2022 by FE class. Made with love by{' '}
-        <Link to="/about" className="your-name">
+        <Link to="/about" className="your-name text-decoration-none pe-auto">
           {YOUR_NAME}
         </Link>
       </h4>
