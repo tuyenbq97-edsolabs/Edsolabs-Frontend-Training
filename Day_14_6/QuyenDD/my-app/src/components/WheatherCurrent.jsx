@@ -1,10 +1,10 @@
 import React from 'react';
 import { Card } from 'react-bootstrap';
-// import PropsTypes from 'prop-types'
+
 export default function WheatherCurrent({ wheatherData }) {
   return (
     <div className="d-flex justify-content-center align-item-center">
-      <Card style={{ width: '18rem' }}>
+      <Card className="card">
         <Card.Img
           className="w-50"
           variant="top"

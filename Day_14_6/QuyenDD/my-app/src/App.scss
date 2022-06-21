@@ -1,6 +1,7 @@
 @import 'bootstrap/dist/css/bootstrap.min.css';
 $primary-color: #6cf;
 $second-color: blue;
+$width-card: 18rem;
 @mixin height($height: 60px) {
   height: $height;
   left: 0;
@@ -13,4 +14,7 @@ $second-color: blue;
 }
 .your-name {
   color: $second-color;
+}
+.card {
+  width: $width-card;
 }

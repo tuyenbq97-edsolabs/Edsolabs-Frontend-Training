@@ -9,7 +9,7 @@ export default function Home() {
   const REACT_APP_API_KEY = process.env.REACT_APP_API_KEY;
   const REACT_APP_BASE_URL = process.env.REACT_APP_BASE_URL;
 
-  const [wheatherData, setWheatherData] = useState([{}]);
+  const [wheatherData, setWheatherData] = useState([]);
   const [city, setCity] = useState('');
   const [data, setData] = useState([]);
   const getWheather = (event) => {

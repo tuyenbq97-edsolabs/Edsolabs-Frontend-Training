@@ -8,7 +8,7 @@ export default function WheatherNextFiveDays({ wheatherData, data }) {
         {data !== 'undefined' &&
           data.map((item, idx) => (
             <Col key={idx} className="p-5 mb-5" md={4}>
-              <Card style={{ width: '18rem' }}>
+              <Card className="card">
                 <Card.Img
                   className="w-50"
                   variant="top"
