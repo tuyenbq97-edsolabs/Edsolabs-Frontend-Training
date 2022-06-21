@@ -6,19 +6,19 @@ import { Container } from 'react-bootstrap';
 
 function Home() {
   const [listWeather, setListWeather] = useState([]);
-  const [list3Days, setList3Days] = useState([]);
+  const [listThreeDays, setListThreeDays] = useState([]);
 
   return (
     <Container className="pb-5">
       <SearchComponent
-        setList3Days={setList3Days}
+        setListThreeDays={setListThreeDays}
         setListWeather={setListWeather}
       />
       <ListWeather
         listWeather={listWeather}
         setListWeather={setListWeather}
-        list3Days={list3Days}
-        setList3Days={setList3Days}
+        list3Days={listThreeDays}
+        setList3Days={setListThreeDays}
       />
     </Container>
   );

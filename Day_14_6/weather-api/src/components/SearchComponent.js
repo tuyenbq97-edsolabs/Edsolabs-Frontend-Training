@@ -2,19 +2,18 @@ import React, { useState } from 'react';
 import { Form, Button } from 'react-bootstrap';
 import axios from 'axios';
 
-function SearchComponent({ setListWeather, setList3Days }) {
+function SearchComponent({ setListWeather, setListThreeDays }) {
   const [search, setSearch] = useState([]);
 
   const Search = () => {
     setSearch(search);
-    console.log(search);
     axios
       .get(
         `${process.env.REACT_APP_BASE_URL}?key=${process.env.REACT_APP_KEY}&q=${search}&days=3`
       )
       .then((res) => {
         setListWeather(res.data);
-        setList3Days(res.data?.forecast?.forecastday);
+        setListThreeDays(res.data?.forecast?.forecastday);
       });
   };
 

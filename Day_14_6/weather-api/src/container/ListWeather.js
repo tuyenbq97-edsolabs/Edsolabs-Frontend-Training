@@ -20,18 +20,12 @@ function ListWeather({ listWeather, setListWeather, list3Days, setList3Days }) {
 
   return (
     <div className="container">
-      {(typeof listWeather.location !== 'undefined') &
-      (typeof listWeather.current !== 'undefined') &
-      (typeof listWeather.forecast !== 'undefined') ? (
+      {typeof !listWeather?.forecast ? (
         <Row>
           {list3Days != null &&
-            listWeather.forecast.forecastday.map((info, index) => (
+            list3Days.map((info, index) => (
               <Col key={index} md={4} className="mb-3">
-                <WeatherComponent
-                  infoDetails={list3Days}
-                  info={listWeather}
-                  idx={index}
-                />
+                <WeatherComponent info={info} listWeather={listWeather} />
               </Col>
             ))}
         </Row>
