@@ -6,7 +6,6 @@ import styled from 'styled-components';
 import CardNewHeaderLg from '../components/card-new-header-lg/card-new-header-lg';
 import CardNewHeaderSm from '../components/card-new-header-sm/card-new-header.-sm';
 import { SubCategoryNameStyled } from '../components/card-new-header-sm/style';
-import { ApiGlobalNews } from './global-new-container';
 
 const LinkStyled = styled(Link)`
   text-decoration: none;
@@ -14,12 +13,6 @@ const LinkStyled = styled(Link)`
   line-height: 18px;
   font-weight: bold;
 `;
-
-interface ApiHeaderNews {
-  dbNewsHeaderSm: any[];
-  dbNewsHeaderLg: any[];
-  slider: any[];
-}
 
 export const RowStyled = styled(Row)`
   margin-left: 0px;
@@ -88,11 +81,17 @@ const ImgStyled = styled.img`
   border-radius: 4px;
 `;
 
+interface HeaderNewContainerProps {
+  dbNewsHeaderSm: any[];
+  dbNewsHeaderLg: any[];
+  slider: any[];
+}
+
 export default function HeaderNewContainer({
   dbNewsHeaderSm,
   slider,
   dbNewsHeaderLg,
-}: ApiHeaderNews) {
+}: HeaderNewContainerProps) {
   return (
     <Container className="p-0">
       <LinkStyled to="/">NEWS /</LinkStyled>

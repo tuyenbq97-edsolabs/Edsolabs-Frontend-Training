@@ -6,12 +6,16 @@ import styled from 'styled-components';
 import CardNew, { CardNewProps } from '../components/card-new/card-new';
 import { RowStyled } from './header-new-container';
 
-export interface ApiGlobalNews {
+export interface GlobalNewContainerProps {
   setDbNews?: any;
   dbNews: any[];
 }
 
-export default function GlobalNewContainer({ dbNews }: ApiGlobalNews) {
+export default function GlobalNewContainer({
+  dbNews,
+  setDbNews,
+}: GlobalNewContainerProps) {
+  console.log(typeof dbNews);
   return (
     <Container className="p-0">
       <RowStyled>

@@ -27,7 +27,7 @@ export const StyledRow = styled(Row)`
     padding-bottom: 136px;
   }
 `;
-export const StyledA = styled.a`
+export const StyledLink = styled.a`
   color: #f2f2f5 !important;
   text-decoration: none;
   &:hover {
@@ -79,33 +79,33 @@ export default function FooterContainer() {
             <Row className="mb-5">
               <Col>
                 <StyledRowTitle>
-                  <StyledA href="##">Plans</StyledA>
+                  <StyledLink href="##">Plans</StyledLink>
                 </StyledRowTitle>
                 <StyledRowContent>
-                  <StyledA href="##">Sim-only plans</StyledA>
+                  <StyledLink href="##">Sim-only plans</StyledLink>
                 </StyledRowContent>
                 <StyledRowContent>
-                  <StyledA href="##">Plans with device</StyledA>
+                  <StyledLink href="##">Plans with device</StyledLink>
                 </StyledRowContent>
                 <StyledRowContent>
-                  <StyledA href="##">Pre-paid plans</StyledA>
+                  <StyledLink href="##">Pre-paid plans</StyledLink>
                 </StyledRowContent>
               </Col>
               <Col>
                 <StyledRowTitle>
-                  <StyledA href="##">Moblies</StyledA>
+                  <StyledLink href="##">Moblies</StyledLink>
                 </StyledRowTitle>
                 <StyledRowContent>
-                  <StyledA href="##">Phones</StyledA>
+                  <StyledLink href="##">Phones</StyledLink>
                 </StyledRowContent>
                 <StyledRowContent>
-                  <StyledA href="##">Tablets</StyledA>
+                  <StyledLink href="##">Tablets</StyledLink>
                 </StyledRowContent>
                 <StyledRowContent>
-                  <StyledA href="##">Accessories</StyledA>
+                  <StyledLink href="##">Accessories</StyledLink>
                 </StyledRowContent>
                 <StyledRowContent>
-                  <StyledA href="##">Wearables</StyledA>
+                  <StyledLink href="##">Wearables</StyledLink>
                 </StyledRowContent>
               </Col>
             </Row>
@@ -114,33 +114,33 @@ export default function FooterContainer() {
             <Row className="mb-5">
               <Col>
                 <StyledRowTitle>
-                  <StyledA href="##">News</StyledA>
+                  <StyledLink href="##">News</StyledLink>
                 </StyledRowTitle>
                 <StyledRowContent>
-                  <StyledA href="##">Global news</StyledA>
+                  <StyledLink href="##">Global news</StyledLink>
                 </StyledRowContent>
                 <StyledRowContent>
-                  <StyledA href="##">Local news</StyledA>
+                  <StyledLink href="##">Local news</StyledLink>
                 </StyledRowContent>
                 <StyledRowContent>
-                  <StyledA href="##">Blogs</StyledA>
+                  <StyledLink href="##">Blogs</StyledLink>
                 </StyledRowContent>
               </Col>
               <Col>
                 <StyledRowTitle>
-                  <StyledA href="##">Help & About</StyledA>
+                  <StyledLink href="##">Help & About</StyledLink>
                 </StyledRowTitle>
                 <StyledRowContent>
-                  <StyledA href="##">About us</StyledA>
+                  <StyledLink href="##">About us</StyledLink>
                 </StyledRowContent>
                 <StyledRowContent>
-                  <StyledA href="##">Why Weiwei?</StyledA>
+                  <StyledLink href="##">Why Weiwei?</StyledLink>
                 </StyledRowContent>
                 <StyledRowContent>
-                  <StyledA href="##">Store locator</StyledA>
+                  <StyledLink href="##">Store locator</StyledLink>
                 </StyledRowContent>
                 <StyledRowContent>
-                  <StyledA href="##">Contact us</StyledA>
+                  <StyledLink href="##">Contact us</StyledLink>
                 </StyledRowContent>
               </Col>
             </Row>

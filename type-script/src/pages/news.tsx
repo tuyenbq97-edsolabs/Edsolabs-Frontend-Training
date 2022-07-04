@@ -8,6 +8,7 @@ import axios from 'axios';
 import HeaderNewContainer from '../containers/header-new-container';
 import SubFooterContainer from '../containers/sub-footer-container';
 import { Button } from 'react-bootstrap';
+import fetchGlobalNews from '../services/fetchGlobalNews';
 
 const MainStyled = styled.div`
   max-width: 100vw;
@@ -22,30 +23,20 @@ export default function News() {
   const [limit, setLimit] = useState(8);
 
   useEffect(() => {
-    axios
-      .get(
-        `https://api.w2project-internal.asia/api/v1/news/by-category-slug/global-news?limit=${limit}`
-      )
-      .then((res) => {
-        setDbNews(res.data.data);
-        setSlider(res.data.data.slice(0, 4));
-        setDbNewsHeaderSm(res.data.data.slice(4, 6));
-        setDbNewsHeaderLg(res.data.data.slice(7, 8));
-        setLimit(res.data.data.length);
-      });
+    fetchGlobalNews.get(`?limit=${limit}`).then((res) => {
+      setDbNews(res.data.data);
+      setSlider(res.data.data.slice(0, 4));
+      setDbNewsHeaderSm(res.data.data.slice(4, 6));
+      setDbNewsHeaderLg(res.data.data.slice(7, 8));
+      setLimit(res.data.data.length);
+    });
   }, []);
-
   useEffect(() => {
-    axios
-      .get(
-        `https://api.w2project-internal.asia/api/v1/news/by-category-slug/global-news?limit=${limit}`
-      )
-      .then((res) => {
-        setDbNews(res.data.data);
-        setLimit(res.data.data.length);
-      });
+    fetchGlobalNews.get(`?limit=${limit}`).then((res) => {
+      setDbNews(res.data.data);
+      setLimit(res.data.data.length);
+    });
   }, [limit]);
-
   return (
     <MainStyled>
       <HeaderContainer />
