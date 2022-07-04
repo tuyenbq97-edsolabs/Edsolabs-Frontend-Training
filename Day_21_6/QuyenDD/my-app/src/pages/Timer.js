@@ -81,7 +81,7 @@ export default function Timer({
           <div className="w-100">
             <span className="fw-bold">Date filter: </span>
             <StyledInputDate type="date" />
-            <TasksList tasks={tasks} tags={tags} setTags={setTags} />
+            <TasksList tasks={tasks} />
           </div>
         </StyledSecondRow>
       </StyledCol>

@@ -1,19 +1,25 @@
 import React from 'react';
 import moment from 'moment';
 import styled from 'styled-components';
-
+import DotsLoading from '../images/dotsloading.svg';
 import Tag from '../images/tag.svg';
+import { Image } from 'react-bootstrap';
 
-const StyledImage = styled.img`
-  width: 5%;
+const StyledImageTag = styled.img`
+  width: 3%;
 `;
+const StyledImageIcon = styled.img`
+  width: 0.7%;
+  cursor: pointer;
+`;
+
 export default function Task({ item }) {
   return (
     <div className="mb-3 d-flex align-items-center border p-3 bg-light">
       <span className="mx-5">{item.description}</span>
 
       <div className="w-50">
-        <StyledImage src={Tag}></StyledImage>
+        <StyledImageTag src={Tag}></StyledImageTag>
 
         <span className="mx-5">
           <span>
@@ -25,7 +31,9 @@ export default function Task({ item }) {
             {item.end_time ? moment(item.end_time).format('HH:mm') : ''}
           </span>
         </span>
-        <span className="mx-3">{item.time_spent ? item.time_spent : ''}</span>
+        <span className="mx-5">{item.time_spent ? item.time_spent : ''}</span>
+
+        <StyledImageIcon src={DotsLoading}></StyledImageIcon>
       </div>
     </div>
   );
