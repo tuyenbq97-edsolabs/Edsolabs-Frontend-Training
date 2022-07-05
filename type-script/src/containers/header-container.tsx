@@ -9,10 +9,17 @@ import User from '../images/User.png';
 import Arrow from '../images/arrow_forward.png';
 
 const NavStyled = styled(Navbar)`
-  padding: 1% 8%;
+  padding: 27px 122px 27px 108px;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
   box-sizing: border-box;
   margin-bottom: 46px;
+  @media screen and (max-width: 840px) {
+    padding: 15px 60px;
+  }
+  @media screen and (max-width: 600px) {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
 `;
 
 const StyledNav = styled(Nav)`
@@ -77,9 +84,20 @@ export default function HeaderContainer() {
             More <img className="ms-1" src={Arrow} alt="" />
           </Nav.Link>
         </StyledNav>
+        <div className="d-flex d-sm-none d-flex align-items-center">
+          <Nav.Link>
+            <Image src={Search} />
+          </Nav.Link>
+          <Nav.Link>
+            <Image src={cart} />
+          </Nav.Link>
+          <Nav.Link>
+            <Image src={User} />
+          </Nav.Link>
+        </div>
       </Navbar.Collapse>
       {match && (
-        <div className=" d-flex align-items-center" id="display">
+        <div className=" d-flex align-items-center">
           <Nav.Link className="d-flex">
             <Image src={locator} className="pe-3" />
             <span className="text-black">Locator</span>
@@ -94,7 +112,7 @@ export default function HeaderContainer() {
         </div>
       )}
       {!match && (
-        <div className=" d-flex align-items-center" id="displayNone">
+        <div className="d-none d-sm-flex d-flex align-items-center">
           <Nav.Link>
             <Image src={Search} />
           </Nav.Link>

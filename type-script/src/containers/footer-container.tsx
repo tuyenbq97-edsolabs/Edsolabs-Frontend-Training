@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { Button, Col, Image, Nav, Navbar, Row } from 'react-bootstrap';
 import logoFooter from '../images/logo_footer.png';
@@ -46,117 +46,120 @@ export const StyledSubFooter = styled.div`
   background-color: #000;
 `;
 export const StyledButton = styled.button`
+  position: fixed;
+  bottom: 328px;
+  right: 36px;
   background-color: inherit;
   border: none;
   padding: 0;
-  background: #1c1c28;
-  @media only screen and (max-width: 768px) {
-    display: none;
-  }
+  display: none;
 `;
 export const StyledRowTitle = styled(Row)`
-  margin-bottom: 18px;
+  margin-bottom: 24px;
   font-weight: bold;
 `;
 export const StyledRowContent = styled(Row)`
-  margin-top: 12px;
+  margin-bottom: 12px;
 `;
-const ImageStyled = styled.img`
-  @media only screen and (max-width: 768px) {
-    display: none;
-  }
-`;
-
+const HandleGoTop = () => {
+  window.scroll({
+    top: 0,
+    behavior: 'smooth',
+  });
+};
 export default function FooterContainer() {
   return (
-    <StyledRow>
-      <Col md={5}>
-        <ImageStyled className="logo-footer" src={logoFooter} alt="logo" />
-      </Col>
-      <Col md={6}>
-        <Row>
-          <Col md={6}>
-            <Row className="mb-5">
-              <Col>
-                <StyledRowTitle>
-                  <StyledLink href="##">Plans</StyledLink>
-                </StyledRowTitle>
-                <StyledRowContent>
-                  <StyledLink href="##">Sim-only plans</StyledLink>
-                </StyledRowContent>
-                <StyledRowContent>
-                  <StyledLink href="##">Plans with device</StyledLink>
-                </StyledRowContent>
-                <StyledRowContent>
-                  <StyledLink href="##">Pre-paid plans</StyledLink>
-                </StyledRowContent>
-              </Col>
-              <Col>
-                <StyledRowTitle>
-                  <StyledLink href="##">Moblies</StyledLink>
-                </StyledRowTitle>
-                <StyledRowContent>
-                  <StyledLink href="##">Phones</StyledLink>
-                </StyledRowContent>
-                <StyledRowContent>
-                  <StyledLink href="##">Tablets</StyledLink>
-                </StyledRowContent>
-                <StyledRowContent>
-                  <StyledLink href="##">Accessories</StyledLink>
-                </StyledRowContent>
-                <StyledRowContent>
-                  <StyledLink href="##">Wearables</StyledLink>
-                </StyledRowContent>
-              </Col>
-            </Row>
-          </Col>
-          <Col md={6}>
-            <Row className="mb-5">
-              <Col>
-                <StyledRowTitle>
-                  <StyledLink href="##">News</StyledLink>
-                </StyledRowTitle>
-                <StyledRowContent>
-                  <StyledLink href="##">Global news</StyledLink>
-                </StyledRowContent>
-                <StyledRowContent>
-                  <StyledLink href="##">Local news</StyledLink>
-                </StyledRowContent>
-                <StyledRowContent>
-                  <StyledLink href="##">Blogs</StyledLink>
-                </StyledRowContent>
-              </Col>
-              <Col>
-                <StyledRowTitle>
-                  <StyledLink href="##">Help & About</StyledLink>
-                </StyledRowTitle>
-                <StyledRowContent>
-                  <StyledLink href="##">About us</StyledLink>
-                </StyledRowContent>
-                <StyledRowContent>
-                  <StyledLink href="##">Why Weiwei?</StyledLink>
-                </StyledRowContent>
-                <StyledRowContent>
-                  <StyledLink href="##">Store locator</StyledLink>
-                </StyledRowContent>
-                <StyledRowContent>
-                  <StyledLink href="##">Contact us</StyledLink>
-                </StyledRowContent>
-              </Col>
-            </Row>
-          </Col>
-        </Row>
-      </Col>
-      <Col md={1}>
-        <Row>
-          <StyledButton>
-            <img src={up_to_top} alt="button-top " />
-            <span id="span" className="d-block text-white">
-              Top
-            </span>
-          </StyledButton>
-        </Row>
-      </Col>
-    </StyledRow>
+    <>
+      <StyledRow>
+        <Col md={5}>
+          <Image
+            className="d-lg-inline d-none logo-footer"
+            src={logoFooter}
+            alt="logo"
+          />
+        </Col>
+        <Col lg={6}>
+          <Row>
+            <Col lg={6}>
+              <Row className="mb-5">
+                <Col>
+                  <StyledRowTitle>
+                    <StyledLink href="##">Plans</StyledLink>
+                  </StyledRowTitle>
+                  <StyledRowContent>
+                    <StyledLink href="##">Sim-only plans</StyledLink>
+                  </StyledRowContent>
+                  <StyledRowContent>
+                    <StyledLink href="##">Plans with device</StyledLink>
+                  </StyledRowContent>
+                  <StyledRowContent>
+                    <StyledLink href="##">Pre-paid plans</StyledLink>
+                  </StyledRowContent>
+                </Col>
+                <Col>
+                  <StyledRowTitle>
+                    <StyledLink href="##">Moblies</StyledLink>
+                  </StyledRowTitle>
+                  <StyledRowContent>
+                    <StyledLink href="##">Phones</StyledLink>
+                  </StyledRowContent>
+                  <StyledRowContent>
+                    <StyledLink href="##">Tablets</StyledLink>
+                  </StyledRowContent>
+                  <StyledRowContent>
+                    <StyledLink href="##">Accessories</StyledLink>
+                  </StyledRowContent>
+                  <StyledRowContent>
+                    <StyledLink href="##">Wearables</StyledLink>
+                  </StyledRowContent>
+                </Col>
+              </Row>
+            </Col>
+            <Col lg={6}>
+              <Row>
+                <Col>
+                  <StyledRowTitle>
+                    <StyledLink href="##">News</StyledLink>
+                  </StyledRowTitle>
+                  <StyledRowContent>
+                    <StyledLink href="##">Global news</StyledLink>
+                  </StyledRowContent>
+                  <StyledRowContent>
+                    <StyledLink href="##">Local news</StyledLink>
+                  </StyledRowContent>
+                  <StyledRowContent>
+                    <StyledLink href="##">Blogs</StyledLink>
+                  </StyledRowContent>
+                </Col>
+                <Col>
+                  <StyledRowTitle>
+                    <StyledLink href="##">Help & About</StyledLink>
+                  </StyledRowTitle>
+                  <StyledRowContent>
+                    <StyledLink href="##">About us</StyledLink>
+                  </StyledRowContent>
+                  <StyledRowContent>
+                    <StyledLink href="##">Why Weiwei?</StyledLink>
+                  </StyledRowContent>
+                  <StyledRowContent>
+                    <StyledLink href="##">Store locator</StyledLink>
+                  </StyledRowContent>
+                  <StyledRowContent>
+                    <StyledLink href="##">Contact us</StyledLink>
+                  </StyledRowContent>
+                </Col>
+              </Row>
+            </Col>
+          </Row>
+        </Col>
+        <Col md={1}></Col>
+      </StyledRow>
+      <StyledButton className="d-lg-inline" onClick={HandleGoTop}>
+        <img src={up_to_top} alt="button-top " />
+        <span id="span" className="d-block text-white">
+          Top
+        </span>
+      </StyledButton>
+    </>
   );
 }

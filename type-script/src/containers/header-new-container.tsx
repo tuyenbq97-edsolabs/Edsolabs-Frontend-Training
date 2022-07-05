@@ -6,6 +6,7 @@ import styled from 'styled-components';
 import CardNewHeaderLg from '../components/card-new-header-lg/card-new-header-lg';
 import CardNewHeaderSm from '../components/card-new-header-sm/card-new-header.-sm';
 import { SubCategoryNameStyled } from '../components/card-new-header-sm/style';
+import { CardNewItem } from '../components/card-new/card-new';
 
 const LinkStyled = styled(Link)`
   text-decoration: none;
@@ -36,8 +37,8 @@ const StyledCarousel = styled(Carousel)`
   .carousel-caption {
     left: 0px;
     text-align: left;
-    padding-left: 3.4%;
-    padding-right: 7%;
+    padding-left: 24px;
+    padding-right: 51px;
   }
   .carousel-indicators [data-bs-target] {
     width: 15%;
@@ -82,9 +83,9 @@ const ImgStyled = styled.img`
 `;
 
 interface HeaderNewContainerProps {
-  dbNewsHeaderSm: any[];
-  dbNewsHeaderLg: any[];
-  slider: any[];
+  dbNewsHeaderSm: CardNewItem[];
+  dbNewsHeaderLg: CardNewItem[];
+  slider: CardNewItem[];
 }
 
 export default function HeaderNewContainer({
@@ -94,13 +95,15 @@ export default function HeaderNewContainer({
 }: HeaderNewContainerProps) {
   return (
     <Container className="p-0">
-      <LinkStyled to="/">NEWS /</LinkStyled>
-      <h3 className="fw-bold">Global news</h3>
-      <TitleHeaderStyled>
-        Always up-to-date to latest telecommuncation news.
-      </TitleHeaderStyled>
+      <div className="ps-2">
+        <LinkStyled to="/">NEWS /</LinkStyled>
+        <h3 className="fw-bold">Global news</h3>
+        <TitleHeaderStyled>
+          Always up-to-date to latest telecommuncation news.
+        </TitleHeaderStyled>
+      </div>
       <RowStyled>
-        <Col lg={6} className="pe-2 pb-3 ps-0  h-100">
+        <Col lg={6} className="pe-2 pb-3 ps-2 h-100">
           <StyledCarousel className="m-0">
             {slider.map((items, idx) => (
               <Carousel.Item key={idx}>

@@ -1,25 +1,23 @@
-import React from 'react';
 import styled from 'styled-components';
 import FooterContainer from '../containers/footer-container';
 import GlobalNewContainer from '../containers/global-new-container';
 import HeaderContainer from '../containers/header-container';
 import { useState, useEffect } from 'react';
-import axios from 'axios';
 import HeaderNewContainer from '../containers/header-new-container';
 import SubFooterContainer from '../containers/sub-footer-container';
 import { Button } from 'react-bootstrap';
 import fetchGlobalNews from '../services/fetchGlobalNews';
+import { CardNewItem } from '../components/card-new/card-new';
 
 const MainStyled = styled.div`
-  max-width: 100vw;
   min-height: 100vh;
 `;
 
 export default function News() {
-  const [dbNews, setDbNews] = useState([]);
-  const [slider, setSlider] = useState([]);
-  const [dbNewsHeaderSm, setDbNewsHeaderSm] = useState([]);
-  const [dbNewsHeaderLg, setDbNewsHeaderLg] = useState([]);
+  const [dbNews, setDbNews] = useState<CardNewItem[]>([]);
+  const [slider, setSlider] = useState<CardNewItem[]>([]);
+  const [dbNewsHeaderSm, setDbNewsHeaderSm] = useState<CardNewItem[]>([]);
+  const [dbNewsHeaderLg, setDbNewsHeaderLg] = useState<CardNewItem[]>([]);
   const [limit, setLimit] = useState(8);
 
   useEffect(() => {
