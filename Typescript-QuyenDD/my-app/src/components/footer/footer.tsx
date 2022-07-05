@@ -10,14 +10,13 @@ import {
   StyledRowTitle,
   StyledSubFooter,
 } from './styled-footer';
-import logo from '../../assets/icons/logowhite.png';
-import tiktok from '../../assets/icons/tiktok.png';
-import instagram from '../../assets/icons/instagram.png';
-import youtube from '../../assets/icons/youtube.png';
-import twitter from '../../assets/icons/twitter.png';
-import facebook from '../../assets/icons/facebook.png';
-import top from '../../assets/icons/top.png';
-
+import logoFooter from '../../assets/icons/logofooter.svg';
+import iconTop from '../../assets/icons/top.svg';
+import iconTiktok from '../../assets/icons/tiktok.svg';
+import iconInstagram from '../../assets/icons/instagram.svg';
+import iconYoutube from '../../assets/icons/youtube.svg';
+import iconTwitter from '../../assets/icons/twitter.svg';
+import iconFacebook from '../../assets/icons/facebook.svg';
 import { Row, Col } from 'react-bootstrap';
 
 export default function Footer() {
@@ -29,13 +28,17 @@ export default function Footer() {
   };
   return (
     <StyledFooter>
-      <StyledRow>
-        <Col md={5}>
-          <img className="logo-footer" src={logo} alt="logo" />
+      <StyledRow className="mx-0 ms-0">
+        <Col lg={5}>
+          <img
+            className="logo-footer d-lg-block d-none "
+            src={logoFooter}
+            alt="logo"
+          />
         </Col>
-        <Col md={6}>
+        <Col lg={6}>
           <Row>
-            <Col md={6}>
+            <Col lg={6}>
               <Row className="m-2 mb-5">
                 <Col>
                   <StyledRowTitle>
@@ -70,7 +73,7 @@ export default function Footer() {
                 </Col>
               </Row>
             </Col>
-            <Col md={6}>
+            <Col lg={6}>
               <Row className="m-2 mb-5">
                 <Col>
                   <StyledRowTitle>
@@ -107,10 +110,13 @@ export default function Footer() {
             </Col>
           </Row>
         </Col>
-        <Col md={1}>
+        <Col lg={1}>
           <Row>
-            <StyledButton onClick={goToTop}>
-              <img src={top} alt="button-top " />
+            <StyledButton
+              className="d-lg-block d-none p-0 border-0"
+              onClick={goToTop}
+            >
+              <img src={iconTop} alt="button-top " />
               <span className="d-block text-white">Top</span>
             </StyledButton>
           </Row>
@@ -124,19 +130,19 @@ export default function Footer() {
           <Col md={3}></Col>
           <Col md={4} className="list-icon">
             <a href="##">
-              <StyledImg src={tiktok} alt="icon-tiktok" />
+              <StyledImg src={iconTiktok} alt="icon-tiktok" />
             </a>
             <a href="##">
-              <StyledImg src={instagram} alt="icon-instagram" />
+              <StyledImg src={iconInstagram} alt="icon-instagram" />
             </a>
             <a href="##">
-              <StyledImg src={youtube} alt="icon-youtube" />
+              <StyledImg src={iconYoutube} alt="icon-youtube" />
             </a>
             <a href="##">
-              <StyledImg src={twitter} alt="icon-twitter" />
+              <StyledImg src={iconTwitter} alt="icon-twitter" />
             </a>
             <a href="##">
-              <StyledImg src={facebook} alt="icon-facebook" />
+              <StyledImg src={iconFacebook} alt="icon-facebook" />
             </a>
           </Col>
         </Row>

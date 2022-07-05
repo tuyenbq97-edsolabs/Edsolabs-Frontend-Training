@@ -17,7 +17,6 @@ export const StyledSubCategoryName = styled.span`
   border-radius: 4px;
   font-size: 12px;
   font-family: 'Lato Bold';
-  font-style: normal;
   position: absolute;
   top: 1rem;
   left: 1rem;

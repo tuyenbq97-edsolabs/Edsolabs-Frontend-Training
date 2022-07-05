@@ -1,13 +1,13 @@
-import CardNew from '../components/card-new/card-new';
-import { Col, Row } from 'react-bootstrap';
+import CardNew, { CardNewItem } from '../components/card-new/card-new';
+import { Col, Row, Container } from 'react-bootstrap';
 
-export interface DataGlobalNew {
-  setDataNews?: any;
-  dataNews: any[];
+export interface GlobalNewProps {
+  setDataNews: (arg: CardNewItem[]) => void;
+  dataNews: CardNewItem[];
 }
-export default function GlobalNewContainer({ dataNews }: DataGlobalNew) {
+export default function GlobalNewContainer({ dataNews }: GlobalNewProps) {
   return (
-    <div>
+    <Container>
       <Row>
         {dataNews &&
           dataNews.map((itemNews, idxNew) => (
@@ -16,6 +16,6 @@ export default function GlobalNewContainer({ dataNews }: DataGlobalNew) {
             </Col>
           ))}
       </Row>
-    </div>
+    </Container>
   );
 }

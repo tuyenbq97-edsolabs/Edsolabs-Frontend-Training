@@ -1,4 +1,3 @@
-import { screen } from '@testing-library/react';
 import styled from 'styled-components';
 import { Row, Col } from 'react-bootstrap';
 export const StyledFooter = styled.div`
@@ -19,9 +18,6 @@ export const StyledRow = styled(Row)`
     margin-left: 108px;
     padding-top: 25px;
     padding-bottom: 136px;
-    @media screen and (max-width: 768px) {
-      display: none;
-    }
   }
 `;
 export const StyledA = styled.a`
@@ -39,7 +35,7 @@ export const StyledSubFooter = styled.div`
   padding: 24px 0px;
   background-color: #000;
   .sub-footer {
-    @media screen and (max-width: 768px) {
+    @media (max-width: 768px) {
       flex-direction: column-reverse;
       .list-icon {
         margin-bottom: 12px;
@@ -55,11 +51,6 @@ export const StyledColSubFooter = styled(Col)`
 `;
 export const StyledButton = styled.button`
   background-color: inherit;
-  border: none;
-  padding: 0;
-  @media screen and (max-width: 768px) {
-    display: none;
-  }
 `;
 export const StyledRowTitle = styled(Row)`
   margin-bottom: 18px;

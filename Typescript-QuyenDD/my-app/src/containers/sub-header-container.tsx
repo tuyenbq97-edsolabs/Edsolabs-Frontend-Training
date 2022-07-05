@@ -1,26 +1,25 @@
 import styled from 'styled-components';
-import { Row, Col, Carousel, Image } from 'react-bootstrap';
+import { Row, Col, Carousel, Image, Container } from 'react-bootstrap';
 import moment from 'moment';
 import CardNewSmall from '../components/card-new-small/card-new-small';
 import CardNewLarge from '../components/card-new-large/card-new-large';
 import { StyledSubCategoryName } from '../components/card-new-large/styled';
 import { StyledCardTextFooter } from '../components/card-new/styled';
+import { CardNewItem } from '../components/card-new/card-new';
 interface CardNewHeaderProps {
-  dataSlider: any[];
-  dataNewsLarge: any[];
-  dataNewsSmall: any[];
+  dataSlider: CardNewItem[];
+  dataNewsLarge: CardNewItem[];
+  dataNewsSmall: CardNewItem[];
 }
 
 const StyledA = styled.a`
   text-decoration: none;
   font-size: 12px;
-  font-style: normal;
   font-family: 'Lato Bold';
 `;
 const StyledTitle = styled.p`
   font-size: 32px;
   margin: 16px 0;
-  font-style: normal;
   font-family: 'Lato Black';
   color: #1c1c28;
 `;
@@ -47,20 +46,18 @@ export const StyledCardTextHeader = styled(StyledCardTextFooter)`
 `;
 const StyledCarouseTitle = styled.p`
   font-size: 24px;
-  font-style: normal;
   font-family: 'Lato Bold';
   color: #ffffff;
 `;
 const StyledCarouseSubTitle = styled.p`
   color: #c7c8d9;
   font-size: 16px;
-  font-style: normal;
   font-family: 'Lato Regular';
 `;
 const StyledRow = styled(Row)`
   margin-top: 40px;
   .row {
-    --bs-gutter-x: 0rem;
+    --bs-gutter-x: 0rem !important;
   }
 `;
 export default function SubHeaderContainer({
@@ -69,18 +66,18 @@ export default function SubHeaderContainer({
   dataNewsSmall,
 }: CardNewHeaderProps) {
   return (
-    <div>
+    <Container>
       <StyledA href="##">News /</StyledA>
       <StyledTitle>Global news</StyledTitle>
       <span>Always up-to-date to latest telecommuncation news.</span>
 
-      <StyledRow className="p-0">
+      <StyledRow className="p-0 ms-0">
         <Col lg={6} className="p-0">
           <StyedCaruosel className="m-0">
             {dataSlider.map((itemSlider, idx) => (
               <Carousel.Item key={idx}>
                 <Image
-                  className="d-block w-100"
+                  className=" position-relative d-block w-100"
                   src={itemSlider.imageUrl}
                   alt="slider"
                 />
@@ -93,8 +90,10 @@ export default function SubHeaderContainer({
                     {moment(itemSlider.publishDate).format('DD MMM YYYY')}
                   </StyledCardTextHeader>
 
-                  <StyledCarouseTitle>{itemSlider.title}</StyledCarouseTitle>
-                  <StyledCarouseSubTitle>
+                  <StyledCarouseTitle className="text-truncate text-nowrap overflow-hidden">
+                    {itemSlider.title}
+                  </StyledCarouseTitle>
+                  <StyledCarouseSubTitle className="text-truncate text-nowrap overflow-hidden">
                     {itemSlider.shortDescription}
                   </StyledCarouseSubTitle>
                 </StyledCarouselCaption>
@@ -119,6 +118,6 @@ export default function SubHeaderContainer({
           </Row>
         </Col>
       </StyledRow>
-    </div>
+    </Container>
   );
 }
