@@ -19,7 +19,6 @@ const IconSubFooterStyled = styled.img`
   border-radius: 50%;
   margin: 0 0.5rem;
   @media only screen and (max-width: 992px) {
-    /* display: flex; */
     margin-bottom: 16px;
   }
 `;
