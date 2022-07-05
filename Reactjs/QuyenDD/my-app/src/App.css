@@ -1,0 +1,287 @@
+/* .App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+} */
+
+/* css form */
+
+@font-face {
+  font-family: "SF Pro Display Regular";
+  src: url("./fonts/SFPRODISPLAYREGULAR.OTF");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "SF Pro Display Bold";
+  src: url("./fonts/SFPRODISPLAYBOLD.OTF");
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "SF Pro Display Medium";
+  src: url("./fonts/SFPRODISPLAYMEDIUM.OTF");
+  font-weight: 500;
+}
+@font-face {
+  font-family: "SF Pro Display Extra Bold";
+  src: url("./fonts/SFPRODISPLAYBOLD.OTF");
+  font-weight: 800;
+}
+.body {
+  background-image: url(./images/bg.png);
+  background-repeat: round;
+}
+main {
+  padding-top: 58px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 414px;
+  min-height: 100vh;
+  margin: auto;
+}
+.content {
+  background: rgba(49, 49, 49, 0.6);
+  backdrop-filter: blur(35px);
+  border-radius: 40px;
+  padding: 25px 36px 0px 36px;
+  margin-top: 52px auto auto auto;
+  z-index: 2;
+}
+.title {
+  margin-bottom: 32px;
+}
+.title h4 {
+  font-family: "SF Pro Display Regular";
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 20px;
+  color: rgba(255, 255, 255, 0.75);
+  margin-top: 0;
+  margin-bottom: 6px;
+}
+.title h1 {
+  font-family: "SF Pro Display Bold";
+  font-size: 28px;
+  line-height: 33px;
+  color: #ffffff;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+form .form-group {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  text-align: left;
+  height: 74px;
+  margin-bottom: 18px;
+  width: 100%;
+}
+form .form-control-label {
+  position: absolute;
+  margin-bottom: 9px;
+  font-family: "SF Pro Display Bold";
+  font-size: 9px;
+  line-height: 11px;
+  color: rgba(255, 255, 255, 0.6);
+  padding-top: 18px;
+  padding-left: 14px;
+}
+form .form-group img {
+  position: absolute;
+  right: 10px;
+  top: calc(50% - 2px);
+}
+form .form-control {
+  height: 74px;
+  width: 100%;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 18px;
+  padding: 37px 13px 17px;
+  outline: none;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-sizing: border-box;
+  border-radius: 14px;
+  color: #ffffff;
+}
+form .form-control::placeholder {
+  color: #ffffff;
+  font-family: "SF Pro Display Medium";
+}
+form .form-control:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+form .btn-submit {
+  height: 74px;
+  width: 100%;
+  cursor: pointer;
+  background: #57d3ec;
+  box-shadow: 0px 28px 40px rgba(87, 211, 236, 0.35);
+  border-radius: 14px;
+  border: none;
+}
+form .btn-submit:active {
+  background-color: #29b6f6;
+}
+form .btn-submit .btn-content {
+  font-family: "SF Pro Display Extra Bold";
+  font-size: 20px;
+  line-height: 74px;
+  color: #ffffff;
+}
+form .login-with {
+  display: flex;
+  justify-items: center;
+  align-items: center;
+}
+form .login-with .btn-login-with {
+  margin-top: 24px;
+  height: 68px;
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(38, 115, 209, 0.08);
+  box-sizing: border-box;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+form .login-with a {
+  text-decoration: none;
+}
+form .login-with .btn-login-with img {
+  margin-right: 12px;
+  margin-left: 16px;
+}
+form .login-with .btn-login-with:last-child {
+  margin-left: 8px;
+}
+form .login-with .btn-login-with span {
+  padding-right: 17px;
+  font-family: "SF Pro Display Regular";
+  font-size: 11px;
+  line-height: 13px;
+  color: #ffffff;
+}
+form .seperator {
+  display: flex;
+  margin-top: 24px;
+  flex-direction: row;
+  align-items: center;
+  text-align: center;
+}
+form .seperator hr {
+  border-style: dashed;
+  border-color: rgba(255, 255, 255, 0.4);
+  border-width: 1px 0px 0px 0px;
+  flex: 1;
+}
+form .seperator span {
+  height: 16px;
+  font-family: "SF Pro Display Medium";
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+  color: #ffffff;
+  margin: 0 14px;
+}
+form .faceID {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background: linear-gradient(
+    129.7deg,
+    rgba(255, 255, 255, 0.5) -1.3%,
+    rgba(255, 255, 255, 0.5) 104.6%
+  );
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-sizing: border-box;
+  backdrop-filter: blur(40px);
+  height: 103px;
+  width: 103px;
+  border-radius: 50%;
+  margin: 37px auto -26px;
+}
+form .faceID span {
+  color: #ffffff;
+  font-family: "SF Pro Display Regular";
+  font-size: 13px;
+  line-height: 16px;
+  margin-top: 8px;
+}
+form .faceID:hover {
+  background: linear-gradient(
+    129.7deg,
+    rgba(255, 255, 255, 0.8) -1.3%,
+    rgba(255, 255, 255, 0.8) 104.6%
+  );
+}
+.footer {
+  width: 100%;
+  margin-top: 26px;
+  backdrop-filter: blur(35px);
+  padding-bottom: 34px;
+  padding-top: 86px;
+  margin-top: -40px;
+}
+.footer span,
+.footer a {
+  font-size: 17px;
+  line-height: 20px;
+  font-family: "SF Pro Display Regular";
+  color: #ffffff;
+}
+.footer a {
+  font-family: "SF Pro Display Extra Bold";
+  text-decoration: none;
+  color: #ffffff;
+}
+
+@media screen and (min-width: 415px) {
+  .footer {
+    backdrop-filter: none;
+  }
+}
+@media screen and(max-width: 365px) {
+  max {
+    max-width: 100%;
+  }
+}
