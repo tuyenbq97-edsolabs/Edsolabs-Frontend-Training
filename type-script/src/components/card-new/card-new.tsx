@@ -5,6 +5,13 @@ import styled from 'styled-components';
 import { SubCategoryNameStyled } from '../card-new-header-sm/style';
 import { CardStyled, CardTextStyled, TitleFooterStyled } from './style';
 
+const CardTitleStyled = styled(Card.Title)`
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 2;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+`;
 export interface CardNewProps {
   news: CardNewItem;
 }
@@ -36,7 +43,7 @@ export default function CardNew({ news }: CardNewProps) {
         <CardImgStyled variant="top" src={news.imageUrl} />
         <Card.Body>
           <Card.Text className="text-primary">{news.category.name}</Card.Text>
-          <Card.Title className="mb-3">{news.title}</Card.Title>
+          <CardTitleStyled className="mb-3">{news.title}</CardTitleStyled>
           <CardTextStyled className="mb-4 ">
             {news.shortDescription}
           </CardTextStyled>

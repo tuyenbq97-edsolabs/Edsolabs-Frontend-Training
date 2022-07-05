@@ -16,4 +16,9 @@ export const TitleFooterStyled = styled(Card.Text)`
 `;
 export const CardTextStyled = styled(Card.Text)`
   color: #1c1c28;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 4;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
 `;
