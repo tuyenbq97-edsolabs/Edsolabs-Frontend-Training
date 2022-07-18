@@ -23,7 +23,7 @@ function BlogsTipsTricksContainer({ BlogTipTrick }: CardNewProps) {
             <h3 className="fw-bold ms-4">{item.category.name}</h3>
           </div>
         ))}
-        <Button className="text-primary bg-white border-3 fw-bold">
+        <Button className="text-primary bg-white border-3 fw-bold d-none d-md-inline">
           Read More
         </Button>
       </div>
@@ -62,6 +62,11 @@ function BlogsTipsTricksContainer({ BlogTipTrick }: CardNewProps) {
           </Link>
         ))}
       </RowStyled>
+      <div className="ms-4 me-4">
+        <Button className="text-primary bg-white border-2 fw-bold d-md-none d-inline w-100">
+          Read More
+        </Button>
+      </div>
     </>
   );
 }

@@ -40,9 +40,9 @@ function index({
           </TitleHeaderStyled>
         </div>
         <HeaderNewContainer
-          dbNewsHeaderSm={dataSlider.slice(4, 6)}
-          slider={dataSlider.slice(0, 4)}
-          dbNewsHeaderLg={dataSlider.slice(6, 7)}
+          dbNewsHeaderSm={dataSlider.slice(2, 4)}
+          slider={dataSlider.slice(3, 6)}
+          dbNewsHeaderLg={dataSlider.slice(1, 2)}
         />
         <LocalNewsContainers localNews={dataLocal} />
         <GlobalNewsContainer globalNews={dataGlobal} />
@@ -56,27 +56,26 @@ function index({
 
 export async function getServerSideProps() {
   // Fetch data from external API
-  const resGlobalNews = await fetch(
-    `https://api.w2project-internal.asia/api/v1/news/by-category-slug/global-news`
-  );
-  const resLocalNews = await fetch(
-    `https://api.w2project-internal.asia/api/v1/news/by-category-slug/local-news`
-  );
-  const resTipsTricks = await fetch(
-    `https://api.w2project-internal.asia/api/v1/news/by-category-slug/blogs-tips-and-tricks`
-  );
 
-  const dataGlobal = await resGlobalNews.json();
-  const dataLocal = await resLocalNews.json();
-  const dataTipsTricks = await resTipsTricks.json();
+  const resData = await fetch(
+    `https://api.w2project-internal.asia/api/v1/news/home`
+  );
+  const data = await resData.json();
 
   // Pass data to the page via props
   return {
     props: {
-      dataSlider: dataGlobal.data.slice(0, 7),
-      dataGlobal: dataGlobal.data,
-      dataLocal: dataLocal.data,
-      dataBlogsTipsTricks: dataTipsTricks.data,
+      dataSlider: data.topStories.articles,
+      dataGlobal: data.categories.find(
+        (element: { name: string }) => element.name === 'Global news'
+      ).articles,
+      dataLocal: data.categories.find(
+        (element: { name: string }) => element.name === 'Local news'
+      ).articles,
+      dataBlogsTipsTricks: data.categories.find(
+        (element: { name: string }) => element.name === 'Blogs, tips & tricks'
+      ).articles,
+      data: data,
     },
   };
 }

@@ -13,24 +13,23 @@ import {
   SubCategoryNameStyled,
 } from '../card-new-header-sm/style';
 import moment from 'moment';
-import { articlesItem } from '../../../pages';
 
-export const ImageStyled = styled(CardImgStyled)`
+export const ImageStyled = styled(Card.Img)`
   object-fit: cover;
-  max-height: 261px;
+  max-height: 284px;
   @media only screen and (max-width: 1400px) {
-    max-height: 222px;
+    max-height: 238px;
   }
   @media only screen and (max-width: 1200px) {
     max-height: 184px;
   }
   @media only screen and (max-width: 992px) {
-    max-height: 100%;
+    max-height: 290px;
   }
 `;
 
 interface CardNewHeaderProp {
-  newsHeaderLg: articlesItem;
+  newsHeaderLg: CardNewItem;
 }
 
 export default function CardNewHeaderLg({ newsHeaderLg }: CardNewHeaderProp) {

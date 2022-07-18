@@ -32,11 +32,11 @@ function GlobalNewsContainer({ globalNews }: CardNewProps) {
             <h3 className="fw-bold ms-4">{item.category.name}</h3>
           </div>
         ))}
-        <Button className="text-primary bg-white border-3 fw-bold">
-          <Link href="/globalNews">
+        <Link href="/globalNews">
+          <Button className="text-primary bg-white border-3 fw-bold d-none d-md-inline">
             <a className="text-decoration-none"> Read More</a>
-          </Link>
-        </Button>
+          </Button>
+        </Link>
       </div>
       <SeparatorStyled />
       <RowStyled>
@@ -73,6 +73,13 @@ function GlobalNewsContainer({ globalNews }: CardNewProps) {
           </Link>
         ))}
       </RowStyled>
+      <div className="ms-4 me-4">
+        <Link href="/globalNews">
+          <Button className="text-primary bg-white border-2 fw-bold d-md-none d-inline w-100">
+            <a className="text-decoration-none"> Read More</a>
+          </Button>
+        </Link>
+      </div>
     </>
   );
 }

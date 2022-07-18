@@ -83,6 +83,8 @@ export const TitleHeaderStyled = styled.p`
 const ImgStyled = styled.img`
   filter: drop-shadow(0px 4px 6px rgba(0, 0, 0, 0.1));
   border-radius: 4px;
+  max-height: 600px;
+  object-fit: cover;
 `;
 
 interface CardNewProps {
@@ -99,27 +101,28 @@ export default function HeaderNewContainer({
   return (
     <>
       <RowStyled>
-        <Col lg={6} className="pe-2 pb-3 ps-2 h-100">
+        <Col lg={7} className="pe-2 pb-3 ps-2 h-100">
           <StyledCarousel className="m-0">
             {slider.map((items, idx) => (
-              // <Link
-              //   key={idx}
-              //   href={{
-              //     pathname: '/[articleSlug]',
-              //     query: {
-              //       articleSlug: items.slug,
-              //     },
-              //   }}
-              // >
               <Carousel.Item key={idx}>
                 <SubCategoryNameStyled>
                   {items.subCategory.name}
                 </SubCategoryNameStyled>
-                <ImgStyled
-                  className="d-block w-100"
-                  src={items.imageUrl}
-                  alt="First slide"
-                />
+                <Link
+                  className="stretched-link"
+                  href={{
+                    pathname: '/[articleSlug]',
+                    query: {
+                      articleSlug: items.slug,
+                    },
+                  }}
+                >
+                  <ImgStyled
+                    className="d-block w-100"
+                    src={items.imageUrl}
+                    alt="First slide"
+                  />
+                </Link>
                 <CarouselCaptionStyled>
                   <SrouceStyle>{items.source}</SrouceStyle>
                   {' - '}
@@ -132,11 +135,10 @@ export default function HeaderNewContainer({
                   </ShortDescriptionStyled>
                 </CarouselCaptionStyled>
               </Carousel.Item>
-              // </Link>
             ))}
           </StyledCarousel>
         </Col>
-        <Col className="p-0" lg={6}>
+        <Col className="p-0" lg={5}>
           <RowStyled>
             {dbNewsHeaderSm.map((item, idx) => (
               <Link

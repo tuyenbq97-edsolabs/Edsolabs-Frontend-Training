@@ -14,20 +14,21 @@ import HeaderNewContainer, {
 } from '../containers/header-new-container';
 import { ColStyled } from '../containers/local-news-containers';
 import SubFooterContainer from '../containers/sub-footer-container';
+import useSWRInfinite from 'swr/infinite';
 
-function globalNews({ dataGlobal, dataSlider }: CardNewProps) {
-  const [dataNews, setDataNews] = useState(dataGlobal);
-  const [limit, setLimit] = useState(11);
-  useEffect(() => {
-    axios
-      .get(
-        `https://api.w2project-internal.asia/api/v1/news/by-category-slug/global-news?limit=${limit}`
-      )
-      .then((res) => {
-        setDataNews(res.data.data);
-        setLimit(res.data.data.length);
-      });
-  }, [limit]);
+function globalNews() {
+  const fetcher = (url: RequestInfo | URL) =>
+    fetch(url).then((res) => res.json());
+  const { data, size, setSize } = useSWRInfinite((index, previousPageData) => {
+    if (previousPageData && !previousPageData.length)
+      return `https://api.w2project-internal.asia/api/v1/news/by-category-slug/global-news?limit=4&offset=${
+        index + 10
+      }`;
+    else
+      return `https://api.w2project-internal.asia/api/v1/news/by-category-slug/global-news?limit=11&offset=${index}`;
+  }, fetcher);
+  const dbNews = data?.map((data) => data.data);
+  const news = dbNews ? [].concat(...dbNews) : [];
   return (
     <div>
       <HeaderContainer />
@@ -40,18 +41,18 @@ function globalNews({ dataGlobal, dataSlider }: CardNewProps) {
           </TitleHeaderStyled>
         </div>
         <HeaderNewContainer
-          dbNewsHeaderSm={dataSlider.slice(4, 6)}
-          slider={dataSlider.slice(0, 4)}
-          dbNewsHeaderLg={dataSlider.slice(6, 7)}
+          dbNewsHeaderSm={news.slice(4, 6)}
+          slider={news.slice(0, 4)}
+          dbNewsHeaderLg={news.slice(6, 7)}
         />
         <RowStyled>
-          {dataNews.slice(7).map((item, idx) => (
+          {news.slice(7).map((item, idx) => (
             <Link
               key={idx}
               href={{
                 pathname: '/[articleSlug]',
                 query: {
-                  articleSlug: item.slug,
+                  articleSlug: item['slug'],
                 },
               }}
             >
@@ -64,8 +65,8 @@ function globalNews({ dataGlobal, dataSlider }: CardNewProps) {
         <div className="d-flex justify-content-center mb-4">
           <Button
             className="bg-white text-primary border-2 fw-bold px-5"
-            disabled={limit >= 12}
-            onClick={() => setLimit(limit + 4)}
+            disabled={news.length >= 12}
+            onClick={() => setSize(size + 1)}
           >
             Show more articles
           </Button>
@@ -75,24 +76,6 @@ function globalNews({ dataGlobal, dataSlider }: CardNewProps) {
       <SubFooterContainer />
     </div>
   );
-}
-
-export async function getServerSideProps() {
-  // Fetch data from external API
-  const resGlobalNews = await fetch(
-    `https://api.w2project-internal.asia/api/v1/news/by-category-slug/global-news?limit=11`
-  );
-
-  const dataGlobal = await resGlobalNews.json();
-
-  // Pass data to the page via props
-  return {
-    props: {
-      dataSlider: dataGlobal.data.slice(0, 7),
-      dataGlobal: dataGlobal.data,
-      data: dataGlobal,
-    },
-  };
 }
 
 export default globalNews;

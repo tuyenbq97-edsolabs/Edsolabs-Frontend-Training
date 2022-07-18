@@ -15,17 +15,29 @@ import {
   SubCategoryNameStyled,
 } from './style';
 
+const CardHeaderSmStyled = styled(CardHeaderStyled)``;
+
+const CardImgLgStyled = styled(Card.Img)`
+  height: 300px;
+  object-fit: cover;
+  filter: drop-shadow(0px 4px 6px rgba(0, 0, 0, 0.1));
+  border-radius: 4px;
+
+  @media screen and (max-width: 1200px) {
+    height: 264px;
+  }
+`;
 interface CardNewHeaderProp {
   newsHeaderSm: CardNewItem;
 }
 
 export default function CardNewHeaderSm({ newsHeaderSm }: CardNewHeaderProp) {
   return (
-    <CardHeaderStyled>
+    <CardHeaderSmStyled>
       <SubCategoryNameStyled>
         {newsHeaderSm.subCategory.name}
       </SubCategoryNameStyled>
-      <CardImgStyled variant="top" src={newsHeaderSm.imageUrl} />
+      <CardImgLgStyled variant="top" src={newsHeaderSm.imageUrl} />
       <CardBodyStyled>
         <CardTextStyled>
           {newsHeaderSm.source} {' - '}
@@ -33,6 +45,6 @@ export default function CardNewHeaderSm({ newsHeaderSm }: CardNewHeaderProp) {
         </CardTextStyled>
         <CardTitleStyled>{newsHeaderSm.title}</CardTitleStyled>
       </CardBodyStyled>
-    </CardHeaderStyled>
+    </CardHeaderSmStyled>
   );
 }

@@ -4,7 +4,10 @@ import React from 'react';
 import { Card, Col, Container, Row } from 'react-bootstrap';
 import styled from 'styled-components';
 import { SubCategoryNameStyled } from '../components/card-new-header/card-new-header-sm/style';
-import { TitleFooterStyled } from '../components/card-new/vertical -card/style';
+import {
+  CardStyled,
+  TitleFooterStyled,
+} from '../components/card-new/vertical -card/style';
 import FooterContainer from '../containers/footer-container';
 import HeaderContainer from '../containers/header-container';
 import { LinkStyled } from '../containers/header-new-container';
@@ -14,6 +17,8 @@ import facebook_icon from '../assets/icons/facebook_icon.svg';
 import gmail_icon from '../assets/icons/gmai_icon.svg';
 import tele_icon from '../assets/icons/tele_icon.svg';
 import twitter_icon from '../assets/icons/twitter_icon.svg';
+import { CardNewItem } from '../components/card-new/vertical -card/card-new';
+import Link from 'next/link';
 
 const ImageStyled = styled(Image)`
   object-fit: cover;
@@ -54,51 +59,20 @@ const CardBodyStyled = styled(Card.Body)`
   padding: 0rem 0rem !important;
 `;
 
-interface ArticleSlug {
-  id: string;
-  title: string;
-  slug: string;
-  shortDescription: string;
-  content: string;
-  imageUrl: string;
-  source: string;
-  publishDate: string;
-  subCategory: {
-    name: string;
-  };
-  moreArticles: [
-    {
-      id: string;
-      title: string;
-      slug: string;
-      shortDescription: string;
-      imageUrl: string;
-      source: string;
-      publishDate: string;
-      category: {
-        name: string;
-        slug: string;
-        icon: string;
-      };
-    }
-  ];
-}
-
 interface ArticleProp {
-  articles: ArticleSlug;
+  articles: CardNewItem;
 }
 
 function ArticleSlug({ articles }: ArticleProp) {
   const createMarkup = () => {
     return { __html: articles.content };
   };
-  console.log(articles.moreArticles);
   return (
     <div>
       <HeaderContainer />
       <Container>
         <Row className="d-flex justify-content-center ">
-          <Col lg={2} md={5} className="d-none d-xl-inline">
+          <Col lg={2} className="d-none d-xl-inline">
             <DateReleaseStyled>
               {articles.source} -{' '}
               {moment(articles.publishDate).format('DD MMM YYYY')}
@@ -121,7 +95,7 @@ function ArticleSlug({ articles }: ArticleProp) {
               </div>
             </div>
           </Col>
-          <Col lg={10} md={7}>
+          <Col lg={10}>
             <LinkStyled href="/">NEWS/ GLOBAL NEWS/</LinkStyled>
 
             <Card className="border-0">
@@ -167,14 +141,24 @@ function ArticleSlug({ articles }: ArticleProp) {
             <h3 className="mb-4">More stories for you </h3>
             <Row>
               {articles.moreArticles.slice(0, 3).map((item, idx) => (
-                <Col key={idx} md={4}>
-                  <Card className="border-0">
-                    <CardImgStyled variant="top" src={item.imageUrl} />
-                    <Card.Body>
-                      <Card.Text className="mb-4 ">{item.title}</Card.Text>
-                    </Card.Body>
-                  </Card>
-                </Col>
+                <Link
+                  key={idx}
+                  href={{
+                    pathname: '/[articleSlug]',
+                    query: {
+                      articleSlug: item.slug,
+                    },
+                  }}
+                >
+                  <Col key={idx} md={4}>
+                    <CardStyled className="border-0">
+                      <CardImgStyled variant="top" src={item.imageUrl} />
+                      <Card.Body>
+                        <Card.Text className="mb-4 ">{item.title}</Card.Text>
+                      </Card.Body>
+                    </CardStyled>
+                  </Col>
+                </Link>
               ))}
             </Row>
           </Col>
@@ -187,7 +171,7 @@ function ArticleSlug({ articles }: ArticleProp) {
 }
 
 export async function getServerSideProps(context: {
-  params: { articleSlug: ArticleSlug };
+  params: { articleSlug: ArticleProp };
 }) {
   // Fetch data from external API
   const res = await fetch(

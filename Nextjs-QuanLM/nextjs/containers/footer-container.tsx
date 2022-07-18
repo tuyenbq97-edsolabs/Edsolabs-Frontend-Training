@@ -73,7 +73,7 @@ const LogoFooterStyled = styled.div`
 `;
 export default function FooterContainer() {
   return (
-    <>
+    <div className="mt-5">
       <StyledRow>
         <Col md={5}>
           <LogoFooterStyled>
@@ -166,6 +166,6 @@ export default function FooterContainer() {
           Top
         </span>
       </StyledButton>
-    </>
+    </div>
   );
 }

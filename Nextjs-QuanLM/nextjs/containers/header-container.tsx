@@ -8,6 +8,7 @@ import Search from '../assets/images/Search.png';
 import User from '../assets/images/User.png';
 import Arrow from '../assets/images/arrow_forward.png';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const NavStyled = styled(Navbar)`
   padding: 27px 122px 27px 108px;
@@ -55,9 +56,11 @@ export default function HeaderContainer() {
           aria-controls="basic-navbar-nav"
           className="border-0 me-3"
         />
-        <Navbar.Brand>
-          <Image src={logo} alt="" />
-        </Navbar.Brand>
+        <Link href="/">
+          <Navbar.Brand role="button">
+            <Image src={logo} alt="" />
+          </Navbar.Brand>
+        </Link>
       </div>
 
       <Navbar.Collapse className="justify-content-between">
