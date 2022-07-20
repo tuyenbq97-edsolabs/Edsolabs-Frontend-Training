@@ -111,7 +111,7 @@ export default function HeaderNewContainer({
                 <Link
                   className="stretched-link"
                   href={{
-                    pathname: '/[articleSlug]',
+                    pathname: '/article/[articleSlug]',
                     query: {
                       articleSlug: items.slug,
                     },
@@ -144,7 +144,7 @@ export default function HeaderNewContainer({
               <Link
                 key={idx}
                 href={{
-                  pathname: '/[articleSlug]',
+                  pathname: '/article/[articleSlug]',
                   query: {
                     articleSlug: item.slug,
                   },
@@ -161,7 +161,7 @@ export default function HeaderNewContainer({
               <Link
                 key={idx}
                 href={{
-                  pathname: '/[articleSlug]',
+                  pathname: '/article/[articleSlug]',
                   query: {
                     articleSlug: item.slug,
                   },

@@ -3,21 +3,21 @@ import Image from 'next/image';
 import React from 'react';
 import { Card, Col, Container, Row } from 'react-bootstrap';
 import styled from 'styled-components';
-import { SubCategoryNameStyled } from '../components/card-new-header/card-new-header-sm/style';
+import { SubCategoryNameStyled } from '../../components/card-new-header/card-new-header-sm/style';
 import {
   CardStyled,
   TitleFooterStyled,
-} from '../components/card-new/vertical -card/style';
-import FooterContainer from '../containers/footer-container';
-import HeaderContainer from '../containers/header-container';
-import { LinkStyled } from '../containers/header-new-container';
-import SubFooterContainer from '../containers/sub-footer-container';
-import phone_icon from '../assets/icons/phone_icon.svg';
-import facebook_icon from '../assets/icons/facebook_icon.svg';
-import gmail_icon from '../assets/icons/gmai_icon.svg';
-import tele_icon from '../assets/icons/tele_icon.svg';
-import twitter_icon from '../assets/icons/twitter_icon.svg';
-import { CardNewItem } from '../components/card-new/vertical -card/card-new';
+} from '../../components/card-new/vertical -card/style';
+import FooterContainer from '../../containers/footer-container';
+import HeaderContainer from '../../containers/header-container';
+import { LinkStyled } from '../../containers/header-new-container';
+import SubFooterContainer from '../../containers/sub-footer-container';
+import phone_icon from '../../assets/icons/phone_icon.svg';
+import facebook_icon from '../../assets/icons/facebook_icon.svg';
+import gmail_icon from '../../assets/icons/gmai_icon.svg';
+import tele_icon from '../../assets/icons/tele_icon.svg';
+import twitter_icon from '../../assets/icons/twitter_icon.svg';
+import { CardNewItem } from '../../components/card-new/vertical -card/card-new';
 import Link from 'next/link';
 
 const ImageStyled = styled(Image)`
@@ -144,7 +144,7 @@ function ArticleSlug({ articles }: ArticleProp) {
                 <Link
                   key={idx}
                   href={{
-                    pathname: '/[articleSlug]',
+                    pathname: '/article/[articleSlug]',
                     query: {
                       articleSlug: item.slug,
                     },

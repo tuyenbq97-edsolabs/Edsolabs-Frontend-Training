@@ -3,6 +3,7 @@ import Link from 'next/link';
 import React from 'react';
 import { Button, Col, Row } from 'react-bootstrap';
 import styled from 'styled-components';
+import { ImageStyled } from '../components/card-new-header/card-new-header-lg/card-new-header-lg';
 import CardNewHorizontalLarge from '../components/card-new/horizontal-card/card-new-horizontal-lg';
 import CardNewHorizontalSmall from '../components/card-new/horizontal-card/card-new-horizontal-sm';
 import CardNew, {
@@ -31,24 +32,36 @@ interface CardNewProps {
 function LocalNewsContainers({ localNews }: CardNewProps) {
   return (
     <>
-      <div className="d-flex align-items-center justify-content-between mx-2 mt-5">
-        {localNews.slice(0, 1).map((item, idx) => (
+      {localNews.slice(0, 1).map((item, idx) => (
+        <div
+          key={idx}
+          className="d-flex align-items-center justify-content-between mx-2 mt-5"
+        >
           <div key={idx} className="d-flex align-items-center">
             <Image src={item.category.icon} alt="" width={48} height={48} />
             <h3 className="fw-bold ms-4">{item.category.name}</h3>
           </div>
-        ))}
-        <Button className="text-primary bg-white border-3 fw-bold d-none d-md-inline">
-          Read More
-        </Button>
-      </div>
+          <Link
+            href={{
+              pathname: '/category/[categorySlug]',
+              query: {
+                categorySlug: item.category.slug,
+              },
+            }}
+          >
+            <Button className="text-primary bg-white border-3 fw-bold d-none d-md-inline">
+              <a className="text-decoration-none"> Read More</a>
+            </Button>
+          </Link>
+        </div>
+      ))}
       <SeparatorStyled />
       <RowStyled>
         {localNews.slice(0, 1).map((item, idx) => (
           <Link
             key={idx}
             href={{
-              pathname: '/[articleSlug]',
+              pathname: '/article/[articleSlug]',
               query: {
                 articleSlug: item.slug,
               },
@@ -64,7 +77,7 @@ function LocalNewsContainers({ localNews }: CardNewProps) {
             <Link
               key={idx}
               href={{
-                pathname: '/[articleSlug]',
+                pathname: '/article/[articleSlug]',
                 query: {
                   articleSlug: item.slug,
                 },
@@ -82,7 +95,7 @@ function LocalNewsContainers({ localNews }: CardNewProps) {
           <Link
             key={idx}
             href={{
-              pathname: '/[articleSlug]',
+              pathname: '/article/[articleSlug]',
               query: {
                 articleSlug: items.slug,
               },
@@ -94,11 +107,22 @@ function LocalNewsContainers({ localNews }: CardNewProps) {
           </Link>
         ))}
       </RowStyled>
-      <div className="ms-4 me-4">
-        <Button className="text-primary bg-white border-2  fw-bold d-md-none d-inline w-100">
-          Read More
-        </Button>
-      </div>
+      {localNews.slice(0, 1).map((item, idx) => (
+        <div key={idx} className="ms-4 me-4">
+          <Link
+            href={{
+              pathname: '/category/[categorySlug]',
+              query: {
+                categorySlug: item.category.slug,
+              },
+            }}
+          >
+            <Button className="text-primary bg-white border-2  fw-bold d-md-none d-inline w-100">
+              <a className="text-decoration-none"> Read More</a>
+            </Button>
+          </Link>
+        </div>
+      ))}
     </>
   );
 }
