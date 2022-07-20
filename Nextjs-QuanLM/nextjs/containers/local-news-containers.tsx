@@ -31,7 +31,7 @@ interface CardNewProps {
 function LocalNewsContainers({ localNews }: CardNewProps) {
   return (
     <>
-      <div className="d-flex align-items-center justify-content-between me-2 ms-2 mt-5">
+      <div className="d-flex align-items-center justify-content-between mx-2 mt-5">
         {localNews.slice(0, 1).map((item, idx) => (
           <div key={idx} className="d-flex align-items-center">
             <Image src={item.category.icon} alt="" width={48} height={48} />

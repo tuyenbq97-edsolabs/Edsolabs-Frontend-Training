@@ -20,15 +20,20 @@ function globalNews() {
   const fetcher = (url: RequestInfo | URL) =>
     fetch(url).then((res) => res.json());
   const { data, size, setSize } = useSWRInfinite((index, previousPageData) => {
+    const PER_SIZE = 4;
+    const INIT_POST = 7;
     if (previousPageData && !previousPageData.length)
-      return `https://api.w2project-internal.asia/api/v1/news/by-category-slug/global-news?limit=4&offset=${
-        index + 10
+      return `https://api.w2project-internal.asia/api/v1/news/by-category-slug/global-news?limit=${PER_SIZE}&offset=${
+        PER_SIZE * index + INIT_POST
       }`;
     else
-      return `https://api.w2project-internal.asia/api/v1/news/by-category-slug/global-news?limit=11&offset=${index}`;
+      return `https://api.w2project-internal.asia/api/v1/news/by-category-slug/global-news?limit=${
+        PER_SIZE + INIT_POST
+      }&offset=${index}`;
   }, fetcher);
   const dbNews = data?.map((data) => data.data);
   const news = dbNews ? [].concat(...dbNews) : [];
+  console.log(data);
   return (
     <div>
       <HeaderContainer />

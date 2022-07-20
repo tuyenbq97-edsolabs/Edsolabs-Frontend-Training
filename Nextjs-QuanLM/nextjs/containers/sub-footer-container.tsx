@@ -12,8 +12,6 @@ const SubFooterStyled = styled.div`
   width: 100%;
   color: white;
   mix-blend-mode: multiply;
-  display: flex;
-  justify-content: space-between;
   @media only screen and (max-width: 992px) {
     /* display: flex; */
     padding: 24px 0px;
@@ -24,7 +22,6 @@ const IconSubFooterStyled = styled(Image)`
   border-radius: 50%;
   margin: 0 8px;
   @media only screen and (max-width: 992px) {
-    /* display: flex; */
     margin-bottom: 16px;
   }
 `;
@@ -38,7 +35,7 @@ const RowStyled = styled(Row)`
 
 export default function SubFooterContainer() {
   return (
-    <SubFooterStyled>
+    <SubFooterStyled className="d-flex justify-content-between">
       <RowStyled>
         <Col lg={5}>© 2021 Weiwei.sg. All rights reserved</Col>
         <Col lg={4}></Col>

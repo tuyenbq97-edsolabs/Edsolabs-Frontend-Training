@@ -7,10 +7,6 @@ import Image from 'next/image';
 
 export const StyledFooter = styled.div`
   height: 440px;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  top: 0;
   color: #f2f2f5;
   background: #1c1c28;
   width: 100%;
@@ -35,32 +31,10 @@ export const StyledLink = styled.a`
     color: #bfb0b0 !important;
   }
 `;
-
-export const StyledSubFooter = styled.div`
-  align-items: center;
-  justify-content: space-around;
-  display: flex;
-  a {
-    padding: 0 10px;
-  }
-  padding: 24px 0px;
-  background-color: #000;
-`;
 export const StyledButton = styled.button`
-  position: fixed;
   bottom: 328px;
   right: 36px;
   background-color: inherit;
-  border: none;
-  padding: 0;
-  display: none;
-`;
-export const StyledRowTitle = styled(Row)`
-  margin-bottom: 24px;
-  font-weight: bold;
-`;
-export const StyledRowContent = styled(Row)`
-  margin-bottom: 12px;
 `;
 const HandleGoTop = () => {
   window.scroll({
@@ -89,70 +63,70 @@ export default function FooterContainer() {
             <Col lg={6}>
               <Row className="mb-5">
                 <Col>
-                  <StyledRowTitle>
+                  <Row className="mb-4 fw-bold">
                     <StyledLink href="##">Plans</StyledLink>
-                  </StyledRowTitle>
-                  <StyledRowContent>
+                  </Row>
+                  <Row className="mb-2">
                     <StyledLink href="##">Sim-only plans</StyledLink>
-                  </StyledRowContent>
-                  <StyledRowContent>
+                  </Row>
+                  <Row className="mb-2">
                     <StyledLink href="##">Plans with device</StyledLink>
-                  </StyledRowContent>
-                  <StyledRowContent>
+                  </Row>
+                  <Row className="mb-2">
                     <StyledLink href="##">Pre-paid plans</StyledLink>
-                  </StyledRowContent>
+                  </Row>
                 </Col>
                 <Col>
-                  <StyledRowTitle>
+                  <Row className="mb-4 fw-bold">
                     <StyledLink href="##">Moblies</StyledLink>
-                  </StyledRowTitle>
-                  <StyledRowContent>
+                  </Row>
+                  <Row className="mb-2">
                     <StyledLink href="##">Phones</StyledLink>
-                  </StyledRowContent>
-                  <StyledRowContent>
+                  </Row>
+                  <Row className="mb-2">
                     <StyledLink href="##">Tablets</StyledLink>
-                  </StyledRowContent>
-                  <StyledRowContent>
+                  </Row>
+                  <Row className="mb-2">
                     <StyledLink href="##">Accessories</StyledLink>
-                  </StyledRowContent>
-                  <StyledRowContent>
+                  </Row>
+                  <Row className="mb-2">
                     <StyledLink href="##">Wearables</StyledLink>
-                  </StyledRowContent>
+                  </Row>
                 </Col>
               </Row>
             </Col>
             <Col lg={6}>
               <Row>
                 <Col>
-                  <StyledRowTitle>
+                  <Row className="mb-4 fw-bold">
                     <StyledLink href="##">News</StyledLink>
-                  </StyledRowTitle>
-                  <StyledRowContent>
+                  </Row>
+                  <Row className="mb-2">
                     <StyledLink href="##">Global news</StyledLink>
-                  </StyledRowContent>
-                  <StyledRowContent>
+                  </Row>
+                  <Row className="mb-2">
                     <StyledLink href="##">Local news</StyledLink>
-                  </StyledRowContent>
-                  <StyledRowContent>
+                  </Row>
+                  <Row className="mb-2">
                     <StyledLink href="##">Blogs</StyledLink>
-                  </StyledRowContent>
+                  </Row>
                 </Col>
                 <Col>
-                  <StyledRowTitle>
+                  <Row className="mb-4 fw-bold">
                     <StyledLink href="##">Help & About</StyledLink>
-                  </StyledRowTitle>
-                  <StyledRowContent>
+                  </Row>
+                  <Row className="mb-2">
                     <StyledLink href="##">About us</StyledLink>
-                  </StyledRowContent>
-                  <StyledRowContent>
+                  </Row>
+                  <Row className="mb-2">
                     <StyledLink href="##">Why Weiwei?</StyledLink>
-                  </StyledRowContent>
-                  <StyledRowContent>
+                  </Row>
+                  <Row className="mb-2">
                     <StyledLink href="##">Store locator</StyledLink>
-                  </StyledRowContent>
-                  <StyledRowContent>
+                  </Row>
+                  <Row className="mb-2">
                     <StyledLink href="##">Contact us</StyledLink>
-                  </StyledRowContent>
+                  </Row>
                 </Col>
               </Row>
             </Col>
@@ -160,7 +134,10 @@ export default function FooterContainer() {
         </Col>
         <Col md={1}></Col>
       </StyledRow>
-      <StyledButton className="d-lg-inline" onClick={HandleGoTop}>
+      <StyledButton
+        className="d-lg-inline d-none position-fixed border-0 p-0"
+        onClick={HandleGoTop}
+      >
         <Image src={up_to_top} alt="" />
         <span id="span" className="d-block text-white">
           Top
