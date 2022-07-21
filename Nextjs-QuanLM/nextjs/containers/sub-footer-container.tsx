@@ -6,11 +6,12 @@ import TwitterIcon from '../assets/images/twitter_icon.png';
 import YoutebuIcon from '../assets/images/youtube_icon.png';
 import InstagramIcon from '../assets/images/instagram_icon.png';
 import Image from 'next/image';
+import { theme } from '../utils/theme';
 const SubFooterStyled = styled.div`
   padding: 24px 165px;
-  background-color: black;
+  background-color: ${theme.darkBlack};
   width: 100%;
-  color: white;
+  color: ${theme.white};
   mix-blend-mode: multiply;
   @media only screen and (max-width: 992px) {
     /* display: flex; */
@@ -18,7 +19,7 @@ const SubFooterStyled = styled.div`
   }
 `;
 const IconSubFooterStyled = styled(Image)`
-  background-color: #000000;
+  background-color: ${theme.darkBlack};
   border-radius: 50%;
   margin: 0 8px;
   @media only screen and (max-width: 992px) {

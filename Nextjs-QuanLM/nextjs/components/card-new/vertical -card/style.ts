@@ -1,5 +1,6 @@
 import { Card } from 'react-bootstrap';
 import styled from 'styled-components';
+import { theme } from '../../../utils/theme';
 
 export const CardStyled = styled(Card)`
   margin-bottom: 40px;
@@ -12,13 +13,13 @@ export const TitleFooterStyled = styled(Card.Text)`
   font-size: 12px;
   line-height: 18px;
   margin: 0;
-  color: #555770;
+  color: ${theme.lightBlack};
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
 `;
 export const CardTextStyled = styled(Card.Text)`
-  color: #1c1c28;
+  color: ${theme.black};
   overflow: hidden;
   text-overflow: ellipsis;
   word-break: break-word;

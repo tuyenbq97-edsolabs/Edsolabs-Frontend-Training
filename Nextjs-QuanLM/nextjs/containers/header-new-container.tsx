@@ -7,6 +7,7 @@ import CardNewHeaderLg from '../components/card-new-header/card-new-header-lg/ca
 import CardNewHeaderSm from '../components/card-new-header/card-new-header-sm/card-new-header.-sm';
 import { SubCategoryNameStyled } from '../components/card-new-header/card-new-header-sm/style';
 import { CardNewItem } from '../components/card-new/vertical -card/card-new';
+import { theme } from '../utils/theme';
 
 export const LinkStyled = styled(Link)`
   text-decoration: none;
@@ -54,7 +55,7 @@ const StyledCarousel = styled(Carousel)`
 export const ShortDescriptionStyled = styled.p`
   font-size: 16px;
   line-height: 24px;
-  color: #c7c8d9;
+  color: ${theme.secondaryWhite};
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -63,7 +64,7 @@ export const ShortDescriptionStyled = styled.p`
 export const SrouceStyle = styled.span`
   font-size: 12px;
   line-height: 18px;
-  color: #c7c8d9;
+  color: ${theme.secondaryWhite};
 `;
 export const TitleStyled = styled.p`
   font-size: 24px;
@@ -77,7 +78,7 @@ export const TitleHeaderStyled = styled.p`
   margin-bottom: 40px;
   font-size: 16px;
   line-height: 24px;
-  color: #555770;
+  color: ${theme.lightBlack};
 `;
 
 const ImgStyled = styled.img`

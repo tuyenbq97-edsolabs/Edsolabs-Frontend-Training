@@ -4,6 +4,7 @@ import { Card } from 'react-bootstrap';
 import styled from 'styled-components';
 import { CardStyled, TitleFooterStyled } from '../vertical -card/style';
 import { CardHorizontalProps } from './card-new-horizontal-lg';
+import { theme } from '../../../utils/theme';
 
 const CardImgHorizontalStyled = styled(Card.Img)`
   max-height: 70px;
@@ -20,7 +21,7 @@ export const CardHorizontalStyled = styled(CardStyled)`
   }
 `;
 const CardTextStyled = styled(Card.Text)`
-  color: #1c1c28;
+  color: ${theme.black};
   overflow: hidden;
   text-overflow: ellipsis;
   word-break: break-word;

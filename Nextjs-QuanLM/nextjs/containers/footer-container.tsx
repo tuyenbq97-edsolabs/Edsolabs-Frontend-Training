@@ -4,20 +4,14 @@ import { Button, Col, Nav, Navbar, Row } from 'react-bootstrap';
 import logoFooter from '../assets/images/logo_footer.png';
 import up_to_top from '../assets/images/up_to_top.png';
 import Image from 'next/image';
-
-export const StyledFooter = styled.div`
-  height: 440px;
-  color: #f2f2f5;
-  background: #1c1c28;
-  width: 100%;
-`;
+import { theme } from '../utils/theme';
 
 export const StyledRow = styled(Row)`
   padding-top: 64px;
   padding-bottom: 136px;
   margin-left: 0px;
   margin-right: 0px;
-  background-color: #1c1c28;
+  background-color: ${theme.black};
   .logo-footer {
     margin-left: 108px;
     padding-top: 25px;
@@ -25,10 +19,10 @@ export const StyledRow = styled(Row)`
   }
 `;
 export const StyledLink = styled.a`
-  color: #f2f2f5 !important;
+  color: ${theme.lightWhite} !important;
   text-decoration: none;
   &:hover {
-    color: #bfb0b0 !important;
+    color: ${theme.darkWhite} !important;
   }
 `;
 export const StyledButton = styled.button`

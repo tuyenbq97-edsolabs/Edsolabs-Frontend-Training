@@ -19,13 +19,14 @@ import tele_icon from '../../assets/icons/tele_icon.svg';
 import twitter_icon from '../../assets/icons/twitter_icon.svg';
 import { CardNewItem } from '../../components/card-new/vertical -card/card-new';
 import Link from 'next/link';
+import { theme } from '../../utils/theme';
 
 const ImageStyled = styled(Image)`
   object-fit: cover;
 `;
 
 const DateReleaseStyled = styled(TitleFooterStyled)`
-  color: #28293d;
+  color: ${theme.violet};
   line-height: 28px;
   margin-bottom: 16px;
   margin-top: 16px;
@@ -34,14 +35,14 @@ const DateReleaseStyled = styled(TitleFooterStyled)`
 const CardTitleStyled = styled.h3`
   font-size: 32px;
   line-height: 48px;
-  color: #1c1c28;
+  color: ${theme.black};
   font-weight: bold;
   margin-bottom: 16px;
 `;
 
 const CustomColorStyled = styled(SubCategoryNameStyled)`
-  background-color: #2e015b;
-  color: white;
+  background-color: ${theme.darkViolet};
+  color: ${theme.white};
 `;
 
 const HrStyled = styled.hr`

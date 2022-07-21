@@ -9,6 +9,7 @@ import User from '../assets/images/User.png';
 import Arrow from '../assets/images/arrow_forward.png';
 import Image from 'next/image';
 import Link from 'next/link';
+import { theme } from '../utils/theme';
 
 const NavStyled = styled(Navbar)`
   padding: 27px 122px 27px 108px;
@@ -33,13 +34,13 @@ const StyledNav = styled(Nav)`
     padding-right: 25px !important;
   }
   .nav-link:hover {
-    color: #8a7272 !important;
+    color: ${theme.lightPink} !important;
   }
 `;
 const SignUpStyled = styled(Nav.Link)`
   padding-top: 4px;
   &:hover {
-    color: #1800ed8a;
+    color: ${theme.lightBlue};
   }
 `;
 const SeparatorStyled = styled.span`
