@@ -176,7 +176,7 @@ export async function getServerSideProps(context: {
 }) {
   // Fetch data from external API
   const res = await fetch(
-    `https://api.w2project-internal.asia/api/v1/news/article/${context.params.articleSlug}`
+    `${process.env.NEXT_PUBLIC_BASE_API}/article/${context.params.articleSlug}`
   );
   const data = await res.json();
   return {

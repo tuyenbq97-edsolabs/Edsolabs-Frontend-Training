@@ -12,6 +12,7 @@ import TemplateBigHeader from '../containers/template-big-header';
 import TemplateMixed from '../containers/template-mixed';
 import TemplateTwoColumn from '../containers/template-two-column';
 import TemplateTopStories from '../containers/template-top-stories';
+import getConfig from 'next/config';
 
 export interface CardNewProps {
   dataSlider: CardNewItem[];
@@ -22,6 +23,13 @@ export interface CardNewProps {
 }
 
 function index({ dataSlider, data }: CardNewProps) {
+  // Only holds serverRuntimeConfig and publicRuntimeConfig
+  const { serverRuntimeConfig, publicRuntimeConfig } = getConfig();
+  // Will only be available on the server-side
+  console.log(serverRuntimeConfig.mySecret);
+  // Will be available on both server-side and client-side
+  console.log(publicRuntimeConfig.staticFolder);
+
   return (
     <div>
       <HeaderContainer />
@@ -64,9 +72,7 @@ function index({ dataSlider, data }: CardNewProps) {
 export async function getServerSideProps() {
   // Fetch data from external API
 
-  const resData = await fetch(
-    `https://api.w2project-internal.asia/api/v1/news/home`
-  );
+  const resData = await fetch(`${process.env.NEXT_PUBLIC_BASE_API}/home`);
   const data = await resData.json();
 
   // Pass data to the page via props

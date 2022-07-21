@@ -1,9 +1,7 @@
 /* eslint-disable react-hooks/rules-of-hooks */
-import axios from 'axios';
 import Link from 'next/link';
-import React, { useEffect, useState } from 'react';
-import { Button, Col, Container } from 'react-bootstrap';
-import { CardNewProps } from '..';
+import React from 'react';
+import { Button, Container } from 'react-bootstrap';
 import CardNew from '../../components/card-new/vertical -card/card-new';
 import FooterContainer from '../../containers/footer-container';
 import HeaderContainer from '../../containers/header-container';
@@ -28,11 +26,15 @@ function CategorySlug() {
     const PER_SIZE = 4;
     const INIT_POST = 7;
     if (previousPageData && !previousPageData.length)
-      return `https://api.w2project-internal.asia/api/v1/news/by-category-slug/${categorySlug}?limit=${PER_SIZE}&offset=${
+      return `${
+        process.env.NEXT_PUBLIC_BASE_API
+      }/by-category-slug/${categorySlug}?limit=${PER_SIZE}&offset=${
         PER_SIZE * index + INIT_POST
       }`;
     else
-      return `https://api.w2project-internal.asia/api/v1/news/by-category-slug/${categorySlug}?limit=${
+      return `${
+        process.env.NEXT_PUBLIC_BASE_API
+      }/by-category-slug/${categorySlug}?limit=${
         PER_SIZE + INIT_POST
       }&offset=${index}`;
   }, fetcher);
