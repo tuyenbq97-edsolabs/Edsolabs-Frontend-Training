@@ -1,26 +1,22 @@
 import React from 'react';
-import Image from 'next/image';
-import { CardNewItem } from '../components/card-new/vertical -card/card-new';
 import { Button, Col } from 'react-bootstrap';
-import { SeparatorStyled } from './local-news-containers';
-import { RowStyled } from './header-new-container';
+import CardNew, {
+  CardNewItem,
+} from '../components/card-new/vertical -card/card-new';
+import Image from 'next/image';
+import { ColStyled, SeparatorStyled } from './template-mixed';
+import { RowStyled } from './template-top-stories';
 import CardFullInfo from '../components/card-new/card-full-info/card-full-info';
-import CardNewHorizontalLarge from '../components/card-new/horizontal-card/card-new-horizontal-lg';
 import Link from 'next/link';
-import styled from 'styled-components';
-
-const ImageStyled = styled(Image)`
-  border-radius: 4px;
-`;
 
 interface CardNewProps {
-  globalNews: CardNewItem[];
+  News: CardNewItem[];
 }
 
-function GlobalNewsContainer({ globalNews }: CardNewProps) {
+function TemplateTwoColumn({ News }: CardNewProps) {
   return (
     <>
-      {globalNews.slice(0, 1).map((item, idx) => (
+      {News.slice(0, 1).map((item, idx) => (
         <div
           key={idx}
           className="d-flex align-items-center justify-content-between mx-2 mt-5"
@@ -43,9 +39,10 @@ function GlobalNewsContainer({ globalNews }: CardNewProps) {
           </Link>
         </div>
       ))}
+
       <SeparatorStyled />
       <RowStyled>
-        {globalNews.slice(0, 1).map((item, idx) => (
+        {News.slice(0, 2).map((item, idx) => (
           <Link
             key={idx}
             href={{
@@ -55,14 +52,14 @@ function GlobalNewsContainer({ globalNews }: CardNewProps) {
               },
             }}
           >
-            <Col>
-              <CardFullInfo news={item} />
+            <Col lg={6}>
+              <CardFullInfo customheight="518px" news={item} />
             </Col>
           </Link>
         ))}
       </RowStyled>
       <RowStyled>
-        {globalNews.slice(1, 3).map((item, idx) => (
+        {News.slice(2, 6).map((item, idx) => (
           <Link
             key={idx}
             href={{
@@ -72,13 +69,13 @@ function GlobalNewsContainer({ globalNews }: CardNewProps) {
               },
             }}
           >
-            <Col key={idx} md={6}>
-              <CardNewHorizontalLarge customheight="200px" news={item} />
-            </Col>
+            <ColStyled md={3}>
+              <CardNew news={item} />
+            </ColStyled>
           </Link>
         ))}
       </RowStyled>
-      {globalNews.slice(0, 1).map((item, idx) => (
+      {News.slice(0, 1).map((item, idx) => (
         <div key={idx} className="ms-4 me-4">
           <Link
             href={{
@@ -98,4 +95,4 @@ function GlobalNewsContainer({ globalNews }: CardNewProps) {
   );
 }
 
-export default GlobalNewsContainer;
+export default TemplateTwoColumn;

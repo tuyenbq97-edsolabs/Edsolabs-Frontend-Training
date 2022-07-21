@@ -10,7 +10,7 @@ import {
 } from '../../components/card-new/vertical -card/style';
 import FooterContainer from '../../containers/footer-container';
 import HeaderContainer from '../../containers/header-container';
-import { LinkStyled } from '../../containers/header-new-container';
+import { LinkStyled } from '../../containers/template-top-stories';
 import SubFooterContainer from '../../containers/sub-footer-container';
 import phone_icon from '../../assets/icons/phone_icon.svg';
 import facebook_icon from '../../assets/icons/facebook_icon.svg';

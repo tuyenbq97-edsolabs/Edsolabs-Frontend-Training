@@ -26,6 +26,8 @@ export const CardImgStyled = styled(Card.Img)`
   }
 `;
 export interface CardNewItem {
+  viewType: string;
+  articles: CardNewItem[];
   content: string;
   id: number;
   imageUrl: string;
@@ -52,7 +54,7 @@ export interface CardNewItem {
 }
 export default function CardNew({ news }: CardNewProps) {
   return (
-    <div className="d-flex justify-content-center h-100">
+    <div className="d-flex justify-content-center h-100" role="button">
       <CardStyled className="border-0">
         <SubCategoryNameStyled>{news.subCategory.name}</SubCategoryNameStyled>
         <CardImgStyled variant="top" src={news.imageUrl} />

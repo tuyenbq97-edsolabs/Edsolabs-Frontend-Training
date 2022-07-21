@@ -9,7 +9,7 @@ import CardNewHorizontalSmall from '../components/card-new/horizontal-card/card-
 import CardNew, {
   CardNewItem,
 } from '../components/card-new/vertical -card/card-new';
-import { RowStyled } from './header-new-container';
+import { RowStyled } from './template-top-stories';
 
 export const SeparatorStyled = styled.hr`
   margin: 16px 8px 40px 8px;
@@ -26,18 +26,18 @@ export const ColStyled = styled(Col)`
 `;
 
 interface CardNewProps {
-  localNews: CardNewItem[];
+  News: CardNewItem[];
 }
 
-function LocalNewsContainers({ localNews }: CardNewProps) {
+function TemplateMixed({ News }: CardNewProps) {
   return (
     <>
-      {localNews.slice(0, 1).map((item, idx) => (
+      {News.slice(0, 1).map((item, idx) => (
         <div
           key={idx}
           className="d-flex align-items-center justify-content-between mx-2 mt-5"
         >
-          <div key={idx} className="d-flex align-items-center">
+          <div className="d-flex align-items-center">
             <Image src={item.category.icon} alt="" width={48} height={48} />
             <h3 className="fw-bold ms-4">{item.category.name}</h3>
           </div>
@@ -57,7 +57,7 @@ function LocalNewsContainers({ localNews }: CardNewProps) {
       ))}
       <SeparatorStyled />
       <RowStyled>
-        {localNews.slice(0, 1).map((item, idx) => (
+        {News.slice(0, 1).map((item, idx) => (
           <Link
             key={idx}
             href={{
@@ -73,7 +73,7 @@ function LocalNewsContainers({ localNews }: CardNewProps) {
           </Link>
         ))}
         <Col md={4}>
-          {localNews.slice(1, 4).map((item, idx) => (
+          {News.slice(1, 4).map((item, idx) => (
             <Link
               key={idx}
               href={{
@@ -91,7 +91,7 @@ function LocalNewsContainers({ localNews }: CardNewProps) {
         </Col>
       </RowStyled>
       <RowStyled>
-        {localNews.slice(4, 8).map((items, idx) => (
+        {News.slice(4, 8).map((items, idx) => (
           <Link
             key={idx}
             href={{
@@ -107,7 +107,7 @@ function LocalNewsContainers({ localNews }: CardNewProps) {
           </Link>
         ))}
       </RowStyled>
-      {localNews.slice(0, 1).map((item, idx) => (
+      {News.slice(0, 1).map((item, idx) => (
         <div key={idx} className="ms-4 me-4">
           <Link
             href={{
@@ -127,4 +127,4 @@ function LocalNewsContainers({ localNews }: CardNewProps) {
   );
 }
 
-export default LocalNewsContainers;
+export default TemplateMixed;

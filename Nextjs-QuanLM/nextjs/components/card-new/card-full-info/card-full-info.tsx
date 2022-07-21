@@ -6,7 +6,7 @@ import {
   SrouceStyle,
   TitleStyled,
   ShortDescriptionStyled,
-} from '../../../containers/header-new-container';
+} from '../../../containers/template-top-stories';
 import { CardNewProps } from '../../../pages';
 import {
   CardHeaderStyled,
@@ -29,7 +29,7 @@ interface CardFullInfoProps {
 
 function CardFullInfo({ news, customheight }: CardFullInfoProps) {
   return (
-    <CardHeaderStyled className="mb-3">
+    <CardHeaderStyled className="mb-3" role="button">
       <SubCategoryNameStyled>{news.subCategory.name}</SubCategoryNameStyled>
       <ImageStyled
         defaultValue="@default"

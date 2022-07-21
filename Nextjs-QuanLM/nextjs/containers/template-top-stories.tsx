@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import { Carousel, Col, Container, Row } from 'react-bootstrap';
 import styled from 'styled-components';
 import CardNewHeaderLg from '../components/card-new-header/card-new-header-lg/card-new-header-lg';
-import CardNewHeaderSm from '../components/card-new-header/card-new-header-sm/card-new-header.-sm';
+import CardNewHeaderSm from '../components/card-new-header/card-new-header-sm/card-new-header-sm';
 import { SubCategoryNameStyled } from '../components/card-new-header/card-new-header-sm/style';
 import { CardNewItem } from '../components/card-new/vertical -card/card-new';
 import { theme } from '../utils/theme';
@@ -48,7 +48,9 @@ const StyledCarousel = styled(Carousel)`
     width: 15%;
   }
   &:hover {
-    box-shadow: 0px 2px 4px rgba(47, 43, 43, 0.397);
+    img {
+      box-shadow: 0px 2px 4px rgba(47, 43, 43, 0.597);
+    }
   }
 `;
 
@@ -94,7 +96,7 @@ interface CardNewProps {
   slider: CardNewItem[];
 }
 
-export default function HeaderNewContainer({
+export default function TemplateTopStories({
   dbNewsHeaderSm,
   slider,
   dbNewsHeaderLg,
@@ -103,7 +105,7 @@ export default function HeaderNewContainer({
     <>
       <RowStyled>
         <Col lg={7} className="pe-2 pb-3 ps-2 h-100">
-          <StyledCarousel className="m-0">
+          <StyledCarousel className="m-0" role="button">
             {slider.map((items, idx) => (
               <Carousel.Item key={idx}>
                 <SubCategoryNameStyled>

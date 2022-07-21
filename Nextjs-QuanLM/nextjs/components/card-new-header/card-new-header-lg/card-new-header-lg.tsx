@@ -34,7 +34,7 @@ interface CardNewHeaderProp {
 
 export default function CardNewHeaderLg({ newsHeaderLg }: CardNewHeaderProp) {
   return (
-    <CardHeaderStyled className="mb-3">
+    <CardHeaderStyled className="mb-3" role="button">
       <SubCategoryNameStyled>
         {newsHeaderLg.subCategory.name}
       </SubCategoryNameStyled>

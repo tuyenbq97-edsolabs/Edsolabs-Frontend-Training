@@ -32,6 +32,11 @@ export const CardHorizontalStyled = styled(CardStyled)`
   @media only screen and (max-width: 992px) {
     flex-direction: column;
   }
+  &:hover {
+    img {
+      box-shadow: 0px 2px 4px rgba(47, 43, 43, 0.597);
+    }
+  }
 `;
 
 export const CardHorizontalTitleStyled = styled(CardTitleStyled)`
@@ -45,7 +50,7 @@ export interface CardHorizontalProps {
 
 function CardNewHorizontalLarge({ news, customheight }: CardHorizontalProps) {
   return (
-    <div className="d-flex justify-content-center">
+    <div className="d-flex justify-content-center" role="button">
       <CardHorizontalStyled className="border-0">
         <SubCategoryNameStyled>{news.subCategory.name}</SubCategoryNameStyled>
         <CardImgHorizontalStyled

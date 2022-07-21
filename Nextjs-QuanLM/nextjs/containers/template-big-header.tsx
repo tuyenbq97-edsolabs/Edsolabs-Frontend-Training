@@ -1,22 +1,26 @@
 import React from 'react';
-import { Button, Col } from 'react-bootstrap';
-import CardNew, {
-  CardNewItem,
-} from '../components/card-new/vertical -card/card-new';
 import Image from 'next/image';
-import { ColStyled, SeparatorStyled } from './local-news-containers';
-import { RowStyled } from './header-new-container';
+import { CardNewItem } from '../components/card-new/vertical -card/card-new';
+import { Button, Col } from 'react-bootstrap';
+import { SeparatorStyled } from './template-mixed';
+import { RowStyled } from './template-top-stories';
 import CardFullInfo from '../components/card-new/card-full-info/card-full-info';
+import CardNewHorizontalLarge from '../components/card-new/horizontal-card/card-new-horizontal-lg';
 import Link from 'next/link';
+import styled from 'styled-components';
+
+const ImageStyled = styled(Image)`
+  border-radius: 4px;
+`;
 
 interface CardNewProps {
-  BlogTipTrick: CardNewItem[];
+  News: CardNewItem[];
 }
 
-function BlogsTipsTricksContainer({ BlogTipTrick }: CardNewProps) {
+function TemplateBigHeader({ News }: CardNewProps) {
   return (
     <>
-      {BlogTipTrick.slice(0, 1).map((item, idx) => (
+      {News.slice(0, 1).map((item, idx) => (
         <div
           key={idx}
           className="d-flex align-items-center justify-content-between mx-2 mt-5"
@@ -39,10 +43,9 @@ function BlogsTipsTricksContainer({ BlogTipTrick }: CardNewProps) {
           </Link>
         </div>
       ))}
-
       <SeparatorStyled />
       <RowStyled>
-        {BlogTipTrick.slice(0, 2).map((item, idx) => (
+        {News.slice(0, 1).map((item, idx) => (
           <Link
             key={idx}
             href={{
@@ -52,14 +55,14 @@ function BlogsTipsTricksContainer({ BlogTipTrick }: CardNewProps) {
               },
             }}
           >
-            <Col lg={6}>
-              <CardFullInfo customheight="518px" news={item} />
+            <Col>
+              <CardFullInfo news={item} />
             </Col>
           </Link>
         ))}
       </RowStyled>
       <RowStyled>
-        {BlogTipTrick.slice(2, 6).map((item, idx) => (
+        {News.slice(1, 3).map((item, idx) => (
           <Link
             key={idx}
             href={{
@@ -69,13 +72,13 @@ function BlogsTipsTricksContainer({ BlogTipTrick }: CardNewProps) {
               },
             }}
           >
-            <ColStyled md={3}>
-              <CardNew news={item} />
-            </ColStyled>
+            <Col key={idx} md={6}>
+              <CardNewHorizontalLarge customheight="200px" news={item} />
+            </Col>
           </Link>
         ))}
       </RowStyled>
-      {BlogTipTrick.slice(0, 1).map((item, idx) => (
+      {News.slice(0, 1).map((item, idx) => (
         <div key={idx} className="ms-4 me-4">
           <Link
             href={{
@@ -95,4 +98,4 @@ function BlogsTipsTricksContainer({ BlogTipTrick }: CardNewProps) {
   );
 }
 
-export default BlogsTipsTricksContainer;
+export default TemplateBigHeader;

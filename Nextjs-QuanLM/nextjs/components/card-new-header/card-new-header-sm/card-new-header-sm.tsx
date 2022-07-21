@@ -33,7 +33,7 @@ interface CardNewHeaderProp {
 
 export default function CardNewHeaderSm({ newsHeaderSm }: CardNewHeaderProp) {
   return (
-    <CardHeaderSmStyled>
+    <CardHeaderSmStyled role="button">
       <SubCategoryNameStyled>
         {newsHeaderSm.subCategory.name}
       </SubCategoryNameStyled>

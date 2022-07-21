@@ -15,6 +15,11 @@ const CardImgHorizontalStyled = styled(Card.Img)`
 `;
 export const CardHorizontalStyled = styled(CardStyled)`
   flex-direction: row;
+  &:hover {
+    img {
+      box-shadow: 0px 2px 4px rgba(47, 43, 43, 0.597);
+    }
+  }
   @media only screen and (max-width: 768px) {
     padding-left: 8px;
     padding-right: 8px;
@@ -32,7 +37,7 @@ const CardTextStyled = styled(Card.Text)`
 
 function CardNewHorizontalSmall({ news }: CardHorizontalProps) {
   return (
-    <div className="d-flex-start justify-content-center">
+    <div className="d-flex-start justify-content-center" role="button">
       <CardHorizontalStyled className="border-0 m-0">
         <CardImgHorizontalStyled variant="top" src={news.imageUrl} />
         <Card.Body className="p-0">

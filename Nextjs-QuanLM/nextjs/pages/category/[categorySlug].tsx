@@ -11,8 +11,8 @@ import HeaderNewContainer, {
   LinkStyled,
   RowStyled,
   TitleHeaderStyled,
-} from '../../containers/header-new-container';
-import { ColStyled } from '../../containers/local-news-containers';
+} from '../../containers/template-top-stories';
+import { ColStyled } from '../../containers/template-mixed';
 import SubFooterContainer from '../../containers/sub-footer-container';
 import useSWRInfinite from 'swr/infinite';
 import { useRouter } from 'next/router';
