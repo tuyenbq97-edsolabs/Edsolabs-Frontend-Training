@@ -9,9 +9,9 @@ import Image from 'next/image';
 import { theme } from '../utils/theme';
 const SubFooterStyled = styled.div`
   padding: 24px 165px;
-  background-color: ${theme.darkBlack};
+  background-color: ${theme.Neutral_L11};
   width: 100%;
-  color: ${theme.white};
+  color: ${theme.Neutral_White};
   mix-blend-mode: multiply;
   @media only screen and (max-width: 992px) {
     /* display: flex; */
@@ -19,7 +19,7 @@ const SubFooterStyled = styled.div`
   }
 `;
 const IconSubFooterStyled = styled(Image)`
-  background-color: ${theme.darkBlack};
+  background-color: ${theme.Neutral_L11};
   border-radius: 50%;
   margin: 0 8px;
   @media only screen and (max-width: 992px) {

@@ -1,5 +1,5 @@
 import moment from 'moment';
-import React from 'react';
+import React, { useState } from 'react';
 import { Card } from 'react-bootstrap';
 import styled from 'styled-components';
 import { SubCategoryNameStyled } from '../../card-new-header/card-new-header-sm/style';
@@ -12,10 +12,6 @@ const CardTitleStyled = styled(Card.Title)`
   display: -webkit-box;
   -webkit-box-orient: vertical;
 `;
-export interface CardNewProps {
-  news: CardNewItem;
-}
-
 export const CardImgStyled = styled(Card.Img)`
   filter: drop-shadow(0px 4px 6px rgba(0, 0, 0, 0.1));
   border-radius: 4px;
@@ -25,6 +21,11 @@ export const CardImgStyled = styled(Card.Img)`
     max-height: 264px;
   }
 `;
+export interface CardNewProps {
+  news: CardNewItem;
+  isShowName?: string;
+}
+
 export interface CardNewItem {
   viewType: string;
   articles: CardNewItem[];
@@ -52,26 +53,28 @@ export interface CardNewItem {
     }
   ];
 }
-export default function CardNew({ news }: CardNewProps) {
+export default function CardNew({ news, isShowName }: CardNewProps) {
   return (
     <div className="d-flex justify-content-center h-100" role="button">
       <CardStyled className="border-0">
         <SubCategoryNameStyled>{news.subCategory.name}</SubCategoryNameStyled>
         <CardImgStyled variant="top" src={news.imageUrl} />
-        <Card.Body className="p-0">
-          <Card.Text className="text-primary mt-4 mb-2">
-            {news.category.name}
-          </Card.Text>
+        <Card.Body className="p-0 mt-4">
+          {isShowName === 'true' && (
+            <Card.Text className="text-primary mb-2">
+              {news.category.name}
+            </Card.Text>
+          )}
           <CardTitleStyled className="mb-3">{news.title}</CardTitleStyled>
-          <CardTextStyled className="mb-5 ">
+          <CardTextStyled className="mb-2">
             {news.shortDescription}
           </CardTextStyled>
 
-          <div className="position-absolute bottom-0">
+          <div>
             <TitleFooterStyled>{news.source}</TitleFooterStyled>
 
             <TitleFooterStyled>
-              {moment(news.publishDate).format('MMM DD YY')}
+              {moment(news.publishDate).format('MMM DD YYYY')}
             </TitleFooterStyled>
           </div>
         </Card.Body>

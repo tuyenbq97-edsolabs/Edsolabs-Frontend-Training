@@ -8,9 +8,12 @@ import CardFullInfo from '../components/card-new/card-full-info/card-full-info';
 import CardNewHorizontalLarge from '../components/card-new/horizontal-card/card-new-horizontal-lg';
 import Link from 'next/link';
 import styled from 'styled-components';
+import { theme } from '../utils/theme';
+import { TitleStyled } from '../pages';
 
-const ImageStyled = styled(Image)`
-  border-radius: 4px;
+export const ButtonStyled = styled(Button)`
+  color: ${theme.hoverTheme.darkBlue};
+  border: 2px solid ${theme.primaryBlue};
 `;
 
 interface CardNewProps {
@@ -27,7 +30,9 @@ function TemplateBigHeader({ News }: CardNewProps) {
         >
           <div className="d-flex align-items-center">
             <Image src={item.category.icon} alt="" width={48} height={48} />
-            <h3 className="fw-bold ms-4">{item.category.name}</h3>
+            <TitleStyled className="fw-bold ms-4">
+              {item.category.name}
+            </TitleStyled>
           </div>
           <Link
             href={{
@@ -37,9 +42,9 @@ function TemplateBigHeader({ News }: CardNewProps) {
               },
             }}
           >
-            <Button className="text-primary bg-white border-3 fw-bold d-none d-md-inline">
+            <ButtonStyled className="fw-bold bg-white d-none d-md-inline">
               <a className="text-decoration-none"> Read More</a>
-            </Button>
+            </ButtonStyled>
           </Link>
         </div>
       ))}

@@ -14,6 +14,15 @@ import { ColStyled } from '../../containers/template-mixed';
 import SubFooterContainer from '../../containers/sub-footer-container';
 import useSWRInfinite from 'swr/infinite';
 import { useRouter } from 'next/router';
+import styled from 'styled-components';
+
+const ButtonStyled = styled(Button)`
+  :disabled {
+    background-color: #ccc !important;
+    color: #666262 !important;
+    border: none;
+  }
+`;
 
 function CategorySlug() {
   const fetcher = (url: RequestInfo | URL) =>
@@ -41,6 +50,7 @@ function CategorySlug() {
   const dbNews = data?.map((data) => data.data);
   const news = dbNews ? [].concat(...dbNews) : [];
   const total = data?.slice(0, 1)?.map((data) => data.total);
+  console.log(news);
   return (
     <div>
       <HeaderContainer />
@@ -58,7 +68,7 @@ function CategorySlug() {
         </div>
         <HeaderNewContainer
           dbNewsHeaderSm={news.slice(4, 6)}
-          slider={news.slice(4, 8)}
+          slider={news.slice(0, 4)}
           dbNewsHeaderLg={news.slice(6, 7)}
         />
         <RowStyled>
@@ -66,26 +76,26 @@ function CategorySlug() {
             <Link
               key={idx}
               href={{
-                pathname: '/[categorySlug]',
+                pathname: '/article/[articleSlug]',
                 query: {
-                  categorySlug: item['slug'],
+                  articleSlug: item['slug'],
                 },
               }}
             >
               <ColStyled md={3}>
-                <CardNew news={item} />
+                <CardNew news={item} isShowName={'true'} />
               </ColStyled>
             </Link>
           ))}
         </RowStyled>
         <div className="d-flex justify-content-center mb-4">
-          <Button
+          <ButtonStyled
             className="bg-white text-primary border-2 fw-bold px-5"
             disabled={news.length >= Number(total)}
             onClick={() => setSize(size + 1)}
           >
             Show more articles
-          </Button>
+          </ButtonStyled>
         </div>
       </Container>
       <FooterContainer />

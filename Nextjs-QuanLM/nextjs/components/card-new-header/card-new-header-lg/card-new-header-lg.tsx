@@ -42,7 +42,7 @@ export default function CardNewHeaderLg({ newsHeaderLg }: CardNewHeaderProp) {
       <CardBodyStyled>
         <CardTextStyled>
           {newsHeaderLg.source} {' - '}
-          {moment(newsHeaderLg.publishDate).format('MMM DD YY')}
+          {moment(newsHeaderLg.publishDate).format('DD MMM YYYY')}
         </CardTextStyled>
         <CardTitleStyled>{newsHeaderLg.title}</CardTitleStyled>
       </CardBodyStyled>

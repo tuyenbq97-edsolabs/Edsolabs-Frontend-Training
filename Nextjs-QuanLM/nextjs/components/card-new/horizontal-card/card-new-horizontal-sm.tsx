@@ -15,18 +15,13 @@ const CardImgHorizontalStyled = styled(Card.Img)`
 `;
 export const CardHorizontalStyled = styled(CardStyled)`
   flex-direction: row;
-  &:hover {
-    img {
-      box-shadow: 0px 2px 4px rgba(47, 43, 43, 0.597);
-    }
-  }
   @media only screen and (max-width: 768px) {
     padding-left: 8px;
     padding-right: 8px;
   }
 `;
 const CardTextStyled = styled(Card.Text)`
-  color: ${theme.black};
+  color: ${theme.Neutral_L11};
   overflow: hidden;
   text-overflow: ellipsis;
   word-break: break-word;
@@ -44,7 +39,7 @@ function CardNewHorizontalSmall({ news }: CardHorizontalProps) {
           <div className="d-flex align-items-center">
             <TitleFooterStyled>{news.source} - </TitleFooterStyled>
             <TitleFooterStyled>
-              {moment(news.publishDate).format('MMM DD YY')}
+              {moment(news.publishDate).format('MMM DD YYYY')}
             </TitleFooterStyled>
           </div>
           <CardTextStyled className=" ">{news.shortDescription}</CardTextStyled>

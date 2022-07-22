@@ -32,11 +32,6 @@ export const CardHorizontalStyled = styled(CardStyled)`
   @media only screen and (max-width: 992px) {
     flex-direction: column;
   }
-  &:hover {
-    img {
-      box-shadow: 0px 2px 4px rgba(47, 43, 43, 0.597);
-    }
-  }
 `;
 
 export const CardHorizontalTitleStyled = styled(CardTitleStyled)`
@@ -63,15 +58,15 @@ function CardNewHorizontalLarge({ news, customheight }: CardHorizontalProps) {
           <CardHorizontalTitleStyled className="mb-3">
             {news.title}
           </CardHorizontalTitleStyled>
-          <CardTextStyled className="mb-4 ">
+          <CardTextStyled className="mb-2 ">
             {news.shortDescription}
           </CardTextStyled>
 
-          <div className="position-absolute bottom-0">
+          <div>
             <TitleFooterStyled>{news.source}</TitleFooterStyled>
 
             <TitleFooterStyled>
-              {moment(news.publishDate).format('MMM DD YY')}
+              {moment(news.publishDate).format('MMM DD YYYY')}
             </TitleFooterStyled>
           </div>
         </Card.Body>

@@ -41,7 +41,7 @@ function CardFullInfo({ news, customheight }: CardFullInfoProps) {
         <SrouceStyle>{news.source}</SrouceStyle>
         {' - '}
         <SrouceStyle>
-          {moment(news.publishDate).format('MMM DD YY')}
+          {moment(news.publishDate).format('DD MMM YYYY')}
         </SrouceStyle>
         <TitleStyled>{news.title}</TitleStyled>
         <ShortDescriptionStyled>{news.shortDescription}</ShortDescriptionStyled>

@@ -9,6 +9,8 @@ import CardNewHorizontalSmall from '../components/card-new/horizontal-card/card-
 import CardNew, {
   CardNewItem,
 } from '../components/card-new/vertical -card/card-new';
+import { TitleStyled } from '../pages';
+import { ButtonStyled } from './template-big-header';
 import { RowStyled } from './template-top-stories';
 
 export const SeparatorStyled = styled.hr`
@@ -39,7 +41,9 @@ function TemplateMixed({ News }: CardNewProps) {
         >
           <div className="d-flex align-items-center">
             <Image src={item.category.icon} alt="" width={48} height={48} />
-            <h3 className="fw-bold ms-4">{item.category.name}</h3>
+            <TitleStyled className="fw-bold ms-4">
+              {item.category.name}
+            </TitleStyled>
           </div>
           <Link
             href={{
@@ -49,9 +53,9 @@ function TemplateMixed({ News }: CardNewProps) {
               },
             }}
           >
-            <Button className="text-primary bg-white border-3 fw-bold d-none d-md-inline">
+            <ButtonStyled className="fw-bold bg-white d-none d-md-inline">
               <a className="text-decoration-none"> Read More</a>
-            </Button>
+            </ButtonStyled>
           </Link>
         </div>
       ))}

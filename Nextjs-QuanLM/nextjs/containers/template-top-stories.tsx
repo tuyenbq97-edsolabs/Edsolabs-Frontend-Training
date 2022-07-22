@@ -47,17 +47,12 @@ const StyledCarousel = styled(Carousel)`
   .carousel-indicators [data-bs-target] {
     width: 15%;
   }
-  &:hover {
-    img {
-      box-shadow: 0px 2px 4px rgba(47, 43, 43, 0.597);
-    }
-  }
 `;
 
 export const ShortDescriptionStyled = styled.p`
   font-size: 16px;
   line-height: 24px;
-  color: ${theme.secondaryWhite};
+  color: ${theme.Neutral_L6};
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -66,7 +61,7 @@ export const ShortDescriptionStyled = styled.p`
 export const SrouceStyle = styled.span`
   font-size: 12px;
   line-height: 18px;
-  color: ${theme.secondaryWhite};
+  color: ${theme.Neutral_L6};
 `;
 export const TitleStyled = styled.p`
   font-size: 24px;
@@ -80,14 +75,23 @@ export const TitleHeaderStyled = styled.p`
   margin-bottom: 40px;
   font-size: 16px;
   line-height: 24px;
-  color: ${theme.lightBlack};
+  color: ${theme.Neutral_L8};
 `;
 
 const ImgStyled = styled.img`
   filter: drop-shadow(0px 4px 6px rgba(0, 0, 0, 0.1));
   border-radius: 4px;
-  max-height: 600px;
+  height: 600px;
   object-fit: cover;
+  @media screen and (max-width: 1400.1px) {
+    height: 554px;
+  }
+  @media screen and (max-width: 1200.1px) {
+    height: 464px;
+  }
+  @media screen and (max-width: 576.1px) {
+    max-height: 400px;
+  }
 `;
 
 interface CardNewProps {
@@ -126,17 +130,27 @@ export default function TemplateTopStories({
                     alt="First slide"
                   />
                 </Link>
-                <CarouselCaptionStyled>
-                  <SrouceStyle>{items.source}</SrouceStyle>
-                  {' - '}
-                  <SrouceStyle>
-                    {moment(items.publishDate).format('MMM DD YY')}
-                  </SrouceStyle>
-                  <TitleStyled>{items.title}</TitleStyled>
-                  <ShortDescriptionStyled>
-                    {items.shortDescription}
-                  </ShortDescriptionStyled>
-                </CarouselCaptionStyled>
+                <Link
+                  className="stretched-link"
+                  href={{
+                    pathname: '/article/[articleSlug]',
+                    query: {
+                      articleSlug: items.slug,
+                    },
+                  }}
+                >
+                  <CarouselCaptionStyled>
+                    <SrouceStyle>{items.source}</SrouceStyle>
+                    {' - '}
+                    <SrouceStyle>
+                      {moment(items.publishDate).format('DD MMM YYYY')}
+                    </SrouceStyle>
+                    <TitleStyled>{items.title}</TitleStyled>
+                    <ShortDescriptionStyled>
+                      {items.shortDescription}
+                    </ShortDescriptionStyled>
+                  </CarouselCaptionStyled>
+                </Link>
               </Carousel.Item>
             ))}
           </StyledCarousel>

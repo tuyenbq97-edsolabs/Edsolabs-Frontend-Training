@@ -34,13 +34,13 @@ const StyledNav = styled(Nav)`
     padding-right: 25px !important;
   }
   .nav-link:hover {
-    color: ${theme.lightPink} !important;
+    color: ${theme.hoverTheme.lightPink} !important;
   }
 `;
 const SignUpStyled = styled(Nav.Link)`
   padding-top: 4px;
   &:hover {
-    color: ${theme.lightBlue};
+    color: ${theme.hoverTheme.lightBlue};
   }
 `;
 const SeparatorStyled = styled.span`

@@ -20,13 +20,20 @@ import twitter_icon from '../../assets/icons/twitter_icon.svg';
 import { CardNewItem } from '../../components/card-new/vertical -card/card-new';
 import Link from 'next/link';
 import { theme } from '../../utils/theme';
+import {
+  FacebookShareButton,
+  WhatsappShareButton,
+  TwitterShareButton,
+  TelegramShareButton,
+  EmailShareButton,
+} from 'next-share';
 
 const ImageStyled = styled(Image)`
   object-fit: cover;
 `;
 
 const DateReleaseStyled = styled(TitleFooterStyled)`
-  color: ${theme.violet};
+  color: ${theme.Purple_Darkest};
   line-height: 28px;
   margin-bottom: 16px;
   margin-top: 16px;
@@ -35,14 +42,14 @@ const DateReleaseStyled = styled(TitleFooterStyled)`
 const CardTitleStyled = styled.h3`
   font-size: 32px;
   line-height: 48px;
-  color: ${theme.black};
+  color: ${theme.Neutral_L11};
   font-weight: bold;
   margin-bottom: 16px;
 `;
 
 const CustomColorStyled = styled(SubCategoryNameStyled)`
-  background-color: ${theme.darkViolet};
-  color: ${theme.white};
+  background-color: ${theme.Purple_Darkest};
+  color: ${theme.Neutral_White};
 `;
 
 const HrStyled = styled.hr`
@@ -80,19 +87,39 @@ function ArticleSlug({ articles }: ArticleProp) {
             </DateReleaseStyled>
             <div className="d-flex">
               <div className="pe-3">
-                <Image src={phone_icon} alt="" />
+                <WhatsappShareButton
+                  url={`http://localhost:3000/article/${articles.slug}`}
+                >
+                  <Image src={phone_icon} alt="" />
+                </WhatsappShareButton>
               </div>
               <div className="pe-3">
-                <Image src={twitter_icon} alt="" />
+                <TwitterShareButton
+                  url={`http://localhost:3000/article/${articles.slug}`}
+                >
+                  <Image src={twitter_icon} alt="" />
+                </TwitterShareButton>
               </div>
               <div className="pe-3">
-                <Image src={facebook_icon} alt="" />
+                <FacebookShareButton
+                  url={`http://localhost:3000/article/${articles.slug}`}
+                >
+                  <Image src={facebook_icon} alt="" />
+                </FacebookShareButton>
               </div>
               <div className="pe-3">
-                <Image src={tele_icon} alt="" />
+                <TelegramShareButton
+                  url={`http://localhost:3000/article/${articles.slug}`}
+                >
+                  <Image src={tele_icon} alt="" />
+                </TelegramShareButton>
               </div>
               <div>
-                <Image src={gmail_icon} alt="" />
+                <EmailShareButton
+                  url={`http://localhost:3000/article/${articles.slug}`}
+                >
+                  <Image src={gmail_icon} alt="" />
+                </EmailShareButton>
               </div>
             </div>
           </Col>
@@ -120,20 +147,40 @@ function ArticleSlug({ articles }: ArticleProp) {
                   {articles.source}
                 </DateReleaseStyled>
                 <div className="d-flex">
-                  <div className="pe-3 ">
-                    <Image src={phone_icon} alt="" />
+                  <div className="pe-3">
+                    <WhatsappShareButton
+                      url={`http://localhost:3000/article/${articles.slug}`}
+                    >
+                      <Image src={phone_icon} alt="" />
+                    </WhatsappShareButton>
                   </div>
                   <div className="pe-3">
-                    <Image src={twitter_icon} alt="" />
+                    <TwitterShareButton
+                      url={`http://localhost:3000/article/${articles.slug}`}
+                    >
+                      <Image src={twitter_icon} alt="" />
+                    </TwitterShareButton>
                   </div>
                   <div className="pe-3">
-                    <Image src={facebook_icon} alt="" />
+                    <FacebookShareButton
+                      url={`http://localhost:3000/article/${articles.slug}`}
+                    >
+                      <Image src={facebook_icon} alt="" />
+                    </FacebookShareButton>
                   </div>
                   <div className="pe-3">
-                    <Image src={tele_icon} alt="" />
+                    <TelegramShareButton
+                      url={`http://localhost:3000/article/${articles.slug}`}
+                    >
+                      <Image src={tele_icon} alt="" />
+                    </TelegramShareButton>
                   </div>
                   <div>
-                    <Image src={gmail_icon} alt="" />
+                    <EmailShareButton
+                      url={`http://localhost:3000/article/${articles.slug}`}
+                    >
+                      <Image src={gmail_icon} alt="" />
+                    </EmailShareButton>
                   </div>
                 </div>
               </CardBodyStyled>
@@ -151,7 +198,7 @@ function ArticleSlug({ articles }: ArticleProp) {
                     },
                   }}
                 >
-                  <Col key={idx} md={4}>
+                  <Col key={idx} md={4} role="button">
                     <CardStyled className="border-0">
                       <CardImgStyled variant="top" src={item.imageUrl} />
                       <Card.Body>

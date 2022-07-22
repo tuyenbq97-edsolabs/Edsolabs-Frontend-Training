@@ -11,7 +11,7 @@ export const StyledRow = styled(Row)`
   padding-bottom: 136px;
   margin-left: 0px;
   margin-right: 0px;
-  background-color: ${theme.black};
+  background-color: ${theme.Neutral_L10};
   .logo-footer {
     margin-left: 108px;
     padding-top: 25px;
@@ -19,10 +19,10 @@ export const StyledRow = styled(Row)`
   }
 `;
 export const StyledLink = styled.a`
-  color: ${theme.lightWhite} !important;
+  color: ${theme.Neutral_L3} !important;
   text-decoration: none;
   &:hover {
-    color: ${theme.darkWhite} !important;
+    color: ${theme.Neutral_L3} !important;
   }
 `;
 export const StyledButton = styled.button`

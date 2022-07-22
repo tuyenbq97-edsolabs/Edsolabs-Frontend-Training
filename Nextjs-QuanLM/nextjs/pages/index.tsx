@@ -13,7 +13,12 @@ import TemplateMixed from '../containers/template-mixed';
 import TemplateTwoColumn from '../containers/template-two-column';
 import TemplateTopStories from '../containers/template-top-stories';
 import getConfig from 'next/config';
+import styled from 'styled-components';
 
+export const TitleStyled = styled.h3`
+  font-size: 32px;
+  line-height: 48px;
+`;
 export interface CardNewProps {
   dataSlider: CardNewItem[];
   data: {
@@ -26,9 +31,9 @@ function index({ dataSlider, data }: CardNewProps) {
   // Only holds serverRuntimeConfig and publicRuntimeConfig
   const { serverRuntimeConfig, publicRuntimeConfig } = getConfig();
   // Will only be available on the server-side
-  console.log(serverRuntimeConfig.mySecret);
+  // console.log(serverRuntimeConfig.mySecret);
   // Will be available on both server-side and client-side
-  console.log(publicRuntimeConfig.staticFolder);
+  // console.log(publicRuntimeConfig.staticFolder);
 
   return (
     <div>
@@ -36,15 +41,15 @@ function index({ dataSlider, data }: CardNewProps) {
       <Container className="p-0">
         <div className="ps-2">
           <LinkStyled href="/">NEWS /</LinkStyled>
-          <h3 className="fw-bold">Top stories</h3>
+          <TitleStyled className="fw-bold">Top stories</TitleStyled>
           <TitleHeaderStyled>
             Always up-to-date to latest telecommuncation news.
           </TitleHeaderStyled>
         </div>
         <TemplateTopStories
-          dbNewsHeaderSm={dataSlider.slice(2, 4)}
-          slider={dataSlider.slice(3, 6)}
-          dbNewsHeaderLg={dataSlider.slice(1, 2)}
+          dbNewsHeaderSm={dataSlider.slice(3, 5)}
+          slider={dataSlider.slice(0, 3)}
+          dbNewsHeaderLg={dataSlider.slice(5, 6)}
         />
         {data.categories.slice(0, 3).map((item, idx) => {
           if (item.viewType === 'MIXED')

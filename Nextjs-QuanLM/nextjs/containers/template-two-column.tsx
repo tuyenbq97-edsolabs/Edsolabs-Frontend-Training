@@ -8,6 +8,8 @@ import { ColStyled, SeparatorStyled } from './template-mixed';
 import { RowStyled } from './template-top-stories';
 import CardFullInfo from '../components/card-new/card-full-info/card-full-info';
 import Link from 'next/link';
+import { ButtonStyled } from './template-big-header';
+import { TitleStyled } from '../pages';
 
 interface CardNewProps {
   News: CardNewItem[];
@@ -23,7 +25,9 @@ function TemplateTwoColumn({ News }: CardNewProps) {
         >
           <div className="d-flex align-items-center">
             <Image src={item.category.icon} alt="" width={48} height={48} />
-            <h3 className="fw-bold ms-4">{item.category.name}</h3>
+            <TitleStyled className="fw-bold ms-4">
+              {item.category.name}
+            </TitleStyled>
           </div>
           <Link
             href={{
@@ -33,9 +37,9 @@ function TemplateTwoColumn({ News }: CardNewProps) {
               },
             }}
           >
-            <Button className="text-primary bg-white border-3 fw-bold d-none d-md-inline">
+            <ButtonStyled className="fw-bold bg-white d-none d-md-inline">
               <a className="text-decoration-none"> Read More</a>
-            </Button>
+            </ButtonStyled>
           </Link>
         </div>
       ))}
