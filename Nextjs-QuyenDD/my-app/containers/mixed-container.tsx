@@ -3,8 +3,8 @@ import { Col, Row, Button } from 'react-bootstrap';
 import Image from 'next/image';
 import styled from 'styled-components';
 import CardNew, { CardNewItem } from '../components/card-new/card-new';
-import CardNewLargeY from '../components/card-new-large-y/card-new-large-y';
-import CardNewSmallY from '../components/card-new-small-y/card-new-small-y';
+import CardNewLargeY from '../components/card-new-large-horizontal/card-new-large-horizontal';
+import CardNewSmallY from '../components/card-new-small-horizontal/card-new-small-horizontal';
 import Link from 'next/link';
 import { StyledTitleHead } from '../pages';
 export interface MixedContainerProps {
@@ -61,7 +61,7 @@ export default function MixedContainer({ newsCard }: MixedContainerProps) {
             }}
           >
             <Col xl={9} lg={7}>
-              <CardNewLargeY newsCardLargeY={item} />
+              <CardNewLargeY newsCard={item} />
             </Col>
           </Link>
         ))}
@@ -77,7 +77,7 @@ export default function MixedContainer({ newsCard }: MixedContainerProps) {
                 },
               }}
             >
-              <CardNewSmallY newsCardSmallY={item} />
+              <CardNewSmallY newsCard={item} />
             </Link>
           ))}
         </Col>
@@ -113,7 +113,7 @@ export default function MixedContainer({ newsCard }: MixedContainerProps) {
             }}
           >
             <Col xl={3} lg={5}>
-              <CardNewSmallY newsCardSmallY={item} />
+              <CardNewSmallY newsCard={item} />
             </Col>
           </Link>
         ))}

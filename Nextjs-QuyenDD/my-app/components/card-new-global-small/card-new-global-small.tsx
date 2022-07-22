@@ -36,7 +36,7 @@ export default function CardNewGlobalSmall({
           variant="top"
           className="mb-0 me-0 me-sm-3 position-relative"
           src={newsCardGlobalSmall.imageUrl}
-        ></StyledCardGlobalSmall>
+        />
         <StyledSubCategoryName>
           {newsCardGlobalSmall.subCategory.name}
         </StyledSubCategoryName>

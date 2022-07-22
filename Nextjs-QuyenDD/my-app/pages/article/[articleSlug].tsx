@@ -14,6 +14,13 @@ import styled from 'styled-components';
 import { StyledSubCategoryName } from '../../components/card-new-large/styled';
 import { CardNewItem } from '../../components/card-new/card-new';
 import { StyledTitleHead } from '..';
+import {
+  EmailShareButton,
+  FacebookShareButton,
+  TelegramShareButton,
+  TwitterShareButton,
+  WhatsappShareButton,
+} from 'next-share';
 
 interface ArticleSlugProps {
   newsCardArticleSlug: CardNewItem;
@@ -42,22 +49,58 @@ export default function ArticleSlug({ newsCardArticleSlug }: ArticleSlugProps) {
           <Col lg={3} className="d-none d-lg-block">
             {newsCardArticleSlug.source} -{' '}
             {moment(newsCardArticleSlug.publishDate).format('MMM DD YYYY')}
-            <section className="d-flex mt-3">
+            <section className="d-flex">
               <div className="me-3">
-                <Image src={whatapp} alt="whatapp-icon" />
+                <WhatsappShareButton
+                  url={'https://github.com/next-share'}
+                  title={
+                    'next-share is a social share buttons for your next React apps.'
+                  }
+                  separator=":: "
+                >
+                  <Image src={whatapp} alt="whatapp-icon" />
+                </WhatsappShareButton>
               </div>
               <div className="me-3">
                 {' '}
-                <Image src={twitter} alt="twitter-icon" />
+                <TwitterShareButton
+                  url={'https://github.com/next-share'}
+                  title={
+                    'next-share is a social share buttons for your next React apps.'
+                  }
+                >
+                  <Image src={twitter} alt="twitter-icon" />
+                </TwitterShareButton>
               </div>
               <div className="me-3">
-                <Image src={facebook} alt="facebook-icon" />
+                <FacebookShareButton
+                  url={'https://github.com/next-share'}
+                  quote={
+                    'next-share is a social share buttons for your next React apps.'
+                  }
+                  hashtag={'#nextshare'}
+                >
+                  <Image src={facebook} alt="facebook-icon" />
+                </FacebookShareButton>
               </div>
               <div className="me-3">
-                <Image src={telegram} alt="telegram-icon" />
+                <TelegramShareButton
+                  url={'https://github.com/next-share'}
+                  title={
+                    'next-share is a social share buttons for your next React apps.'
+                  }
+                >
+                  <Image src={telegram} alt="telegram-icon" />
+                </TelegramShareButton>
               </div>
               <div className="me-3">
-                <Image src={gmail} alt="gmail-icon" />
+                <EmailShareButton
+                  url={'https://github.com/next-share'}
+                  subject={'Next Share'}
+                  body="body"
+                >
+                  <Image src={gmail} alt="gmail-icon" />
+                </EmailShareButton>
               </div>
             </section>
           </Col>
@@ -83,20 +126,56 @@ export default function ArticleSlug({ newsCardArticleSlug }: ArticleSlugProps) {
                 </span>
                 <section className="d-flex">
                   <div className="me-3">
-                    <Image src={whatapp} alt="whatapp-icon" />
+                    <WhatsappShareButton
+                      url={'https://github.com/next-share'}
+                      title={
+                        'next-share is a social share buttons for your next React apps.'
+                      }
+                      separator=":: "
+                    >
+                      <Image src={whatapp} alt="whatapp-icon" />
+                    </WhatsappShareButton>
                   </div>
                   <div className="me-3">
                     {' '}
-                    <Image src={twitter} alt="twitter-icon" />
+                    <TwitterShareButton
+                      url={'https://github.com/next-share'}
+                      title={
+                        'next-share is a social share buttons for your next React apps.'
+                      }
+                    >
+                      <Image src={twitter} alt="twitter-icon" />
+                    </TwitterShareButton>
                   </div>
                   <div className="me-3">
-                    <Image src={facebook} alt="facebook-icon" />
+                    <FacebookShareButton
+                      url={'https://github.com/next-share'}
+                      quote={
+                        'next-share is a social share buttons for your next React apps.'
+                      }
+                      hashtag={'#nextshare'}
+                    >
+                      <Image src={facebook} alt="facebook-icon" />
+                    </FacebookShareButton>
                   </div>
                   <div className="me-3">
-                    <Image src={telegram} alt="telegram-icon" />
+                    <TelegramShareButton
+                      url={'https://github.com/next-share'}
+                      title={
+                        'next-share is a social share buttons for your next React apps.'
+                      }
+                    >
+                      <Image src={telegram} alt="telegram-icon" />
+                    </TelegramShareButton>
                   </div>
                   <div className="me-3">
-                    <Image src={gmail} alt="gmail-icon" />
+                    <EmailShareButton
+                      url={'https://github.com/next-share'}
+                      subject={'Next Share'}
+                      body="body"
+                    >
+                      <Image src={gmail} alt="gmail-icon" />
+                    </EmailShareButton>
                   </div>
                 </section>
                 <div className="divider"></div>

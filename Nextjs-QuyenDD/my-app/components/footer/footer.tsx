@@ -4,6 +4,7 @@ import {
   StyledNavLinkFooter,
   StyledSectionFooter,
   StyledSectionSubFooter,
+  StyledTitleFooter,
 } from './styled-footer';
 import logoFooter from '../../assets/icons/logofooter.svg';
 import iconTop from '../../assets/icons/top.svg';
@@ -36,7 +37,7 @@ export default function Footer() {
             <Col md={8}>
               <Row>
                 <Col className="mb-5 mb-md-0 col-6 col-lg-3">
-                  <h6 className="mb-4">Plans</h6>
+                  <StyledTitleFooter className="mb-4">Plans</StyledTitleFooter>
                   <Nav className="flex-column">
                     <StyledNavLinkFooter className="px-0 py-1">
                       Sim-only plans
@@ -50,7 +51,9 @@ export default function Footer() {
                   </Nav>
                 </Col>
                 <Col className="mb-5 mb-md-0 col-6 col-lg-3">
-                  <h6 className="mb-4">Mobiles</h6>
+                  <StyledTitleFooter className="mb-4">
+                    Mobiles
+                  </StyledTitleFooter>
                   <Nav className="flex-column">
                     <StyledNavLinkFooter className="px-0 py-1">
                       Phones
@@ -68,7 +71,7 @@ export default function Footer() {
                 </Col>
 
                 <Col className="mb-5 mb-md-0 col-6 col-lg-3">
-                  <h6 className="mb-4">News</h6>
+                  <StyledTitleFooter className="mb-4">News</StyledTitleFooter>
                   <Nav className="flex-column">
                     <StyledNavLinkFooter className="px-0 py-1">
                       Global news
@@ -83,7 +86,9 @@ export default function Footer() {
                 </Col>
 
                 <Col className="mb-5 mb-md-0 col-6 col-lg-3">
-                  <h6 className="mb-4">Help & About</h6>
+                  <StyledTitleFooter className="mb-4">
+                    Help & About
+                  </StyledTitleFooter>
                   <Nav className="flex-column">
                     <StyledNavLinkFooter className="px-0 py-1">
                       About us

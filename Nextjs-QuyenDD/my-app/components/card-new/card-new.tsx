@@ -7,7 +7,6 @@ import {
   StyledCardTitle,
   StyledCardTextSecond,
   StyledCardTextFooter,
-  StyledCardBody,
 } from './styled';
 export interface CardNewProps {
   news: CardNewItem;
@@ -46,20 +45,22 @@ export default function CardNew({ news }: CardNewProps) {
       <StyledCard className="border-0">
         <Card.Img variant="top" src={news.imageUrl} />
         <StyledSubCategoryName>{news.subCategory.name}</StyledSubCategoryName>
-        <StyledCardBody>
+        <Card.Body className="py-3 px-0">
           <StyledCardTitle className="mb-3">{news.title}</StyledCardTitle>
           <StyledCardTextSecond className="mb-2">
             {news.shortDescription}
           </StyledCardTextSecond>
 
           <div>
-            <StyledCardTextFooter>{news.source}</StyledCardTextFooter>
+            <StyledCardTextFooter className="m-0">
+              {news.source}
+            </StyledCardTextFooter>
 
             <StyledCardTextFooter>
               {moment(news.publishDate).format(' MMM DD  YYYY')}
             </StyledCardTextFooter>
           </div>
-        </StyledCardBody>
+        </Card.Body>
       </StyledCard>
     </div>
   );

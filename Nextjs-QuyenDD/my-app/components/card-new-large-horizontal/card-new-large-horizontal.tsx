@@ -5,8 +5,8 @@ import moment from 'moment';
 import { StyledSubCategoryName } from '../card-new-large/styled';
 import styled from 'styled-components';
 import { StyledCardTextHeader } from '../../containers/top-stories-container';
-interface CardNewLargeYProps {
-  newsCardLargeY: CardNewItem;
+interface CardNewLargeHorizontalProps {
+  newsCard: CardNewItem;
 }
 const StyledCardLargeY = styled(Card.Img)`
   min-height: 300px;
@@ -22,29 +22,26 @@ const StyledCardTitleLocalNew = styled(Card.Title)`
   -webkit-box-orient: vertical;
   display: -webkit-box !important;
 `;
-export default function CardNewLargeY({ newsCardLargeY }: CardNewLargeYProps) {
+export default function CardNewLargeHorizontal({
+  newsCard,
+}: CardNewLargeHorizontalProps) {
   return (
     <div className="text-decoration-none">
       <Card className="d-flex flex-row border-0">
         <div className="mb-0 me-0 me-sm-3">
-          <StyledCardLargeY
-            variant="top"
-            src={newsCardLargeY.imageUrl}
-          ></StyledCardLargeY>
+          <StyledCardLargeY variant="top" src={newsCard.imageUrl} />
         </div>
 
         <StyledSubCategoryName>
-          {newsCardLargeY.subCategory.name}
+          {newsCard.subCategory.name}
         </StyledSubCategoryName>
         <Card.Body className=" ms-3 ms-sm-0 pt-3 ps-0 pe-0 pb-0">
-          <StyledCardTitleLocalNew>
-            {newsCardLargeY.title}
-          </StyledCardTitleLocalNew>
-          <Card.Text>{newsCardLargeY.shortDescription}</Card.Text>
+          <StyledCardTitleLocalNew>{newsCard.title}</StyledCardTitleLocalNew>
+          <Card.Text>{newsCard.shortDescription}</Card.Text>
 
           <StyledCardTextHeader>
-            {newsCardLargeY.source} -{' '}
-            {moment(newsCardLargeY.publishDate).format('MMM DD YYYY')}{' '}
+            {newsCard.source} -{' '}
+            {moment(newsCard.publishDate).format('MMM DD YYYY')}{' '}
           </StyledCardTextHeader>
         </Card.Body>
       </Card>

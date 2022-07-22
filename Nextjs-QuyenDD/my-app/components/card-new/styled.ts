@@ -25,10 +25,6 @@ export const StyledCardTextSecond = styled(Card.Text)`
 `;
 export const StyledCardTextFooter = styled(Card.Text)`
   font-size: 12px;
-  margin: 0;
   color: #555770;
   font-family: 'Lato Regular';
-`;
-export const StyledCardBody = styled(Card.Body)`
-  padding: 16px 0px;
 `;

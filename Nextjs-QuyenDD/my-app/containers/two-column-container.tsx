@@ -8,6 +8,7 @@ import { StyledTitleHead } from '../pages';
 interface TwoColumnContainerProps {
   newsCard: CardNewItem[];
 }
+
 export default function TwoColumnContainer({
   newsCard,
 }: TwoColumnContainerProps) {

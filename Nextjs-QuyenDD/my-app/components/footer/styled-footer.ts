@@ -25,9 +25,12 @@ export const StyledSectionSubFooter = styled.section`
   background: rgb(0, 0, 0);
   line-height: 72px;
   margin-top: 64px;
-  /* .text-label {
+  .text-label {
     line-height: 1;
-  } */
+    color: #c7c8d9;
+    font-size: 15px;
+    font-family: 'Lato Bold';
+  }
   .list-icon {
     display: inline-flex;
     line-height: 48px;
@@ -44,4 +47,11 @@ export const StyledSectionSubFooter = styled.section`
 `;
 export const StyledNavLinkFooter = styled(Nav.Link)`
   color: #f2f2f5;
+  font-family: 'Lato Regular';
+  font-size: 16px;
+`;
+export const StyledTitleFooter = styled.h6`
+  color: #f2f2f5;
+  font-size: 20px;
+  font-family: 'Lato Bold';
 `;

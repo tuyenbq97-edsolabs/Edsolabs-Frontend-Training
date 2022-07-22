@@ -4,8 +4,8 @@ import { Card } from 'react-bootstrap';
 import styled from 'styled-components';
 import { StyledCardTextHeader } from '../../containers/top-stories-container';
 import { CardNewItem } from '../card-new/card-new';
-interface CardNewSmallYProps {
-  newsCardSmallY: CardNewItem;
+interface CardNewSmallHorizontalProps {
+  newsCard: CardNewItem;
 }
 const StyledCardSmallY = styled(Card.Img)`
   height: 70px;
@@ -18,21 +18,20 @@ const StyledCardTextLocalNew = styled(Card.Text)`
   -webkit-box-orient: vertical;
   display: -webkit-box !important;
 `;
-export default function CardNewSmallY({ newsCardSmallY }: CardNewSmallYProps) {
+export default function CardNewSmallHorizontal({
+  newsCard,
+}: CardNewSmallHorizontalProps) {
   return (
     <Card className=" d-flex flex-row border-0 mb-3">
-      <StyledCardSmallY
-        variant="top"
-        src={newsCardSmallY.imageUrl}
-      ></StyledCardSmallY>
+      <StyledCardSmallY variant="top" src={newsCard.imageUrl} />
       <Card.Body>
         <StyledCardTextHeader>
-          {newsCardSmallY.source} -{' '}
-          {moment(newsCardSmallY.publishDate).format('MMM DD YYYY')}{' '}
+          {newsCard.source} -{' '}
+          {moment(newsCard.publishDate).format('MMM DD YYYY')}{' '}
         </StyledCardTextHeader>
 
         <StyledCardTextLocalNew>
-          {newsCardSmallY.shortDescription}
+          {newsCard.shortDescription}
         </StyledCardTextLocalNew>
       </Card.Body>
     </Card>

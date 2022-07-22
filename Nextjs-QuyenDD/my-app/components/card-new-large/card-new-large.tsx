@@ -23,7 +23,7 @@ export default function CardNewLarge({ newsCardLarge }: CardNewLargeProps) {
       <StyledSubCategoryName>
         {newsCardLarge.subCategory.name}
       </StyledSubCategoryName>
-      <StyledCardBodyLarge>
+      <StyledCardBodyLarge className="position-absolute text-white">
         <StyledCardTextHeader className="mb-1">
           {moment(newsCardLarge.publishDate).format('DD MMM YYYY')}
         </StyledCardTextHeader>

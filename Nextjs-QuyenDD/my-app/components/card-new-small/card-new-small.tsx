@@ -22,7 +22,7 @@ export default function CardNewSmall({ newsCardSmall }: CardNewSmallProps) {
         {newsCardSmall.subCategory.name}
       </StyledSubCategoryName>
 
-      <StyledCardBodySmall>
+      <StyledCardBodySmall className="position-absolute text-white">
         <StyledCardTextHeader className="mb-1">
           {moment(newsCardSmall.publishDate).format('DD MMM YYYY')}
         </StyledCardTextHeader>
