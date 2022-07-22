@@ -20,7 +20,11 @@ const StyledButton = styled(Button)`
   }
 `;
 export default function CategorySlug() {
-  const aipGlobalNews = process.env.NEXT_PUBLIC_API_GLOBAL_NEWS;
+  const router = useRouter();
+  const { query } = router;
+  const { categorySlug } = query;
+  const aipGlobalNews =
+    process.env.NEXT_PUBLIC_API_GLOBAL_NEWS + '/' + categorySlug;
   const defaultLimit = 4;
   const initialPost = 7;
   const fetcher = (url: RequestInfo | URL) =>

@@ -30,11 +30,20 @@ export default function TwoColumnContainer({
             </div>
           </Col>
           <Col className="d-none d-lg-block" lg={4}>
-            <div className="d-flex justify-content-end">
-              <Button className=" text-primary bg-white border-2">
-                Read More
-              </Button>
-            </div>
+            <Link
+              href={{
+                pathname: '/category/[categorySlug]',
+                query: {
+                  categorySlug: item.category.slug,
+                },
+              }}
+            >
+              <div className="d-flex justify-content-end">
+                <Button className=" text-primary bg-white border-2">
+                  Read More
+                </Button>
+              </div>
+            </Link>
           </Col>
         </Row>
       ))}
@@ -74,11 +83,23 @@ export default function TwoColumnContainer({
         ))}
       </Row>
       <Row className="d-lg-none d-flex">
-        <Col>
-          <Button className="d-flex w-100 justify-content-center text-primary bg-white border-2">
-            Read More
-          </Button>
-        </Col>
+        {newsCard.slice(0, 1).map((item, idx) => (
+          <Link
+            key={idx}
+            href={{
+              pathname: '/category/[categorySlug]',
+              query: {
+                categorySlug: item.category.slug,
+              },
+            }}
+          >
+            <Col>
+              <Button className="d-flex w-100 justify-content-center text-primary bg-white border-2">
+                Read More
+              </Button>
+            </Col>
+          </Link>
+        ))}
       </Row>
     </StyledSectionContainer>
   );
