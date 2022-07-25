@@ -17,6 +17,11 @@ import { useRouter } from 'next/router';
 import styled from 'styled-components';
 
 const ButtonStyled = styled(Button)`
+  padding-top: 11px;
+  padding-bottom: 11px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 26px;
   :disabled {
     background-color: #ccc !important;
     color: #666262 !important;
@@ -50,13 +55,14 @@ function CategorySlug() {
   const dbNews = data?.map((data) => data.data);
   const news = dbNews ? [].concat(...dbNews) : [];
   const total = data?.slice(0, 1)?.map((data) => data.total);
-  console.log(news);
   return (
     <div>
       <HeaderContainer />
       <Container>
         <div className="ps-2">
-          <LinkStyled href="/">NEWS /</LinkStyled>
+          <LinkStyled href="/">
+            <a className="text-decoration-none fw-bold">NEWS /</a>
+          </LinkStyled>
           <h3 className="fw-bold">
             {news.slice(0, 1).map((item) => {
               return item['category']['name'];

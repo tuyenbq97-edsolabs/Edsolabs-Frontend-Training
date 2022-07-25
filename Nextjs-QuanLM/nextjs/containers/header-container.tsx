@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import logo from '../assets/images/logo.png';
 import locator from '../assets/images/locator.png';
 import cart from '../assets/images/cart.png';
-import { Nav, Navbar } from 'react-bootstrap';
+import { Nav, Navbar, Offcanvas } from 'react-bootstrap';
 import Search from '../assets/images/Search.png';
 import User from '../assets/images/User.png';
 import Arrow from '../assets/images/arrow_forward.png';
@@ -25,6 +25,12 @@ const NavStyled = styled(Navbar)`
   @media screen and (max-width: 600px) {
     padding-left: 10px;
     padding-right: 10px;
+  }
+  @media screen and (max-width: 425px) {
+    .nav-link {
+      padding-left: 5px !important;
+      padding-right: 5px !important;
+    }
   }
 `;
 
@@ -49,75 +55,105 @@ const SeparatorStyled = styled.span`
   width: 46px;
 `;
 
-export default function HeaderContainer() {
-  return (
-    <NavStyled expand="xl">
-      <div className="d-flex align-items-center">
-        <Navbar.Toggle
-          aria-controls="basic-navbar-nav"
-          className="border-0 me-3"
-        />
-        <Link href="/">
-          <Navbar.Brand role="button">
-            <Image src={logo} alt="" />
-          </Navbar.Brand>
-        </Link>
-      </div>
+const ImageStyled = styled(Navbar.Brand)`
+  line-height: 43.8px;
+`;
 
-      <Navbar.Collapse className="justify-content-between">
-        <StyledNav>
+export default function HeaderContainer() {
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
+  return (
+    <>
+      <NavStyled expand="xl" className="justify-content-between">
+        <div className="d-flex">
+          <div className="d-flex align-items-center">
+            <Navbar.Toggle
+              aria-controls="basic-navbar-nav"
+              className="border-0 me-3"
+              onClick={handleShow}
+            />
+            <Link href="/">
+              <Navbar.Brand role="button" className="d-flex">
+                <Image src={logo} alt="" />
+              </Navbar.Brand>
+            </Link>
+          </div>
+
+          <StyledNav className="d-none d-xl-flex ">
+            <Nav.Link className="text-black" href="#home">
+              Plans
+            </Nav.Link>
+            <Nav.Link className="text-black" href="#link">
+              Shop
+            </Nav.Link>
+            <Nav.Link className="text-black" href="#link">
+              Entertainment
+            </Nav.Link>
+            <Nav.Link className="text-black" href="#link">
+              Trade-in
+            </Nav.Link>
+            <Nav.Link className="text-black" href="#link">
+              <span className="me-1">More</span> <Image src={Arrow} alt="" />
+            </Nav.Link>
+          </StyledNav>
+        </div>
+        <div className="d-flex d-xl-none align-items-center">
+          <Nav.Link>
+            <Image src={Search} alt="" />
+          </Nav.Link>
+          <Nav.Link>
+            <Image src={cart} alt="" />
+          </Nav.Link>
+          <Nav.Link>
+            <Image src={User} alt="" />
+          </Nav.Link>
+        </div>
+        <div className="d-none d-lg-none d-xl-flex align-items-center">
+          <Nav.Link className="d-flex">
+            <Image src={locator} alt="" />
+            <span className="text-black ps-3">Locator</span>
+          </Nav.Link>
+          <SeparatorStyled></SeparatorStyled>
+          <Nav.Link>
+            <Image src={cart} alt="" />
+          </Nav.Link>
+
+          <SignUpStyled>Signup</SignUpStyled>
+        </div>
+      </NavStyled>
+      <Offcanvas show={show} onHide={handleClose}>
+        <Offcanvas.Header closeButton>
+          <Offcanvas.Title>
+            <Navbar.Brand role="button">
+              <Image src={logo} alt="" />
+            </Navbar.Brand>
+          </Offcanvas.Title>
+        </Offcanvas.Header>
+        <Offcanvas.Body>
           <Nav.Link className="text-black" href="#home">
             Plans
           </Nav.Link>
+          <hr />
           <Nav.Link className="text-black" href="#link">
             Shop
-          </Nav.Link>
+          </Nav.Link>{' '}
+          <hr />
           <Nav.Link className="text-black" href="#link">
             Entertainment
-          </Nav.Link>
+          </Nav.Link>{' '}
+          <hr />
           <Nav.Link className="text-black" href="#link">
             Trade-in
-          </Nav.Link>
+          </Nav.Link>{' '}
+          <hr />
           <Nav.Link className="text-black" href="#link">
             <span className="me-1">More</span> <Image src={Arrow} alt="" />
           </Nav.Link>
-        </StyledNav>
-      </Navbar.Collapse>
-      <div className="d-flex d-sm-none d-flex align-items-center">
-        <Nav.Link>
-          <Image src={Search} alt="" />
-        </Nav.Link>
-        <Nav.Link>
-          <Image src={cart} alt="" />
-        </Nav.Link>
-        <Nav.Link>
-          <Image src={User} alt="" />
-        </Nav.Link>
-      </div>
-      <div className="d-none d-lg-none d-xl-flex align-items-center">
-        <Nav.Link className="d-flex">
-          <Image src={locator} alt="" />
-          <span className="text-black ps-3">Locator</span>
-        </Nav.Link>
-
-        <SeparatorStyled></SeparatorStyled>
-        <Nav.Link>
-          <Image src={cart} alt="" />
-        </Nav.Link>
-
-        <SignUpStyled>Signup</SignUpStyled>
-      </div>
-      <div className="d-xl-none d-none d-sm-flex d-flex align-items-center">
-        <Nav.Link>
-          <Image src={Search} alt="" />
-        </Nav.Link>
-        <Nav.Link>
-          <Image src={cart} alt="" />
-        </Nav.Link>
-        <Nav.Link>
-          <Image src={User} alt="" />
-        </Nav.Link>
-      </div>
-    </NavStyled>
+        </Offcanvas.Body>
+      </Offcanvas>
+    </>
   );
 }

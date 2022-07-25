@@ -19,7 +19,7 @@ export const SeparatorStyled = styled.hr`
 `;
 
 export const ColStyled = styled(Col)`
-  @media only screen and (max-width: 992px) {
+  @media only screen and (max-width: 1200px) {
     width: 50%;
   }
   @media only screen and (max-width: 768px) {
@@ -41,7 +41,7 @@ function TemplateMixed({ News }: CardNewProps) {
         >
           <div className="d-flex align-items-center">
             <Image src={item.category.icon} alt="" width={48} height={48} />
-            <TitleStyled className="fw-bold ms-4">
+            <TitleStyled className="fw-bold ms-4 mb-0">
               {item.category.name}
             </TitleStyled>
           </div>
@@ -71,12 +71,12 @@ function TemplateMixed({ News }: CardNewProps) {
               },
             }}
           >
-            <Col md={8} className="pe-2 ps-2">
+            <Col lg={8} className="pe-2 ps-2">
               <CardNewHorizontalLarge news={item} />
             </Col>
           </Link>
         ))}
-        <Col md={4}>
+        <Col lg={4}>
           {News.slice(1, 4).map((item, idx) => (
             <Link
               key={idx}

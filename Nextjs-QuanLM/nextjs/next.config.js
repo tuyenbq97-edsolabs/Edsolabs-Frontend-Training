@@ -6,6 +6,7 @@ const nextConfig = {
     domains: [
       'api.w2project-internal.asia',
       'sg-stg-storage.ap-south-1.linodeobjects.com',
+      'api.w2project.asia',
     ],
     formats: ['image/avif', 'image/webp'],
   },

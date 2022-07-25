@@ -40,16 +40,18 @@ function index({ dataSlider, data }: CardNewProps) {
       <HeaderContainer />
       <Container className="p-0">
         <div className="ps-2">
-          <LinkStyled href="/">NEWS /</LinkStyled>
+          <LinkStyled href="/">
+            <a className="text-decoration-none fw-bold">NEWS /</a>
+          </LinkStyled>
           <TitleStyled className="fw-bold">Top stories</TitleStyled>
           <TitleHeaderStyled>
             Always up-to-date to latest telecommuncation news.
           </TitleHeaderStyled>
         </div>
         <TemplateTopStories
-          dbNewsHeaderSm={dataSlider.slice(3, 5)}
-          slider={dataSlider.slice(0, 3)}
-          dbNewsHeaderLg={dataSlider.slice(5, 6)}
+          dbNewsHeaderSm={dataSlider.slice(4, 6)}
+          slider={dataSlider.slice(0, 4)}
+          dbNewsHeaderLg={dataSlider.slice(6, 7)}
         />
         {data.categories.slice(0, 3).map((item, idx) => {
           if (item.viewType === 'MIXED')

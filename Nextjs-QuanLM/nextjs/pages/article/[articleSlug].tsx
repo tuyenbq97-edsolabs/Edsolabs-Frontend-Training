@@ -75,6 +75,7 @@ function ArticleSlug({ articles }: ArticleProp) {
   const createMarkup = () => {
     return { __html: articles.content };
   };
+
   return (
     <div>
       <HeaderContainer />
@@ -124,21 +125,35 @@ function ArticleSlug({ articles }: ArticleProp) {
             </div>
           </Col>
           <Col lg={10}>
-            <LinkStyled href="/">NEWS/ GLOBAL NEWS/</LinkStyled>
+            <LinkStyled href="/">
+              <a className="text-decoration-none fw-bold">NEWS / </a>
+            </LinkStyled>
+            <LinkStyled
+              href={{
+                pathname: '/category/[categorySlug]',
+                query: {
+                  categorySlug: articles.category.slug,
+                },
+              }}
+            >
+              <a className="text-decoration-none text-uppercase fw-bold">
+                {articles.category.name} /
+              </a>
+            </LinkStyled>
 
             <Card className="border-0">
               <CardTitleStyled>{articles.title}</CardTitleStyled>
-              <div>
-                <CustomColorStyled>
-                  {articles.subCategory.name}
-                </CustomColorStyled>
+              <div className="position-relative">
                 <ImageStyled
                   src={articles.imageUrl}
                   alt=""
                   width={807}
                   height={360}
                   layout="responsive"
-                />
+                />{' '}
+                <CustomColorStyled>
+                  {articles.subCategory.name}
+                </CustomColorStyled>
               </div>
               <CardBodyStyled>
                 <div dangerouslySetInnerHTML={createMarkup()} />
@@ -200,9 +215,16 @@ function ArticleSlug({ articles }: ArticleProp) {
                 >
                   <Col key={idx} md={4} role="button">
                     <CardStyled className="border-0">
-                      <CardImgStyled variant="top" src={item.imageUrl} />
+                      <CardImgStyled
+                        variant="top"
+                        src={item.imageUrl}
+                        className="position-relative"
+                      />
                       <Card.Body>
                         <Card.Text className="mb-4 ">{item.title}</Card.Text>
+                        <CustomColorStyled>
+                          {articles.subCategory.name}
+                        </CustomColorStyled>
                       </Card.Body>
                     </CardStyled>
                   </Col>

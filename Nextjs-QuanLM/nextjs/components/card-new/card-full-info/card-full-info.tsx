@@ -18,8 +18,11 @@ import { CardNewItem } from '../vertical -card/card-new';
 
 const ImageStyled = styled(Card.Img)`
   object-fit: cover;
-  max-height: ${(props) => props.customheight || '600px'};
+  height: ${(props) => props.customheight || '600px'};
   border-radius: 4px;
+  @media only screen and (max-width: 768px) {
+    max-height: 350px;
+  }
 `;
 
 interface CardFullInfoProps {

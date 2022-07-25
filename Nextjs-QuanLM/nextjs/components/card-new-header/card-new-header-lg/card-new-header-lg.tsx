@@ -16,15 +16,12 @@ import moment from 'moment';
 
 export const ImageStyled = styled(Card.Img)`
   object-fit: cover;
-  max-height: 284px;
+  height: 284px;
   @media only screen and (max-width: 1400px) {
     max-height: 238px;
   }
   @media only screen and (max-width: 1200px) {
-    max-height: 184px;
-  }
-  @media only screen and (max-width: 992px) {
-    max-height: 290px;
+    max-height: 300px;
   }
 `;
 

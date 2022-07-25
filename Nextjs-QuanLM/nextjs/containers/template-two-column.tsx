@@ -25,7 +25,7 @@ function TemplateTwoColumn({ News }: CardNewProps) {
         >
           <div className="d-flex align-items-center">
             <Image src={item.category.icon} alt="" width={48} height={48} />
-            <TitleStyled className="fw-bold ms-4">
+            <TitleStyled className="fw-bold ms-4 mb-0">
               {item.category.name}
             </TitleStyled>
           </div>

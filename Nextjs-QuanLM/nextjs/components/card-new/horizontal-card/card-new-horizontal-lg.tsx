@@ -19,11 +19,10 @@ const CardImgHorizontalStyled = styled(Card.Img)`
   border-radius: 4px;
   filter: drop-shadow(0px 4px 6px rgba(0, 0, 0, 0.1));
   @media only screen and (max-width: 992px) {
-    max-height: 200px;
-    border-radius: 4px;
+    max-height: 300px;
   }
   @media only screen and (max-width: 867px) {
-    max-height: 100%;
+    max-height: 280px;
   }
 `;
 

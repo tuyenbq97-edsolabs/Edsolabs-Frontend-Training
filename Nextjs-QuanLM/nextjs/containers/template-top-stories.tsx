@@ -10,10 +10,9 @@ import { CardNewItem } from '../components/card-new/vertical -card/card-new';
 import { theme } from '../utils/theme';
 
 export const LinkStyled = styled(Link)`
-  text-decoration: none;
   font-size: 12px;
   line-height: 18px;
-  font-weight: bold;
+  text-decoration: none !important;
   .ps-2 {
     padding-left: 1rem !important;
   }
@@ -108,7 +107,7 @@ export default function TemplateTopStories({
   return (
     <>
       <RowStyled>
-        <Col lg={7} className="pe-2 pb-3 ps-2 h-100">
+        <Col xl={7} className="pe-2 pb-3 ps-2 h-100">
           <StyledCarousel className="m-0" role="button">
             {slider.map((items, idx) => (
               <Carousel.Item key={idx}>
@@ -155,7 +154,7 @@ export default function TemplateTopStories({
             ))}
           </StyledCarousel>
         </Col>
-        <Col className="p-0" lg={5}>
+        <Col className="p-0" xl={5}>
           <RowStyled>
             {dbNewsHeaderSm.map((item, idx) => (
               <Link

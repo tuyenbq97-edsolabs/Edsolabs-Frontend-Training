@@ -5,8 +5,8 @@ import { CardStyled } from '../../card-new/vertical -card/style';
 
 export const SubCategoryNameStyled = styled.span`
   position: absolute;
-  margin-top: 16px;
-  margin-left: 16px;
+  top: 16px;
+  left: 16px;
   font-size: 12px;
   line-height: 18px;
   text-transform: uppercase;
@@ -41,7 +41,7 @@ export const CardTitleStyled = styled(Card.Title)`
   word-break: break-word;
   display: -webkit-box;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 3;
+  -webkit-line-clamp: 2;
 `;
 export const CardTextStyled = styled(Card.Text)`
   font-size: 12px;
