@@ -40,23 +40,19 @@ const StyledNav = styled(Nav)`
     padding-right: 25px !important;
   }
   .nav-link:hover {
-    color: ${theme.hoverTheme.lightPink} !important;
+    color: ${({ theme }) => theme.hoverTheme.lightPink} !important;
   }
 `;
 const SignUpStyled = styled(Nav.Link)`
   padding-top: 4px;
   &:hover {
-    color: ${theme.hoverTheme.lightBlue};
+    color: ${({ theme }) => theme.hoverTheme.lightBlue};
   }
 `;
 const SeparatorStyled = styled.span`
   border-top: 1px solid #c7c8d9;
   transform: rotate(90deg);
   width: 46px;
-`;
-
-const ImageStyled = styled(Navbar.Brand)`
-  line-height: 43.8px;
 `;
 
 export default function HeaderContainer() {

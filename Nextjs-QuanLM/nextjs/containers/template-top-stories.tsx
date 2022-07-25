@@ -51,7 +51,7 @@ const StyledCarousel = styled(Carousel)`
 export const ShortDescriptionStyled = styled.p`
   font-size: 16px;
   line-height: 24px;
-  color: ${theme.Neutral_L6};
+  color: ${({ theme }) => theme.Neutral_L6};
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -60,7 +60,7 @@ export const ShortDescriptionStyled = styled.p`
 export const SrouceStyle = styled.span`
   font-size: 12px;
   line-height: 18px;
-  color: ${theme.Neutral_L6};
+  color: ${({ theme }) => theme.Neutral_L6};
 `;
 export const TitleStyled = styled.p`
   font-size: 24px;
@@ -74,7 +74,7 @@ export const TitleHeaderStyled = styled.p`
   margin-bottom: 40px;
   font-size: 16px;
   line-height: 24px;
-  color: ${theme.Neutral_L8};
+  color: ${({ theme }) => theme.Neutral_L8};
 `;
 
 const ImgStyled = styled.img`

@@ -10,7 +10,7 @@ export const SubCategoryNameStyled = styled.span`
   font-size: 12px;
   line-height: 18px;
   text-transform: uppercase;
-  color: ${theme.Neutral_L10};
+  color: ${({ theme }) => theme.Neutral_L10};
   padding: 3px 21px 5px 22px;
   background: #ffffff;
   opacity: 0.9;
@@ -24,7 +24,7 @@ export const CardBodyStyled = styled(Card.Body)`
   bottom: 0;
   background: #1c1c28;
   opacity: 0.8;
-  color: ${theme.Neutral_White};
+  color: ${({ theme }) => theme.Neutral_White};
   width: 100%;
   border-radius: 4px;
 `;

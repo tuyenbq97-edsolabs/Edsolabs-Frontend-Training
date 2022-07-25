@@ -14,4 +14,8 @@ export const theme = {
     lightPink: '#8a7272',
     lightBlue: '#1800ed8a',
   },
+  disabledButtonTheme: {
+    background: '#ccc',
+    color: '#666262',
+  },
 };

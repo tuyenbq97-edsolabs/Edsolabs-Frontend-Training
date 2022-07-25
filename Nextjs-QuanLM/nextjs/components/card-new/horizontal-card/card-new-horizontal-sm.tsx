@@ -21,7 +21,7 @@ export const CardHorizontalStyled = styled(CardStyled)`
   }
 `;
 const CardTextStyled = styled(Card.Text)`
-  color: ${theme.Neutral_L11};
+  color: ${({ theme }) => theme.Neutral_L11};
   overflow: hidden;
   text-overflow: ellipsis;
   word-break: break-word;

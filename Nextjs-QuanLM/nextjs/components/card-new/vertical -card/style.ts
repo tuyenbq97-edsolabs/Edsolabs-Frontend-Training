@@ -10,13 +10,14 @@ export const TitleFooterStyled = styled(Card.Text)`
   font-size: 12px;
   line-height: 18px;
   margin: 0;
-  color: ${theme.Neutral_L10};
+  color: ${({ theme }) => theme.Neutral_L10};
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
 `;
 export const CardTextStyled = styled(Card.Text)`
-  color: ${theme.Neutral_L11};
+  color: ${({ theme }) => theme.Neutral_L11};
+
   overflow: hidden;
   text-overflow: ellipsis;
   word-break: break-word;

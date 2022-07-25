@@ -13,7 +13,8 @@ import TemplateMixed from '../containers/template-mixed';
 import TemplateTwoColumn from '../containers/template-two-column';
 import TemplateTopStories from '../containers/template-top-stories';
 import getConfig from 'next/config';
-import styled from 'styled-components';
+import styled, { ThemeProvider } from 'styled-components';
+import { theme } from '../utils/theme';
 
 export const TitleStyled = styled.h3`
   font-size: 32px;
@@ -37,31 +38,32 @@ function index({ dataSlider, data }: CardNewProps) {
 
   return (
     <div>
-      <HeaderContainer />
-      <Container className="p-0">
-        <div className="ps-2">
-          <LinkStyled href="/">
-            <a className="text-decoration-none fw-bold">NEWS /</a>
-          </LinkStyled>
-          <TitleStyled className="fw-bold">Top stories</TitleStyled>
-          <TitleHeaderStyled>
-            Always up-to-date to latest telecommuncation news.
-          </TitleHeaderStyled>
-        </div>
-        <TemplateTopStories
-          dbNewsHeaderSm={dataSlider.slice(4, 6)}
-          slider={dataSlider.slice(0, 4)}
-          dbNewsHeaderLg={dataSlider.slice(6, 7)}
-        />
-        {data.categories.slice(0, 3).map((item, idx) => {
-          if (item.viewType === 'MIXED')
-            return <TemplateMixed key={idx} News={item.articles} />;
-          else if (item.viewType === 'BIG_HEADER')
-            return <TemplateBigHeader key={idx} News={item.articles} />;
-          else if (item.viewType === 'TWO_COLUMN')
-            return <TemplateTwoColumn key={idx} News={item.articles} />;
-        })}
-        {/* {data.categories.slice(3).map((item) => {
+      <ThemeProvider theme={theme}>
+        <HeaderContainer />
+        <Container className="p-0">
+          <div className="ps-2">
+            <LinkStyled href="/">
+              <a className="text-decoration-none fw-bold">NEWS /</a>
+            </LinkStyled>
+            <TitleStyled className="fw-bold">Top stories</TitleStyled>
+            <TitleHeaderStyled>
+              Always up-to-date to latest telecommuncation news.
+            </TitleHeaderStyled>
+          </div>
+          <TemplateTopStories
+            dbNewsHeaderSm={dataSlider.slice(4, 6)}
+            slider={dataSlider.slice(0, 4)}
+            dbNewsHeaderLg={dataSlider.slice(6, 7)}
+          />
+          {data.categories.slice(0, 3).map((item, idx) => {
+            if (item.viewType === 'MIXED')
+              return <TemplateMixed key={idx} News={item.articles} />;
+            else if (item.viewType === 'BIG_HEADER')
+              return <TemplateBigHeader key={idx} News={item.articles} />;
+            else if (item.viewType === 'TWO_COLUMN')
+              return <TemplateTwoColumn key={idx} News={item.articles} />;
+          })}
+          {/* {data.categories.slice(3).map((item) => {
           if (item.viewType === 'MIXED')
             return <LocalNewsContainers localNews={item.articles} />;
           else if (item.viewType === 'BIG_HEADER')
@@ -69,9 +71,10 @@ function index({ dataSlider, data }: CardNewProps) {
           else if (item.viewType === 'TWO_COLUMN')
             return <BlogsTipsTricksContainer BlogTipTrick={item.articles} />;
         })} */}
-      </Container>
-      <FooterContainer />
-      <SubFooterContainer />
+        </Container>
+        <FooterContainer />
+        <SubFooterContainer />
+      </ThemeProvider>
     </div>
   );
 }

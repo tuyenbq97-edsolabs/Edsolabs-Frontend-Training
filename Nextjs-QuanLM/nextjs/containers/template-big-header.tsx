@@ -12,7 +12,7 @@ import { theme } from '../utils/theme';
 import { TitleStyled } from '../pages';
 
 export const ButtonStyled = styled(Button)`
-  color: ${theme.hoverTheme.darkBlue};
+  color: ${({ theme }) => theme.hoverTheme.darkBlue};
   border: 2px solid ${theme.primaryBlue};
 `;
 
