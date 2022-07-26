@@ -22,9 +22,9 @@ export default function CardNewSmallHorizontal({
   newsCard,
 }: CardNewSmallHorizontalProps) {
   return (
-    <Card className=" d-flex flex-row border-0 mb-3">
+    <Card className="d-flex flex-row border-0 mb-3">
       <StyledCardSmallY variant="top" src={newsCard.imageUrl} />
-      <Card.Body>
+      <Card.Body className="py-0">
         <StyledCardTextHeader>
           {newsCard.source} -{' '}
           {moment(newsCard.publishDate).format('MMM DD YYYY')}{' '}

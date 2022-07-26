@@ -1,6 +1,10 @@
 import React from 'react';
 import CardNew, { CardNewItem } from '../components/card-new/card-new';
-import { StyledImage, StyledSectionContainer } from './mixed-container';
+import {
+  StyledButton,
+  StyledImage,
+  StyledSectionContainer,
+} from './mixed-container';
 import { Row, Col, Button } from 'react-bootstrap';
 import CardNewGlobalLarge from '../components/card-new-global-large/card-new-global-large';
 import Link from 'next/link';
@@ -13,7 +17,7 @@ export default function TwoColumnContainer({
   newsCard,
 }: TwoColumnContainerProps) {
   return (
-    <StyledSectionContainer>
+    <StyledSectionContainer className="mx-0 mt-0">
       {newsCard.slice(0, 1).map((item, idx) => (
         <Row key={idx} className="align-items-center pb-3">
           <Col lg={8}>
@@ -39,16 +43,16 @@ export default function TwoColumnContainer({
               }}
             >
               <div className="d-flex justify-content-end">
-                <Button className=" text-primary bg-white border-2">
+                <StyledButton className=" text-primary bg-white border-2">
                   Read More
-                </Button>
+                </StyledButton>
               </div>
             </Link>
           </Col>
         </Row>
       ))}
       <div className="divider"></div>
-      <Row>
+      <Row className="mb-3">
         {newsCard.slice(0, 2).map((item, idx) => (
           <Link
             key={idx}
@@ -59,7 +63,7 @@ export default function TwoColumnContainer({
               },
             }}
           >
-            <Col lg={6} className="px-2">
+            <Col lg={6}>
               <CardNewGlobalLarge newsCardGlobalLarge={item} />
             </Col>
           </Link>
@@ -77,7 +81,7 @@ export default function TwoColumnContainer({
             }}
           >
             <Col xl={3} lg={6} md={6}>
-              <CardNew news={item} />
+              <CardNew showArticle={false} news={item} />
             </Col>
           </Link>
         ))}
@@ -94,9 +98,9 @@ export default function TwoColumnContainer({
             }}
           >
             <Col>
-              <Button className="d-flex w-100 justify-content-center text-primary bg-white border-2">
+              <StyledButton className="d-flex w-100 justify-content-center text-primary bg-white border-2">
                 Read More
-              </Button>
+              </StyledButton>
             </Col>
           </Link>
         ))}

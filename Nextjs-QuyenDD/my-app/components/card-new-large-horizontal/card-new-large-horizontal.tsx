@@ -5,46 +5,43 @@ import moment from 'moment';
 import { StyledSubCategoryName } from '../card-new-large/styled';
 import styled from 'styled-components';
 import { StyledCardTextHeader } from '../../containers/top-stories-container';
+import { StyledCardTextSecond, StyledCardTitle } from '../card-new/styled';
 interface CardNewLargeHorizontalProps {
   newsCard: CardNewItem;
 }
 const StyledCardLargeY = styled(Card.Img)`
-  min-height: 300px;
+  height: 250px;
   object-fit: cover;
-  flex: 1 1 0%;
-  border-radius: 4px;
-  filter: drop-shadow(rgba(0, 0, 0, 0.1) 0px 4px 6px);
 `;
-const StyledCardTitleLocalNew = styled(Card.Title)`
-  overflow: hidden;
-  text-overflow: ellipsis;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  display: -webkit-box !important;
+const StyledCardBody = styled(Card.Body)`
+  flex: 1;
+`;
+const StyledCardHead = styled.div`
+  flex: 1;
 `;
 export default function CardNewLargeHorizontal({
   newsCard,
 }: CardNewLargeHorizontalProps) {
   return (
-    <div className="text-decoration-none">
-      <Card className="d-flex flex-row border-0">
-        <div className="mb-0 me-0 me-sm-3">
-          <StyledCardLargeY variant="top" src={newsCard.imageUrl} />
-        </div>
+    <Card className="d-flex  flex-lg-row flex-column position-relative border-0">
+      <StyledCardHead className="mb-0 me-0 me-lg-3 position-relative">
+        <StyledCardLargeY variant="top" src={newsCard.imageUrl} />
+      </StyledCardHead>
 
-        <StyledSubCategoryName>
-          {newsCard.subCategory.name}
-        </StyledSubCategoryName>
-        <Card.Body className=" ms-3 ms-sm-0 pt-3 ps-0 pe-0 pb-0">
-          <StyledCardTitleLocalNew>{newsCard.title}</StyledCardTitleLocalNew>
-          <Card.Text>{newsCard.shortDescription}</Card.Text>
+      <StyledSubCategoryName>{newsCard.subCategory.name}</StyledSubCategoryName>
+      <StyledCardBody className="py-lg-0 py-2 ms-3 ms-sm-0 px-0">
+        <StyledCardTitle className="overflow-hidden">
+          {newsCard.title}
+        </StyledCardTitle>
+        <StyledCardTextSecond className="overflow-hidden">
+          {newsCard.shortDescription}
+        </StyledCardTextSecond>
 
-          <StyledCardTextHeader>
-            {newsCard.source} -{' '}
-            {moment(newsCard.publishDate).format('MMM DD YYYY')}{' '}
-          </StyledCardTextHeader>
-        </Card.Body>
-      </Card>
-    </div>
+        <StyledCardTextHeader>
+          {newsCard.source} -{' '}
+          {moment(newsCard.publishDate).format('MMM DD YYYY')}{' '}
+        </StyledCardTextHeader>
+      </StyledCardBody>
+    </Card>
   );
 }

@@ -22,29 +22,36 @@ export const StyledCarouseTitle = styled.p`
   font-size: 24px;
   font-family: 'Lato Bold';
   color: #ffffff;
+  -webkit-line-clamp: 1;
 `;
 export const StyledCarouseSubTitle = styled.p`
   color: #c7c8d9;
   font-size: 16px;
   font-family: 'Lato Regular';
-`;
-export const StyledImage = styled.img`
-  filter: drop-shadow(0px 4px 6px rgba(0, 0, 0, 0.1));
-  border-radius: 4px;
-  min-height: 600px;
-  max-height: 600px;
-  background-size: cover;
-  object-fit: cover;
-  background-position: center center;
-`;
-const StyledSectionTopStories = styled.section`
-  margin-bottom: 64px;
+  -webkit-line-clamp: 2;
 `;
 export const StyledCarousel = styled(Carousel)`
   .carousel-control-next,
   .carousel-control-prev {
     display: none;
   }
+  .carousel-indicators > [data-bs-target] {
+    width: 80px;
+    height: 4px;
+    border-radius: 100px;
+    border: 0px;
+  }
+  .carousel-indicators > [data-bs-target].active {
+    background: linear-gradient(180deg, #396afc 0%, #2948ff 100%);
+  }
+`;
+export const StyledImage = styled(Card.Img)`
+  min-height: 600px;
+  background-size: cover;
+  background-position: center center;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: rgb(0 0 0 / 10%) 0px 4px 6px;
 `;
 export const StyledCarouselCaption = styled(Carousel.Caption)`
   position: absolute;
@@ -58,6 +65,12 @@ export const StyledCarouselCaption = styled(Carousel.Caption)`
   padding-left: 24px;
   padding-right: 50px;
 `;
+const StyledSectionTop = styled.section`
+  margin-bottom: 64px;
+  @media screen and (max-width: 991.98px) {
+    margin: 40px;
+  }
+`;
 export default function TopStoriesContainer({
   sliderCard,
   newsCardSmall,
@@ -65,9 +78,9 @@ export default function TopStoriesContainer({
 }: TopStoriesContainerProps) {
   return (
     <>
-      <StyledSectionTopStories>
-        <Row gx={3}>
-          <Col lg={7} className="p-0">
+      <StyledSectionTop className="mb-5 mt-0 mx-0">
+        <Row gx={3} className="mx-0">
+          <Col lg={7} className="ps-0 pe-0 pe-lg-2">
             <StyledCarousel>
               {sliderCard.map((item, idx) => (
                 <Carousel.Item key={idx}>
@@ -81,7 +94,7 @@ export default function TopStoriesContainer({
                     }}
                   >
                     <StyledImage
-                      className=" position-relative d-block w-100"
+                      className="d-block w-100"
                       src={item.imageUrl}
                     />
                   </Link>
@@ -104,10 +117,10 @@ export default function TopStoriesContainer({
                         {moment(item.publishDate).format('DD MMM YYYY')}
                       </StyledCardTextHeader>
 
-                      <StyledCarouseTitle className="  text-truncate text-nowrap overflow-hidden">
+                      <StyledCarouseTitle className="mb-2 text-truncate text-nowrap overflow-hidden">
                         {item.title}
                       </StyledCarouseTitle>
-                      <StyledCarouseSubTitle className="  text-truncate text-nowrap overflow-hidden">
+                      <StyledCarouseSubTitle className="d-none d-md-block text-truncate text-nowrap overflow-hidden">
                         {item.shortDescription}
                       </StyledCarouseSubTitle>
                     </StyledCarouselCaption>
@@ -116,8 +129,8 @@ export default function TopStoriesContainer({
               ))}
             </StyledCarousel>
           </Col>
-          <Col lg={5}>
-            <Row gx={3}>
+          <Col lg={5} className="px-0">
+            <Row gx={5} className="mx-0">
               {newsCardSmall.map((item, idx) => (
                 <Link
                   key={idx}
@@ -128,13 +141,13 @@ export default function TopStoriesContainer({
                     },
                   }}
                 >
-                  <Col lg={6} className="mt-lg-0 mt-2 px-0 px-lg-2">
+                  <Col lg={6} className="mt-3 mt-lg-0 ps-0 ps-lg-2 pe-0">
                     <CardNewSmall newsCardSmall={item} />
                   </Col>
                 </Link>
               ))}
             </Row>
-            <Row>
+            <Row className="mx-0">
               {newsCardLarge.map((item, idx) => (
                 <Link
                   key={idx}
@@ -145,7 +158,7 @@ export default function TopStoriesContainer({
                     },
                   }}
                 >
-                  <Col lg={12} className="px-2">
+                  <Col lg={12} className="ps-0 ps-lg-2 pe-0 ">
                     <CardNewLarge newsCardLarge={item} />
                   </Col>
                 </Link>
@@ -153,7 +166,7 @@ export default function TopStoriesContainer({
             </Row>
           </Col>
         </Row>
-      </StyledSectionTopStories>
+      </StyledSectionTop>
     </>
   );
 }

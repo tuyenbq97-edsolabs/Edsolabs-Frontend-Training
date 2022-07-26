@@ -27,11 +27,10 @@ export const StyledNavBar = styled(Navbar)`
 
 export const StyledNavLink = styled(Nav.Link)`
   line-height: 82px;
-  padding: 0 1.5rem;
   &:hover {
     color: #ccc !important;
   }
-  padding: 0 24px !important;
+  padding: 0 1.2rem !important;
   color: #1c1c28 !important;
 `;
 export const StyledImgLocation = styled(Image)`

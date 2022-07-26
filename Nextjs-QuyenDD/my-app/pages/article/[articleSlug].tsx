@@ -13,7 +13,7 @@ import Link from 'next/link';
 import styled from 'styled-components';
 import { StyledSubCategoryName } from '../../components/card-new-large/styled';
 import { CardNewItem } from '../../components/card-new/card-new';
-import { StyledTitleHead } from '..';
+import { StyledLinkHead, StyledTitleHead } from '..';
 import {
   EmailShareButton,
   FacebookShareButton,
@@ -21,6 +21,11 @@ import {
   TwitterShareButton,
   WhatsappShareButton,
 } from 'next-share';
+import {
+  StyledCardTextFooter,
+  StyledCardTitle,
+  StyledCarImg,
+} from '../../components/card-new/styled';
 
 interface ArticleSlugProps {
   newsCardArticleSlug: CardNewItem;
@@ -47,8 +52,11 @@ export default function ArticleSlug({ newsCardArticleSlug }: ArticleSlugProps) {
       <StyledContainer className="py-4">
         <Row>
           <Col lg={3} className="d-none d-lg-block">
-            {newsCardArticleSlug.source} -{' '}
-            {moment(newsCardArticleSlug.publishDate).format('MMM DD YYYY')}
+            <StyledCardTextFooter>
+              {newsCardArticleSlug.source} -{' '}
+              {moment(newsCardArticleSlug.publishDate).format('MMM DD YYYY')}
+            </StyledCardTextFooter>
+
             <section className="d-flex">
               <div className="me-3">
                 <WhatsappShareButton
@@ -105,8 +113,10 @@ export default function ArticleSlug({ newsCardArticleSlug }: ArticleSlugProps) {
             </section>
           </Col>
           <Col lg={9}>
-            <Link href="/">NEWS/ GLOBAL NEWWS</Link>
-            <h3 className="mt-2">{newsCardArticleSlug.title}</h3>
+            <StyledLinkHead href="/">NEWS/</StyledLinkHead>
+            <StyledTitleHead className="mt-2 overflow-hidden">
+              {newsCardArticleSlug.title}
+            </StyledTitleHead>
             <Card className="border-0 my-4">
               <Card.Img
                 variant="top"
@@ -118,12 +128,12 @@ export default function ArticleSlug({ newsCardArticleSlug }: ArticleSlugProps) {
               </StyledSubCategory>
               <Card.Body className="p-0">
                 <div dangerouslySetInnerHTML={createMarkup()}></div>
-                <span className="my-4 d-block">
+                <StyledCardTextFooter className="my-4 d-block">
                   {newsCardArticleSlug.source} -{' '}
                   {moment(newsCardArticleSlug.publishDate).format(
                     ' MMM DD YYYY'
                   )}
-                </span>
+                </StyledCardTextFooter>
                 <section className="d-flex">
                   <div className="me-3">
                     <WhatsappShareButton
@@ -197,12 +207,14 @@ export default function ArticleSlug({ newsCardArticleSlug }: ArticleSlugProps) {
                       >
                         <Col md={4} key={idx}>
                           <Card className="border-0">
-                            <Card.Img variant="top" src={item.imageUrl} />
+                            <StyledCarImg variant="top" src={item.imageUrl} />
                             <StyledSubCategory>
                               {newsCardArticleSlug.subCategory.name}
                             </StyledSubCategory>
-                            <Card.Body className="p-0 mt-3">
-                              <h4 className="mb-4 ">{item.title}</h4>
+                            <Card.Body className="p-0">
+                              <StyledCardTitle className="p-0 pt-3 overflow-hidden">
+                                {item.title}
+                              </StyledCardTitle>
                             </Card.Body>
                           </Card>
                         </Col>

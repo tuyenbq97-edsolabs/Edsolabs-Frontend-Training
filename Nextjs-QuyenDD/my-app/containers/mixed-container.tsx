@@ -12,6 +12,9 @@ export interface MixedContainerProps {
 }
 export const StyledSectionContainer = styled.section`
   margin-bottom: 64px;
+  @media screen and (max-width: 991.98px) {
+    margin: 40px;
+  }
   .divider {
     border-bottom: 1px solid rgb(227, 228, 235);
     margin-bottom: 40px;
@@ -20,9 +23,14 @@ export const StyledSectionContainer = styled.section`
 export const StyledImage = styled(Image)`
   object-fit: cover;
 `;
+export const StyledButton = styled(Button)`
+  padding: 12px 16px;
+  font-size: 16px;
+  font-family: 'Lato Bold';
+`;
 export default function MixedContainer({ newsCard }: MixedContainerProps) {
   return (
-    <StyledSectionContainer>
+    <StyledSectionContainer className="mx-0 mt-0">
       {newsCard.slice(0, 1).map((item, idx) => (
         <Row key={idx} className="align-items-center pb-3">
           <Col lg={8}>
@@ -48,9 +56,9 @@ export default function MixedContainer({ newsCard }: MixedContainerProps) {
               }}
             >
               <div className="d-flex justify-content-end">
-                <Button className="text-primary bg-white border-2">
+                <StyledButton className="text-primary bg-white border-2">
                   Read More
-                </Button>
+                </StyledButton>
               </div>
             </Link>
           </Col>
@@ -104,7 +112,7 @@ export default function MixedContainer({ newsCard }: MixedContainerProps) {
           >
             <Col xl={3} lg={6} sm={6}>
               <div className="d-flex mb-3">
-                <CardNew news={item} />
+                <CardNew showArticle={false} news={item} />
               </div>
             </Col>
           </Link>
@@ -139,9 +147,9 @@ export default function MixedContainer({ newsCard }: MixedContainerProps) {
             }}
           >
             <Col>
-              <Button className="d-flex w-100 justify-content-center text-primary bg-white border-2">
+              <StyledButton className="d-flex w-100 justify-content-center text-primary bg-white border-2">
                 Read More
-              </Button>
+              </StyledButton>
             </Col>
           </Link>
         ))}

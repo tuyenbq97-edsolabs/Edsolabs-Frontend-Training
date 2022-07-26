@@ -1,10 +1,18 @@
 import moment from 'moment';
 import React from 'react';
+import { Card } from 'react-bootstrap';
 import { StyledCardTextHeader } from '../../containers/top-stories-container';
-import { StyledSubCategoryName } from '../card-new-large/styled';
+import {
+  StyledCardText,
+  StyledSubCategoryName,
+} from '../card-new-large/styled';
 import { CardNewItem } from '../card-new/card-new';
-import { StyledCard, StyledCardTextSecond } from '../card-new/styled';
-import { StyledCardBodySmall, StyledImgCardNewSmall } from './styled';
+import { StyledCardTextSecond } from '../card-new/styled';
+import {
+  StyledCard,
+  StyledCardBodySmall,
+  StyledImgCardNewSmall,
+} from './styled';
 
 interface CardNewSmallProps {
   newsCardSmall: CardNewItem;
@@ -12,9 +20,9 @@ interface CardNewSmallProps {
 
 export default function CardNewSmall({ newsCardSmall }: CardNewSmallProps) {
   return (
-    <StyledCard className="border-0 mb-2">
+    <StyledCard className="border-0 mb-2 me-0">
       <StyledImgCardNewSmall
-        className="position-relative"
+        className="d-block  position-relative"
         src={newsCardSmall.imageUrl}
         variant="top"
       />
@@ -26,9 +34,9 @@ export default function CardNewSmall({ newsCardSmall }: CardNewSmallProps) {
         <StyledCardTextHeader className="mb-1">
           {moment(newsCardSmall.publishDate).format('DD MMM YYYY')}
         </StyledCardTextHeader>
-        <StyledCardTextSecond className="text-white text-truncate text-nowrap overflow-hidden">
+        <StyledCardText className="text-white overflow-hidden">
           {newsCardSmall.title}
-        </StyledCardTextSecond>
+        </StyledCardText>
       </StyledCardBodySmall>
     </StyledCard>
   );

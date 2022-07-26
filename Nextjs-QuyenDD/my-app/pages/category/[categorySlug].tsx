@@ -9,14 +9,15 @@ import TopStoriesContainer from '../../containers/top-stories-container';
 import useSWRInfinite from 'swr/infinite';
 import { useRouter } from 'next/router';
 import styled from 'styled-components';
-import { StyledTitleHead } from '..';
+import { StyledLinkHead, StyledSpanHead, StyledTitleHead } from '..';
 
 const StyledButton = styled(Button)`
   font-family: 'Lato Bold';
   font-size: 16px;
-  .btn-primary:disabled {
-    background-color: #fff;
-    color: #ccc;
+  &:disabled {
+    border: 2.25px solid rgb(227, 228, 235);
+    color: #9e9e9e !important;
+    background-color: #bdbdbd;
   }
 `;
 export default function CategorySlug() {
@@ -48,9 +49,13 @@ export default function CategorySlug() {
       <Header />
       <Container className="pt-4 py-4">
         <Row className="mb-4">
-          <Link href="/">NEWS/ GLOBAL NEWS/</Link>
-          <StyledTitleHead>Global news</StyledTitleHead>
-          <span>Always up-to-date to latest telecommuncation news.</span>
+          <StyledLinkHead href="/">NEWS/</StyledLinkHead>
+          {dataNews.slice(0, 1).map((item) => (
+            <StyledTitleHead>{item['category']['name']}</StyledTitleHead>
+          ))}
+          <StyledSpanHead>
+            Always up-to-date to latest telecommuncation news.
+          </StyledSpanHead>
         </Row>
 
         <TopStoriesContainer
@@ -72,7 +77,7 @@ export default function CategorySlug() {
             >
               <Col xl={3} lg={6} sm={6}>
                 <div className="d-flex mb-3">
-                  <CardNew news={item} />
+                  <CardNew showArticle={true} news={item} />
                 </div>
               </Col>
             </Link>

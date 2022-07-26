@@ -15,6 +15,7 @@ import iconTwitter from '../../assets/icons/twitter.svg';
 import iconFacebook from '../../assets/icons/facebook.svg';
 import { Row, Col, Container, Nav } from 'react-bootstrap';
 import Image from 'next/image';
+import Link from 'next/link';
 export default function Footer() {
   const goToTop = () => {
     window.scrollTo({
@@ -28,11 +29,14 @@ export default function Footer() {
         <Container>
           <Row className="d-flex justify-content-end">
             <Col md={4}>
-              <Image
-                className="d-none d-md-block"
-                src={logoFooter}
-                alt="logo-footer"
-              />
+              <Link href="/">
+                <Image
+                  role="button"
+                  className="d-none d-md-block"
+                  src={logoFooter}
+                  alt="logo-footer"
+                />
+              </Link>
             </Col>
             <Col md={8}>
               <Row>
@@ -112,7 +116,7 @@ export default function Footer() {
         <StyledSectionSubFooter>
           <Container>
             <Row>
-              <Col className="d-flex flex-column flex-md-row justify-content-md-between justify-content-center align-items-center py-4 py-md-0">
+              <Col className="d-flex flex-column flex-md-row justify-content-md-between justify-content-center align-items-center py-3 py-md-0">
                 <div className="text-label">
                   © 2021 Weiwei.sg. All rights reserved
                 </div>

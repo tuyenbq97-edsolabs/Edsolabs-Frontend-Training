@@ -12,41 +12,40 @@ import {
   StyledSubCategoryName,
 } from '../card-new-large/styled';
 import { CardNewItem } from '../card-new/card-new';
-import { StyledCard } from '../card-new/styled';
 
 interface CardNewGlobalLargeProps {
   newsCardGlobalLarge: CardNewItem;
 }
 const StyledCardGlobalLarge = styled(Card.Img)`
   min-height: 600px;
-  filter: drop-shadow(rgba(0, 0, 0, 0.1) 0px 4px 6px);
+  object-fit: cover;
 `;
 export default function CardNewGlobalLarge({
   newsCardGlobalLarge,
 }: CardNewGlobalLargeProps) {
   return (
-    <StyledCard className="ms-2">
+    <Card className=" mb-3 mb-lg-0 border-0">
       <StyledCardGlobalLarge
-        className="position-relative"
+        className="d-block position-relative"
         variant="top"
         src={newsCardGlobalLarge.imageUrl}
       />
       <StyledSubCategoryName>
         {newsCardGlobalLarge.subCategory.name}
       </StyledSubCategoryName>
-      <StyledCardBodyLarge>
-        <StyledCardTextHeader>
+      <StyledCardBodyLarge className="position-absolute">
+        <StyledCardTextHeader className=" mb-1">
           {newsCardGlobalLarge.source} -{' '}
           {moment(newsCardGlobalLarge.publishDate).format('DD MMM YYYY')}
         </StyledCardTextHeader>
 
-        <StyledCarouseTitle className="text-truncate text-nowrap overflow-hidden">
+        <StyledCarouseTitle className="mb-2 text-truncate text-nowrap overflow-hidden">
           {newsCardGlobalLarge.title}
         </StyledCarouseTitle>
-        <StyledCarouseSubTitle className="text-truncate text-nowrap overflow-hidden">
+        <StyledCarouseSubTitle className="mb-0 text-truncate text-nowrap overflow-hidden">
           {newsCardGlobalLarge.shortDescription}
         </StyledCarouseSubTitle>
       </StyledCardBodyLarge>
-    </StyledCard>
+    </Card>
   );
 }

@@ -25,6 +25,9 @@ export const StyledSectionSubFooter = styled.section`
   background: rgb(0, 0, 0);
   line-height: 72px;
   margin-top: 64px;
+  @media screen and (max-width: 767.98px) {
+    line-height: 40px;
+  }
   .text-label {
     line-height: 1;
     color: #c7c8d9;

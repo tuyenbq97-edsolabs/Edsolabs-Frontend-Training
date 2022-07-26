@@ -8,11 +8,17 @@ export const StyledCardBodySmall = styled(Card.Body)`
   right: 0;
 `;
 export const StyledImgCardNewSmall = styled(Card.Img)`
-  filter: drop-shadow(0px 4px 6px rgba(0, 0, 0, 0.1));
   border-radius: 4px;
   min-height: 300px;
   max-height: 300px;
+  overflow: hidden;
   background-size: cover;
-  object-fit: cover;
+  /* object-fit: cover; */
   background-position: center center;
+  box-shadow: rgb(0 0 0 / 10%) 0px 4px 6px;
+`;
+export const StyledCard = styled(Card)`
+  &:nth-child(1) {
+    margin-right: 12px;
+  }
 `;

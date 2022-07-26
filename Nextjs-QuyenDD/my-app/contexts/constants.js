@@ -1,21 +1,7 @@
 export const themes = {
-  // light: {
-  //   foreground: '#000000',
-  //   background: '#eeeeee',
-  // },
-  // dark: {
-  //   foreground: '#ffffff',
-  //   background: '#222222',
-  // },
-  primaryColor: {
-    color: '#004FC4',
-  },
-  secondaryColor: {
-    color: '#1C1C28',
-  },
-  mutedColor: {
-    color: '#F2F2F5',
-  },
+  primaryColor: '#004FC4',
+  secondaryColor: '#1C1C28',
+  mutedColor: '#F2F2F5',
   blueWhite: {
     background: '#FFFFFF',
     color: ' #004FC4',
@@ -27,4 +13,5 @@ export const themes = {
   timeColor: {
     color: '#55577',
   },
+  colors: {},
 };

@@ -12,6 +12,7 @@ import { StyledNavBar, StyledNavLink } from './styled-header';
 import { Nav, Navbar } from 'react-bootstrap';
 import { ThemeContext } from '../../contexts/ThemeContext';
 import { themes } from '../../contexts/constants';
+import Link from 'next/link';
 export default function Header() {
   return (
     <ThemeContext.Provider value={themes.secondaryColor}>
@@ -21,9 +22,11 @@ export default function Header() {
             className="p-0 border-0"
             aria-controls="basic-navbar-nav"
           />
-          <Navbar.Brand className="ms-3 ms-xl-0 me-4">
-            <Image src={logoHeader} alt="logo-header" />
-          </Navbar.Brand>
+          <Link href="/">
+            <Navbar.Brand role="button" className="ms-3 ms-xl-0 me-4 py-0">
+              <Image src={logoHeader} alt="logo-header" />
+            </Navbar.Brand>
+          </Link>
 
           <Navbar.Collapse>
             <Nav className="me-auto">
@@ -53,13 +56,13 @@ export default function Header() {
             </Nav.Link>
           </Nav>
           <div className="flex-row d-flex ms-auto d-lg-none align-items-center">
-            <Nav.Link className="me-4">
+            <Nav.Link className="me-none me-sm-4">
               <Image src={search} alt="search" />
             </Nav.Link>
-            <Nav.Link className="me-4">
+            <Nav.Link className="me-none me-sm-4 p-sm-2 p-1">
               <Image src={shop} alt="shop" />
             </Nav.Link>
-            <Nav.Link className="me-4">
+            <Nav.Link className="me-none me-sm-4">
               <Image src={user} alt="user" />
             </Nav.Link>
           </div>
